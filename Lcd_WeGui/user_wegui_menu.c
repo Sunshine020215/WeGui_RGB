@@ -170,13 +170,12 @@ menu_t m_App_5 =
 		.str_zh_CN=(uint8_t *)"5.应用5",//中文描述
 	  .str_en_US=(uint8_t *)"5.App 5",//英文描述
 	},
-	.menuType=mPorgram,//菜单类型
-	.menuPar.mPorgram_Par =
+	.menuType=mList,//菜单类型
+	.menuPar.mList_Par =
 	{
 		.begin_fun=0x00,//菜单进入 执行一次
 		.loop_fun=0x00, //菜单功能 持续执行
 		.quit_fun=0x00, //菜单退出 执行一次
-		.refresh_fun=0x00,//刷新屏幕时执行,放绘图函数
 	},
 };
 menu_t m_App_6 =
