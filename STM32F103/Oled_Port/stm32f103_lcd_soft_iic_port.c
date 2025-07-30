@@ -15,17 +15,20 @@
 
 
 
-/*--------------------------------------------------------------
-	* 暂不支持使用ARMV6编译,请使用ARMV5编译器
-----------------------------------------------------------------*/
 
 
 //I2C延迟信号 设置
 
+//速度最快(屏幕点不亮选择慢速)
+//#define I2C_SCL_Rise_Delay() {}
+//#define I2C_SCL_Fall_Delay() {}
+//#define I2C_SDA_Rise_Delay() {}
+//#define I2C_SDA_Fall_Delay() {}
+
 //速度极快(屏幕点不亮选择慢速)
 //#define I2C_SCL_Rise_Delay() {volatile uint8_t t=0;while(t--);}
 //#define I2C_SCL_Fall_Delay() {volatile uint8_t t=0;while(t--);}
-//#define I2C_SDA_Rise_Delay() {volatile uint8_t t=5;while(t--);}
+//#define I2C_SDA_Rise_Delay() {volatile uint8_t t=0;while(t--);}
 //#define I2C_SDA_Fall_Delay() {volatile uint8_t t=0;while(t--);}
 
 //速度较快
@@ -55,23 +58,6 @@
 
 
 
-#if ((LCD_MODE == _FULL_BUFF_DYNA_UPDATE) || (LCD_MODE == _PAGE_BUFF_DYNA_UPDATE))
-static uint32_t crc[((SCREEN_HIGH+7)/8)];//储存crc
-/*--------------------------------------------------------------
-  * 名称: LCD_Reset_crc()
-  * 功能: 刷新一次crc值(动态刷新专用)
-  * 说明: 用于强制刷新屏幕,防止动态刷新出现区域不刷新
-----------------------------------------------------------------*/
-void LCD_Reset_crc()
-{
-	uint16_t i=0;
-	while(i < ((SCREEN_HIGH+7)/8))
-	{
-		crc[i]=0xff;
-		i++;
-	}
-}
-#endif
 
 
 //I2C起始信号
@@ -124,6 +110,25 @@ static void I2C_send_1Byte(uint8_t dat)
 	LCD_SCL_Clr();I2C_SCL_Fall_Delay();
 }
 
+
+
+#if ((LCD_MODE == _FULL_BUFF_DYNA_UPDATE) || (LCD_MODE == _PAGE_BUFF_DYNA_UPDATE))
+static uint32_t crc[((SCREEN_HIGH+7)/8)];//储存crc
+/*--------------------------------------------------------------
+  * 名称: LCD_Reset_crc()
+  * 功能: 刷新一次crc值(动态刷新专用)
+  * 说明: 用于强制刷新屏幕,防止动态刷新出现区域不刷新
+----------------------------------------------------------------*/
+void LCD_Reset_crc()
+{
+	uint16_t i=0;
+	while(i < ((SCREEN_HIGH+7)/8))
+	{
+		crc[i]=0xff;
+		i++;
+	}
+}
+#endif
 
 /*--------------------------------------------------------------
   * 名称: LCD_Send_1Cmd(uint8_t dat)
@@ -250,7 +255,7 @@ void LCD_Port_Init(void)
 	LCD_RES_IO_Init();
 	
 	#if ((LCD_MODE == _FULL_BUFF_DYNA_UPDATE) || (LCD_MODE ==_PAGE_BUFF_DYNA_UPDATE))
-	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_CRC, ENABLE);
+	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_CRC, ENABLE);//动态刷新CRC校验用
 	#endif
 	
 	LCD_RES_Clr();
@@ -300,23 +305,23 @@ uint8_t LCD_Refresh(void)
 	unsigned char ypage,x;
 	for(ypage=0;ypage<GRAM_YPAGE_NUM;ypage++)
 	{
-		uint32_t i_sum1;
+		uint32_t i_crc;
 		
 		//-----方式1:CRC算法校验-----
 		CRC->CR = CRC_CR_RESET;//CRC_ResetDR();
 		for(x=0;x<SCREEN_WIDTH;x++)
 		{
-			CRC->DR = lcd_driver.LCD_GRAM[ypage][x][0];//CRC_CalcCRC(lcd_driver.LCD_GRAM[ypage][x]);
+			CRC->DR = lcd_driver.LCD_GRAM[ypage][x][0];//CRC_CalcCRC(lcd_driver.LCD_GRAM[ypage][x][0]);
 		}
-		i_sum1 = CRC->DR;//i_sum1 = CRC_GetCRC();
+		i_crc = CRC->DR;//i_sum1 = CRC_GetCRC();
 		//---------------------------
 
-		if(crc[ypage] != i_sum1)
+		if(crc[ypage] != i_crc)
 		{
 			LCD_Set_Addr(0,ypage);
 			LCD_Send_nDat(&lcd_driver.LCD_GRAM[ypage][0][0],SCREEN_WIDTH);
 		}
-		crc[ypage] = i_sum1;
+		crc[ypage] = i_crc;
 	}
 	return 0;
 }
@@ -350,23 +355,23 @@ uint8_t LCD_Refresh(void)
 	for(ypage=0;ypage<GRAM_YPAGE_NUM;ypage++)
 	{
 		uint32_t i_crc;
-		//判断屏幕是否已刷完
-		if(lcd_driver.lcd_refresh_ypage + ypage > ((SCREEN_HIGH+7)/8)-1)
-		{
-			break;
-		}
+
 		//-----方式1:CRC算法校验-----
 		CRC->CR = CRC_CR_RESET;//CRC_ResetDR();
 		for(x=0;x<SCREEN_WIDTH;x++)
 		{
-			CRC->DR = lcd_driver.LCD_GRAM[ypage][x][0];//CRC_CalcCRC(lcd_driver.LCD_GRAM[ypage][x]);
+			CRC->DR = lcd_driver.LCD_GRAM[ypage][x][0];//CRC_CalcCRC(lcd_driver.LCD_GRAM[ypage][x][0]);
 		}
 		i_crc = CRC->DR;//i_sum1 = CRC_GetCRC();
 		//---------------------------
+
 		if(crc[lcd_driver.lcd_refresh_ypage + ypage] != i_crc)
 		{
-			LCD_Set_Addr(0,lcd_driver.lcd_refresh_ypage + ypage);
-			LCD_Send_nDat(&lcd_driver.LCD_GRAM[ypage][0][0],SCREEN_WIDTH);
+			if(crc[lcd_driver.lcd_refresh_ypage + ypage] != i_crc)
+			{
+				LCD_Set_Addr(0,lcd_driver.lcd_refresh_ypage + ypage);
+				LCD_Send_nDat(&lcd_driver.LCD_GRAM[ypage][0][0],SCREEN_WIDTH);
+			}
 			crc[lcd_driver.lcd_refresh_ypage + ypage] = i_crc;
 		}
 	}
@@ -409,7 +414,7 @@ uint8_t LCD_Refresh(void)
 		{
 			i = 0x00;
 			//第一个点
-			if(lcd_driver.LCD_GRAM[page][x][0]&mask)
+			if(lcd_driver.LCD_GRAM[page][x]&mask)
 			{
 				i = GRAY_COLOUR<<4;
 			}
@@ -417,7 +422,7 @@ uint8_t LCD_Refresh(void)
 			//第二个点
 			if(x<SCREEN_WIDTH)
 			{
-				if(lcd_driver.LCD_GRAM[page][x][0]&mask)
+				if(lcd_driver.LCD_GRAM[page][x]&mask)
 				{
 					i |= GRAY_COLOUR;
 				}
@@ -447,14 +452,14 @@ uint8_t LCD_Refresh(void)
 		{
 			i = 0x00;
 			//第一个点
-			if(lcd_driver.LCD_GRAM[page1][x][0]&mask1)
+			if(lcd_driver.LCD_GRAM[page1][x]&mask1)
 			{
 				i = GRAY_COLOUR<<4;
 			}
 			//第二个点
 			if((y+1)<SCREEN_HIGH)
 			{
-				if(lcd_driver.LCD_GRAM[page2][x][0]&mask2)
+				if(lcd_driver.LCD_GRAM[page2][x]&mask2)
 				{
 					i |= GRAY_COLOUR;
 				}
@@ -474,6 +479,7 @@ uint8_t LCD_Refresh(void)
 uint8_t LCD_Refresh(void)
 {
 	//每page做"sum+mini_crc组合"校验,若校验码没变,则不刷新该page
+	static uint32_t sum1[GRAM_YPAGE_NUM];
 	unsigned char ypage,x,y,i,ycount;
 	for(ypage=0;ypage<GRAM_YPAGE_NUM;ypage++)
 	{
@@ -483,12 +489,12 @@ uint8_t LCD_Refresh(void)
 		CRC->CR = CRC_CR_RESET;//CRC_ResetDR();
 		for(x=0;x<SCREEN_WIDTH;x++)
 		{
-			CRC->DR = lcd_driver.LCD_GRAM[ypage][x][0];//CRC_CalcCRC(lcd_driver.LCD_GRAM[ypage][x]);
+			CRC->DR = lcd_driver.LCD_GRAM[ypage][x];//CRC_CalcCRC(lcd_driver.LCD_GRAM[ypage][x]);
 		}
 		i_sum1 = CRC->DR;//i_sum1 = CRC_GetCRC();
 		//---------------------------
 
-		if(crc[ypage] != i_sum1)
+		if(sum1[ypage] != i_sum1)
 		{
 			ycount = 8* ypage;
 #if defined(GRAY_DRIVER_0DEG)
@@ -509,13 +515,13 @@ uint8_t LCD_Refresh(void)
 				{
 					//----第一个点----
 					i = 0x00;
-					if(lcd_driver.LCD_GRAM[ypage][x][0]&mask)
+					if(lcd_driver.LCD_GRAM[ypage][x]&mask)
 					{
 						i = GRAY_COLOUR<<4;
 					}
 					//----第二个点----
 					x++;
-					if((lcd_driver.LCD_GRAM[ypage][x][0]&mask)&&(x<SCREEN_WIDTH))
+					if((lcd_driver.LCD_GRAM[ypage][x]&mask)&&(x<SCREEN_WIDTH))
 					{
 						i |= GRAY_COLOUR;
 					}
@@ -541,14 +547,14 @@ uint8_t LCD_Refresh(void)
 					//(4位一个点)
 					//----第一个点----
 					i = 0x00;
-					if(lcd_driver.LCD_GRAM[ypage][x][0]&(0x01<<y))
+					if(lcd_driver.LCD_GRAM[ypage][x]&(0x01<<y))
 					{
 						i = GRAY_COLOUR<<4;
 					}
 					//----第二个点----
 					if((y+1)<SCREEN_HIGH)
 					{
-						if(lcd_driver.LCD_GRAM[ypage][x][0]&(0x01<<(y+1)))
+						if(lcd_driver.LCD_GRAM[ypage][x]&(0x01<<(y+1)))
 						{
 							i |= GRAY_COLOUR;
 						}
@@ -560,7 +566,7 @@ uint8_t LCD_Refresh(void)
 #endif
 			LCD_I2C_Stop();
 		}
-		crc[ypage] = i_sum1;
+		sum1[ypage] = i_sum1;
 	}
 	return 0;
 }
