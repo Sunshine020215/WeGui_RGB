@@ -4,6 +4,7 @@
 */
 
 #include "lcd_driver_config.h"
+#include "lcd_wegui_config.h"
 
 #if(LCD_PORT == _HARD_4SPI)
 
@@ -69,11 +70,9 @@ void LCD_Send_1Cmd(uint8_t dat)
 	LCD_CS_Clr();
 	{
 		//方式1,调库发送
-		//while((LCD_SPIx->SR & SPI_I2S_FLAG_TXE) == (uint16_t)RESET);
 		//SPI_I2S_SendData(LCD_SPIx, dat);
 		
 		//方式2,寄存器操作发送
-		while((LCD_SPIx->SR & SPI_I2S_FLAG_TXE) == (uint16_t)RESET);
 		LCD_SPIx->DR = dat;
 	}
 	while((LCD_SPIx->SR & SPI_I2S_FLAG_TXE) == (uint16_t)RESET);
@@ -121,15 +120,15 @@ void LCD_Send_nDat(uint8_t *p,uint16_t num)
 	while(num>i)	  
 	{
 		//方式1,调库发送
-		//SPI_I2S_SendData(LCD_SPIx, p[i++]);
 		//while (SPI_I2S_GetFlagStatus(LCD_SPIx, SPI_I2S_FLAG_TXE) == SET);
-		
+		//SPI_I2S_SendData(LCD_SPIx, p[i++]);
+
 		//方式2,寄存器操作发送
 		while((LCD_SPIx->SR & SPI_I2S_FLAG_TXE) == (uint16_t)RESET);
 		LCD_SPIx->DR = p[i++];
 		
 	}
-	while((LCD_SPIx->SR & SPI_I2S_FLAG_TXE) == (uint16_t)RESET);
+	//while((LCD_SPIx->SR & SPI_I2S_FLAG_TXE) == (uint16_t)RESET);
 	while((LCD_SPIx->SR & SPI_I2S_FLAG_BSY) != (uint16_t)RESET);
 	LCD_CS_Set();
 }
@@ -428,7 +427,7 @@ uint8_t LCD_Refresh(void)
 		uint32_t i_crc;
 
 		//判断屏幕是否已刷完
-		if(lcd_driver.lcd_refresh_ypage + ypage > ((SCREEN_HIGH+7)/8)-1)
+		if((lcd_driver.lcd_refresh_ypage + ypage)>=((SCREEN_HIGH+7)/8))
 		{
 			break;
 		}
@@ -733,7 +732,10 @@ uint8_t LCD_Refresh(void)
 	for(ypage=0;ypage<GRAM_YPAGE_NUM;ypage++)
 	{
 		uint32_t i_crc;
-
+		if((lcd_driver.lcd_refresh_ypage + ypage)>=((SCREEN_HIGH+7)/8))
+		{
+			break;
+		}
 		//-----方式1:CRC算法校验-----
 		CRC->CR = CRC_CR_RESET;//CRC_ResetDR();
 		for(x=0;x<SCREEN_WIDTH;x++)
@@ -1012,7 +1014,10 @@ uint8_t LCD_Refresh(void)
 	for(ypage=0;ypage<GRAM_YPAGE_NUM;ypage++)
 	{
 		uint32_t i_crc;
-
+		if((lcd_driver.lcd_refresh_ypage + ypage)>=((SCREEN_HIGH+7)/8))
+		{
+			break;
+		}
 		//-----方式1:CRC算法校验-----
 		CRC->CR = CRC_CR_RESET;//CRC_ResetDR();
 		for(x=0;x<SCREEN_WIDTH;x++)

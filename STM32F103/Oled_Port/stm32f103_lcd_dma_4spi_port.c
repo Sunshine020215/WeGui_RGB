@@ -4,6 +4,7 @@
 */
 
 #include "lcd_driver_config.h"
+#include "lcd_wegui_config.h"
 
 #if(LCD_PORT == _DMA_4SPI)
 
