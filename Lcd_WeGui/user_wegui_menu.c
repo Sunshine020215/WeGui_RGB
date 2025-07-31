@@ -575,7 +575,7 @@ menu_t m_Setting_UI =
 {
 	.fatherMenu=&m_App_Setting,//父菜单
 	.subMenu=0x00,//(首个)子菜单
-	.nextMenu=&m_Setting_Langauge,//同级下一个菜单
+	.nextMenu=&m_Setting_Language,//同级下一个菜单
 	.titel=
 	{
 		.str_zh_CN=(uint8_t *)"UI&主题",//中文标题
@@ -595,10 +595,10 @@ menu_t m_Setting_UI =
 	},
 };
 
-menu_t m_Setting_Langauge =
+menu_t m_Setting_Language =
 {
 	.fatherMenu=&m_App_Setting,//父菜单
-	.subMenu=&m_Setting_Langauge_English,//(首个)子菜单
+	.subMenu=&m_Setting_Language_English,//(首个)子菜单
 	.nextMenu=&m_Setting_Developer,//同级下一个菜单
 	.titel=
 	{
@@ -608,7 +608,7 @@ menu_t m_Setting_Langauge =
 	.discribe=
 	{
 		.str_zh_CN=(uint8_t *)"6.语言",//中文描述
-	  .str_en_US=(uint8_t *)"6.Langauge",//英文描述
+	  .str_en_US=(uint8_t *)"6.Language",//英文描述
 	},
 	.menuType=mList,//菜单类型
 	.menuPar.mList_Par =
@@ -670,13 +670,13 @@ menu_t m_Setting_About=
 };
 
 
-//-------------------m.Setting.Langauge语言------------------------
-void Set_langauge_English(void);
-menu_t m_Setting_Langauge_English =
+//-------------------m.Setting.Language语言------------------------
+void Set_language_English(void);
+menu_t m_Setting_Language_English =
 {
-	.fatherMenu=&m_Setting_Langauge,//父菜单
+	.fatherMenu=&m_Setting_Language,//父菜单
 	.subMenu=0x00,//(首个)子菜单
-	.nextMenu=&m_Setting_Langauge_Chinese,//同级下一个菜单
+	.nextMenu=&m_Setting_Language_Chinese,//同级下一个菜单
 	.titel=
 	{
 		.str_zh_CN=(uint8_t *)"ENGLISH",//中文标题
@@ -691,7 +691,7 @@ menu_t m_Setting_Langauge_English =
 	.menuType=wMessage,//菜单类型
 	.menuPar.wMessage_Par =
 	{
-		.Press_func=Set_langauge_English,//按下执行一次
+		.Press_func=Set_language_English,//按下执行一次
 		.Value_string=0x00,              //末尾显示的值 0x00不显示
 		.Tip_string=
 		{
@@ -701,10 +701,10 @@ menu_t m_Setting_Langauge_English =
 	},
 };
 
-void Set_langauge_Chinese(void);
-menu_t m_Setting_Langauge_Chinese =
+void Set_language_Chinese(void);
+menu_t m_Setting_Language_Chinese =
 {
-	.fatherMenu=&m_Setting_Langauge,//父菜单
+	.fatherMenu=&m_Setting_Language,//父菜单
 	.subMenu=0x00,//(首个)子菜单
 	.nextMenu=0x00,//同级下一个菜单
 	.titel=
@@ -720,7 +720,7 @@ menu_t m_Setting_Langauge_Chinese =
 	.menuType=wMessage,//菜单类型
 	.menuPar.wMessage_Par =
 	{
-		.Press_func=Set_langauge_Chinese, //按下执行一次
+		.Press_func=Set_language_Chinese, //按下执行一次
 		.Value_string=0x00,               //末尾显示的值 0x00不显示
 		.Tip_string=
 		{

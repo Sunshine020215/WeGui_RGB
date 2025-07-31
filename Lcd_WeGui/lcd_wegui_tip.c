@@ -24,7 +24,7 @@ void Wegui_Push_Message_tip(int16_t y, uint8_t* string, uint16_t time)//(推送y
 	{
 		Wegui.tip.fonts_high = 16;
 		//--文字高度--
-		switch(Wegui.setting.langauge)
+		switch(Wegui.setting.language)
 		{
 			case zh_CN://中文
 				if(lcd_driver.fonts_UTF8_cut != 0x00)
@@ -77,7 +77,7 @@ void Wegui_Push_Slider_tip(int16_t y, uint8_t* string, int16_t *p_value,int16_t 
 {
 	uint16_t string_yline = Lcd_Get_UTF8_YLine(Wegui.tip.string);//字符串分了多少行
 	//--更新文字高度--
-	switch(Wegui.setting.langauge)
+	switch(Wegui.setting.language)
 	{
 		case zh_CN://中文
 			if(lcd_driver.fonts_UTF8_cut != 0x00)
@@ -113,7 +113,7 @@ void Wegui_Push_Slider_tip(int16_t y, uint8_t* string, int16_t *p_value,int16_t 
 	
 	if(p_value==0x00)
 	{
-		//tip.string=Wegui_get_string(p_ValueError_String,Wegui.setting.langauge);
+		//tip.string=Wegui_get_string(p_ValueError_String,Wegui.setting.language);
 		Wegui.tip.string=(uint8_t*)"pErr";
 		Wegui.tip.pvalue = 0x00;
 		Wegui.tip.show_Value=0;

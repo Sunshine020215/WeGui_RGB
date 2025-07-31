@@ -53,14 +53,14 @@ do                                                   \
 
 //--------------------语言--------------------
 //-------语言类型--------
-typedef enum langauge
+typedef enum language
 {
 	en_US=0,//英语
 	zh_CN,//简体中文
 	
 }langage_t;
 //-----多语言字符串------
-typedef struct langauge_string_t
+typedef struct language_string_t
 {
 	/*const*/ uint8_t * str_zh_CN;
 	/*const*/ uint8_t * str_en_US;
@@ -68,7 +68,7 @@ typedef struct langauge_string_t
 //--------------------设置--------------------
 typedef struct Wegui_t_setting
 {
-	langage_t langauge;    //系统语言
+	langage_t language;    //系统语言
 	int16_t brightness;   //系统亮度
 	int16_t ui_fps_ms;    //ui绘制时间(建议与刷屏同步)
 	int16_t screen_fps_ms;//屏幕刷新时间(建议与UI同步)
@@ -262,12 +262,12 @@ uint8_t *itoa(int16_t num,uint8_t *str,uint8_t radix);
 uint8_t Get_submenu_sum(menu_t* m);//获取菜单中子菜单的总数
 
 /*--------------------------------------------------------------
-  * 名称: uint8_t* Wegui_get_string(Wegui_string_t object,langage_t langauge)
+  * 名称: uint8_t* Wegui_get_string(Wegui_string_t object,langage_t language)
   * 传入1: object 语言包
-  * 传入2: langauge 语言
-  * 功能: 返回"语言包"里对应的"langauge语言"字符串指针,
+  * 传入2: language 语言
+  * 功能: 返回"语言包"里对应的"language语言"字符串指针,
 ----------------------------------------------------------------*/
-uint8_t* Wegui_get_string(Wegui_string_t object,langage_t langauge);
+uint8_t* Wegui_get_string(Wegui_string_t object,langage_t language);
 
 
 

@@ -83,7 +83,7 @@ void Uart_Screen_App_Begin()//进入APP执行一次
 	};
 	
 	Lcd_Clear_GRAM();
-	Lcd_Draw_UTF8_String(0,0,(uint8_t*)Wegui_get_string(welcom,Wegui.setting.langauge));
+	Lcd_Draw_UTF8_String(0,0,(uint8_t*)Wegui_get_string(welcom,Wegui.setting.language));
 }
 void Uart_Screen_App_Loop()//相对于主循环执行
 {
@@ -151,7 +151,7 @@ void m_wDemo_wMessage_Pres2_func()//菜单按下更换文字
 		num=0;
 	}
 	
-	m_wDemo_wMessage_Pres2.menuPar.wMessage_Par.Value_string = Wegui_get_string(i[num],Wegui.setting.langauge);;
+	m_wDemo_wMessage_Pres2.menuPar.wMessage_Par.Value_string = Wegui_get_string(i[num],Wegui.setting.language);;
 }
 
 
@@ -170,12 +170,12 @@ void update_Wegui_screen_brightness()
 #endif
 
 //------------------------------------------设置语言--------------------------------------------
-void Set_langauge_Chinese()
+void Set_language_Chinese()
 {
-	Wegui.setting.langauge=zh_CN;
+	Wegui.setting.language=zh_CN;
 }
-void Set_langauge_English()
+void Set_language_English()
 {
-	Wegui.setting.langauge=en_US;
+	Wegui.setting.language=en_US;
 }
 

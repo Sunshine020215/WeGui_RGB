@@ -11,11 +11,6 @@
 #include "lcd_wegui_config.h"
 #include "lcd_res.h"
 
-
-
-
-
-
 typedef union unicode_par
 {
 	uint16_t u16;
@@ -46,7 +41,6 @@ typedef enum circle_part
 	C_ALL = 0xFF,//完整的园
 
 }circle_part_t;
-
 
 typedef enum lcd_driver_mode//驱动模式
 {
@@ -130,7 +124,6 @@ typedef struct lcd_driver
 	const fonts_t *fonts_UTF8_cut;//UTF8裁剪字体
 	uint8_t newline_high;//换行距离
 }lcd_driver_t;
-
 
 
 /*--------------------------------------------------------------
@@ -266,7 +259,6 @@ uint16_t Lcd_Get_UTF8_YLine(uint8_t *p);
 ----------------------------------------------------------------*/
 void Lcd_Clear_GRAM(void);
 
-	
 #if (defined LCD_USE_RGB565)
 /*--------------------------------------------------------------
   * 名称: RGB_Set_Driver_Colour(uint8_t num,uint16_t colour)
@@ -278,14 +270,12 @@ void Lcd_Clear_GRAM(void);
 void RGB_Set_Driver_Colour(uint8_t num,uint16_t colour);
 #endif
 
-
 /*--------------------------------------------------------------
   * 名称: Lcd_Fill_GRAM(uint8_t n)
 	* 功能: 显存全部刷成"笔刷n"(lcd_driver.colour[n])的颜色
 ----------------------------------------------------------------*/
 void Lcd_Fill_GRAM(uint8_t n);
 	
-
 /*--------------------------------------------------------------
   * 名称: lcd_driver_Init()
   * 功能: 驱动初始化

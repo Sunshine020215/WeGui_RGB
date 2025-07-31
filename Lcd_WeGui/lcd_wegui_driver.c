@@ -12,13 +12,14 @@
 
 	
 uint16_t Wegui_stick=0;
-Wegui_t Wegui;
+Wegui_t Wegui=
+{
+	.setting.brightness=255//默认最大亮度
+};
 
 #if (defined LCD_USE_RGB565)
-uint8_t bl_pwmd;//模拟PWM背光占空比
+uint8_t bl_pwmd;//模拟PWM背光占空比计数值
 #endif
-
-
 
 
 /*--------------------------------------------------------------
@@ -68,14 +69,14 @@ uint8_t *itoa(int16_t num,uint8_t *str,uint8_t radix)
 
 
 /*--------------------------------------------------------------
-  * 名称: uint8_t* Wegui_get_string(Wegui_string_t object,langage_t langauge)
+  * 名称: uint8_t* Wegui_get_string(Wegui_string_t object,langage_t language)
   * 传入1: object 语言包
-  * 传入2: langauge 语言
-  * 功能: 返回"语言包"里对应的"langauge语言"字符串指针,
+  * 传入2: language 语言
+  * 功能: 返回"语言包"里对应的"language语言"字符串指针,
 ----------------------------------------------------------------*/
-uint8_t* Wegui_get_string(Wegui_string_t object,langage_t langauge)
+uint8_t* Wegui_get_string(Wegui_string_t object,langage_t language)
 {
-	switch(langauge)
+	switch(language)
 	{
 		case zh_CN:return (uint8_t*)object.str_zh_CN;
 		
@@ -121,7 +122,7 @@ void Wegui_enter_menu(menu_t* p)
 			case wSlider:
 			{
 				Wegui_Push_Slider_tip		(8, //Y位置
-																Wegui_get_string(p->titel,Wegui.setting.langauge), //标题
+																Wegui_get_string(p->titel,Wegui.setting.language), //标题
 																p->menuPar.wSliderTip_Par.pstr, //参数指针
 																p->menuPar.wSliderTip_Par.min ,//最小值
 																p->menuPar.wSliderTip_Par.max,//最大值
@@ -145,10 +146,12 @@ void Wegui_enter_menu(menu_t* p)
 					}break;
 					default:break;
 				}
-				Wegui.menu = p;
-				Wegui_mList_Init();
+
 				if(Wegui.menu->menuPar.mList_Par.quit_fun!=0x00)
 					Wegui.menu->menuPar.mList_Par.quit_fun();//执行函数
+				
+				Wegui.menu = p;//切进新的菜单
+				Wegui_mList_Init();
 				
 				if(Wegui.menu->menuPar.mList_Par.begin_fun!=0x00)
 					Wegui.menu->menuPar.mList_Par.begin_fun();//执行函数
@@ -166,10 +169,11 @@ void Wegui_enter_menu(menu_t* p)
 					}break;
 					default:break;
 				}
-				
-				Wegui.menu = p;
 				if(Wegui.menu->menuPar.mList_Par.quit_fun!=0x00)
+				{
 					Wegui.menu->menuPar.mList_Par.quit_fun();//执行函数
+				}
+				Wegui.menu = p;//切进新的菜单
 				
 				if(Wegui.menu->menuPar.mList_Par.begin_fun!=0x00)
 					Wegui.menu->menuPar.mList_Par.begin_fun();//执行函数
@@ -180,7 +184,7 @@ void Wegui_enter_menu(menu_t* p)
 				{
 					p->menuPar.wMessage_Par.Press_func();
 				}
-				Wegui_Push_Message_tip(8, Wegui_get_string(p->menuPar.wMessage_Par.Tip_string,Wegui.setting.langauge), 3000);//推送提示信息, (推送y位置, 提示内容字符串, 展示时间ms)
+				Wegui_Push_Message_tip(8, Wegui_get_string(p->menuPar.wMessage_Par.Tip_string,Wegui.setting.language), 3000);//推送提示信息, (推送y位置, 提示内容字符串, 展示时间ms)
 			}break;
 			default:break;
 		}
@@ -464,14 +468,17 @@ void Wegui_Hello_Word()
 	uint8_t* string = (uint8_t*)"Hello WeGui!\nDriver:Soft3SPI";
 	#elif (LCD_PORT == _SOFT_4SPI)  //软件四线SPI驱动   
 	uint8_t* string = (uint8_t*)"Hello WeGui!\nDriver:Soft4SPI";
-	#elif (LCD_PORT == _HARD_4SPI)  //硬件四线SPI驱动   
+	#elif ((LCD_PORT == _HARD_4SPI)||(LCD_PORT == _HARD_4SPI0)||(LCD_PORT == _HARD_4SPI1))  //硬件四线SPI驱动   
 	uint8_t* string = (uint8_t*)"Hello WeGui!\nDriver:Hard4SPI";
 	#elif (LCD_PORT == _DMA_4SPI)   //DMA四线SPI驱动 
 	uint8_t* string = (uint8_t*)"Hello WeGui!\nDriver:DMA 4SPI";
-	#elif (LCD_PORT == _SOFT_IIC)   //软件IIC驱动
+	#elif ((LCD_PORT == _SOFT_IIC)||(LCD_PORT == _SOFT_I2C))//软件IIC驱动
 	uint8_t* string = (uint8_t*)"Hello WeGui!\nDriver:SoftI2C";
-	#elif (LCD_PORT ==_HARD_IIC)   //硬件IIC驱动
+	#elif ((LCD_PORT ==_HARD_IIC)||(LCD_PORT ==_HARD_I2C)||(LCD_PORT ==_HARD_I2C0)||(LCD_PORT ==_HARD_I2C1))//硬件IIC驱动
 	uint8_t* string = (uint8_t*)"Hello WeGui!\nDriver:HardI2C";
+	#else //其他驱动 
+	#warning ("_")
+	uint8_t* string = (uint8_t*)"Hello WeGui!";
 	#endif
 	
 	Wegui_Push_Message_tip(2, string, 3000);//推送提示信息, (推送y位置, 提示内容字符串, 展示时间ms)
@@ -502,14 +509,14 @@ void Lcd_Wegui_Init()
 	
 	Wegui.menu = &m_main;//开机初始菜单menu
 	
-	//Wegui.setting.langauge = en_US; //默认语言设置 en_US  zh_CN
-	Wegui.setting.langauge = zh_CN; //默认语言设置 en_US  zh_CN
+	//Wegui.setting.language = en_US; //默认语言设置 en_US  zh_CN
+	Wegui.setting.language = zh_CN; //默认语言设置 en_US  zh_CN
 	
 	#if (defined LCD_USE_RGB565)
-		Wegui.setting.brightness=BL_PWM_MAX;//默认亮度设置(对比度)
+		Wegui.setting.brightness=BL_PWM_MAX;//亮度
 		bl_pwmd = BL_PWM_MAX;//模拟PWM背光占空比
 	#else
-		Wegui.setting.brightness=127;//默认亮度设置(对比度)
+		Wegui.setting.brightness=127;//亮度
 	#endif
 	
 		
@@ -521,9 +528,11 @@ void Lcd_Wegui_Init()
 	Wegui.sysInfo.cpu_load = 0;//实时刷新率
 	Wegui.sysInfo.cpu_time = 0;//刷屏资源占用时间
 	Wegui.sysInfo.fps_time = 0;//刷屏间隔时间
+	/*
 	Wegui.sysInfo.cpu_model = (uint8_t*)"STM32F103C8";
 	Wegui.sysInfo.software = (uint8_t*)"WeGui RGB";
-	Wegui.sysInfo.software_version = (uint8_t*)"V0.5.0";
+	Wegui.sysInfo.software_version = (uint8_t*)"V0.5.1";
+	*/
 
 	Wegui_mList_Init();
 	

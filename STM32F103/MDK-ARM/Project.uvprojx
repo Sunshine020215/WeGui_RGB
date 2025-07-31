@@ -7,7 +7,7 @@
 
   <Targets>
     <Target>
-      <TargetName>WeGui_OLED</TargetName>
+      <TargetName>WeGui_RGB</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
@@ -871,6 +871,11 @@
               <FilePath>..\Oled_Port\stm32f103_lcd_hard_iic_port.c</FilePath>
             </File>
             <File>
+              <FileName>stm32f103_lcd_soft_iic_port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Oled_Port\stm32f103_lcd_soft_iic_port.c</FilePath>
+            </File>
+            <File>
               <FileName>stm32f103_lcd_soft_3spi_port.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Oled_Port\stm32f103_lcd_soft_3spi_port.c</FilePath>
@@ -879,11 +884,6 @@
               <FileName>stm32f103_lcd_soft_4spi_port.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Oled_Port\stm32f103_lcd_soft_4spi_port.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f103_lcd_soft_iic_port.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Oled_Port\stm32f103_lcd_soft_iic_port.c</FilePath>
             </File>
             <File>
               <FileName>stm32f103_wegui_4key_port.c</FileName>

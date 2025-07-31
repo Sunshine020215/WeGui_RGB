@@ -39,12 +39,12 @@ extern menu_t m_Setting_Time;
 extern menu_t m_Setting_Speaker;
 extern menu_t m_Setting_UI;
 extern menu_t m_Setting_Developer;
-extern menu_t m_Setting_Langauge;
+extern menu_t m_Setting_Language;
 extern menu_t m_Setting_About;
 
-//-------------------m.Setting.Langauge语言------------------------
-extern menu_t m_Setting_Langauge_English;
-extern menu_t m_Setting_Langauge_Chinese;
+//-------------------m.Setting.Language语言------------------------
+extern menu_t m_Setting_Language_English;
+extern menu_t m_Setting_Language_Chinese;
 
 //-------------------m.Setting.Display显示------------------------
 extern menu_t m_Setting_Display_ScreenFPS;

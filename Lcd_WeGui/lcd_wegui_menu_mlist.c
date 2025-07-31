@@ -86,7 +86,7 @@ void Wegui_show_mList(uint16_t farmes)
 		//函数名称:Value_Change_PID_P(cur_value,target_value,P,count)
 		Value_Change_PID_P( mList_par.list_animation_temp_y,
 												(SCREEN_HIGH-1+SCREEN_HIGH/8),
-												(4),
+												(3),
 		                    //(13 - SCREEN_HIGH/36+1),//控制菜单下拉速度[1最快:16最慢]
 												farmes);
 		
@@ -114,7 +114,7 @@ void Wegui_show_mList(uint16_t farmes)
 		{
 			temp_y = (-mList_par.list_y_offset_cur);
 		}
-		string=Wegui_get_string(Wegui.menu->titel,Wegui.setting.langauge);
+		string=Wegui_get_string(Wegui.menu->titel,Wegui.setting.language);
 		Lcd_Draw_UTF8_String(LINE0_START_X_SCAPE,temp_y,(uint8_t*)string);
 		
 		/*
@@ -154,7 +154,7 @@ void Wegui_show_mList(uint16_t farmes)
 				Lcd_Set_Driver_Mode((lcd_driver_mode_t)COLOUR_MLIST_NORMAL_TEXT);//设定笔刷颜色
 			#endif
 			Lcd_Draw_Ascii(LINE1_START_X_SCAPE-lcd_driver.fonts_ASCII->width-lcd_driver.fonts_ASCII->scape - 4,temp_y,'-');
-			string=Wegui_get_string(p->discribe,Wegui.setting.langauge);
+			string=Wegui_get_string(p->discribe,Wegui.setting.language);
 			Lcd_Draw_UTF8_String(LINE1_START_X_SCAPE,temp_y,(uint8_t*)string);
 			
 			//---若菜单是带参数设置的, 末尾显示各自参数---
@@ -255,7 +255,7 @@ void Wegui_show_mList(uint16_t farmes)
 	{
 		curr_target_x0 = LINE0_START_X_SCAPE;
 		curr_target_y0 = mList_par.list_y_offset_target;
-		string=Wegui_get_string(Wegui.menu->titel,Wegui.setting.langauge);
+		string=Wegui_get_string(Wegui.menu->titel,Wegui.setting.language);
 	}
 	//子菜单项光标位置
 	else
@@ -264,7 +264,7 @@ void Wegui_show_mList(uint16_t farmes)
 		curr_target_x0=LINE1_START_X_SCAPE;
 		//curr_target_y0=mList_par.list_y_scape*mList_par.cursor_id - mList_par.list_y_offset_target;
 		curr_target_y0=mList_par.list_y_scape*mList_par.cursor_id - mList_par.list_y_offset_cur;
-		string=Wegui_get_string(p->discribe,Wegui.setting.langauge);
+		string=Wegui_get_string(p->discribe,Wegui.setting.language);
 	}
 	
 	
