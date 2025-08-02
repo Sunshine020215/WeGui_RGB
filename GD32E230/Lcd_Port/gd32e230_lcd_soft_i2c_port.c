@@ -1,0 +1,576 @@
+#include "lcd_driver_config.h"
+#include "lcd_wegui_config.h"
+
+
+#if (LCD_PORT == _SOFT_I2C)
+
+
+#include "gd32e230_lcd_soft_i2c_port.h"
+#include "lcd_driver.h"
+#include "stdint.h"
+
+
+
+
+
+
+
+
+//I2C延迟信号 设置
+
+//速度最快(屏幕点不亮选择慢速)
+//#define I2C_SCL_Rise_Delay() {}
+//#define I2C_SCL_Fall_Delay() {}
+//#define I2C_SDA_Rise_Delay() {}
+//#define I2C_SDA_Fall_Delay() {}
+
+//速度极快(屏幕点不亮选择慢速)
+//#define I2C_SCL_Rise_Delay() {volatile uint8_t t=0;while(t--);}
+//#define I2C_SCL_Fall_Delay() {volatile uint8_t t=0;while(t--);}
+//#define I2C_SDA_Rise_Delay() {volatile uint8_t t=0;while(t--);}
+//#define I2C_SDA_Fall_Delay() {volatile uint8_t t=0;while(t--);}
+
+//速度较快
+//#define I2C_SCL_Rise_Delay() {volatile uint8_t t=1;while(t--);}
+//#define I2C_SCL_Fall_Delay() {volatile uint8_t t=1;while(t--);}
+//#define I2C_SDA_Rise_Delay() {volatile uint8_t t=1;while(t--);}
+//#define I2C_SDA_Fall_Delay() {volatile uint8_t t=1;while(t--);}
+
+//速度稍快2
+//#define I2C_SCL_Rise_Delay() {volatile uint8_t t=2;while(t--);}
+//#define I2C_SCL_Fall_Delay() {volatile uint8_t t=2;while(t--);}
+//#define I2C_SDA_Rise_Delay() {volatile uint8_t t=2;while(t--);}
+//#define I2C_SDA_Fall_Delay() {volatile uint8_t t=2;while(t--);}
+
+//速度适中
+#define I2C_SCL_Rise_Delay() {volatile uint8_t t=5;while(t--);}
+#define I2C_SCL_Fall_Delay() {volatile uint8_t t=5;while(t--);}
+#define I2C_SDA_Rise_Delay() {volatile uint8_t t=5;while(t--);}
+#define I2C_SDA_Fall_Delay() {volatile uint8_t t=5;while(t--);}
+
+//速度最慢
+//#define I2C_SCL_Rise_Delay() {volatile uint8_t t=10;while(t--);}
+//#define I2C_SCL_Fall_Delay() {volatile uint8_t t=10;while(t--);}
+//#define I2C_SDA_Rise_Delay() {volatile uint8_t t=10;while(t--);}
+//#define I2C_SDA_Fall_Delay() {volatile uint8_t t=10;while(t--);}
+
+
+
+
+
+
+//I2C起始信号
+static void LCD_I2C_Start(void)
+{
+	LCD_SDA_Clr();I2C_SDA_Fall_Delay();
+	LCD_SCL_Clr();
+}
+
+//I2C结束信号
+static void LCD_I2C_Stop(void)
+{
+	//LCD_SCL_Clr();//初始化确保状态正确
+	
+	LCD_SDA_Clr();I2C_SDA_Fall_Delay();
+	LCD_SCL_Set();I2C_SCL_Rise_Delay();
+	LCD_SDA_Set();I2C_SDA_Rise_Delay();
+}
+
+//I2C等待信号响应
+static void LCD_I2C_WaitAck(void)
+{
+	LCD_SDA_Set();I2C_SDA_Rise_Delay();
+	LCD_SCL_Set();I2C_SCL_Rise_Delay();
+	LCD_SCL_Clr();I2C_SCL_Fall_Delay();
+}
+//I2C发送1字节数据
+static void I2C_send_1Byte(uint8_t dat)
+{
+	uint8_t i;
+	for(i=0;i<8;i++)
+	{
+		if(dat&0x80)//将dat的8位从最高位依次写入
+		{
+			__NOP();
+			LCD_SCL_Clr();I2C_SCL_Fall_Delay();
+			LCD_SDA_Set();I2C_SDA_Rise_Delay();
+    }
+		else
+		{
+			LCD_SCL_Clr();I2C_SCL_Fall_Delay();
+			LCD_SDA_Clr();I2C_SDA_Fall_Delay();
+    }
+		
+		dat<<=1;
+		LCD_SCL_Set();I2C_SCL_Rise_Delay();
+		
+  }
+	__NOP();__NOP();__NOP();
+	LCD_SCL_Clr();I2C_SCL_Fall_Delay();
+}
+
+
+
+
+#if ((LCD_MODE == _FULL_BUFF_DYNA_UPDATE) || (LCD_MODE == _PAGE_BUFF_DYNA_UPDATE))
+static uint16_t crc[((SCREEN_HIGH+7)/8)][PAGE_CRC_NUM];//储存crc
+/*--------------------------------------------------------------
+  * 名称: LCD_Reset_crc()
+  * 功能: 刷新一次crc值(动态刷新专用)
+  * 说明: 用于强制刷新屏幕,防止动态刷新出现区域不刷新
+----------------------------------------------------------------*/
+void LCD_Reset_crc()
+{
+	uint16_t i=0;
+	uint16_t *p=&crc[0][0];
+	while(i < ((SCREEN_HIGH+7)/8)*PAGE_CRC_NUM)
+	{
+		p[i]=0xff;//随机值,不是0x0就ok
+		i++;
+	}
+}
+
+//默认的动态刷新crc算法
+#define lcd_crc() do \
+{\
+		CRC_CTL |= (uint32_t)CRC_CTL_RST;\
+		uint8_t *i = &lcd_driver.LCD_GRAM[ypage][0][0];\
+		for(x=0;x<(SCREEN_WIDTH*LCD_COLOUR_BIT);x++)\
+		{\
+			REG8(CRC) = i[x];\
+		}\
+		i_crc = CRC_DATA;\
+}while(0)
+#endif
+
+/*--------------------------------------------------------------
+  * 名称: LCD_Send_1Cmd(uint8_t dat)
+  * 传入1: dat
+  * 返回: 无
+  * 功能: 向屏幕发送1个命令
+  * 说明: 
+----------------------------------------------------------------*/
+void LCD_Send_1Cmd(uint8_t dat)// __attribute__((optimize("O0")))
+{
+	LCD_I2C_Start();
+	I2C_send_1Byte(OLED_IIC_7ADDR<<1);
+	LCD_I2C_WaitAck();
+  I2C_send_1Byte(0x00);
+	LCD_I2C_WaitAck();
+	I2C_send_1Byte(dat);
+	LCD_I2C_WaitAck();
+	LCD_I2C_Stop();
+}
+
+/*--------------------------------------------------------------
+  * 名称: LCD_Send_1Dat(uint8_t dat)
+  * 传入1: dat
+  * 返回: 无
+  * 功能: 向屏幕发送1个数据
+  * 说明: 
+----------------------------------------------------------------*/
+void LCD_Send_1Dat(uint8_t dat)// __attribute__((optimize("O0")))
+{
+	LCD_I2C_Start();
+	I2C_send_1Byte(OLED_IIC_7ADDR<<1);
+	LCD_I2C_WaitAck();
+	I2C_send_1Byte(0x40);
+	LCD_I2C_WaitAck();
+	I2C_send_1Byte(dat);
+	LCD_I2C_WaitAck();
+	LCD_I2C_Stop();
+}
+
+/*--------------------------------------------------------------
+  * 名称: LCD_Send_nDat(uint8_t *p,uint16_t num)
+  * 传入1: *p数组指针
+  * 传入2: num发送数量
+  * 返回: 无
+  * 功能: 向屏幕发送num个数据
+  * 说明: 
+----------------------------------------------------------------*/
+void LCD_Send_nDat(uint8_t *p,uint16_t num)
+{
+	LCD_I2C_Start();
+	I2C_send_1Byte(OLED_IIC_7ADDR<<1);
+	LCD_I2C_WaitAck();
+	I2C_send_1Byte(0x40);
+	LCD_I2C_WaitAck();
+	uint16_t i=0;
+	while(num>i)
+	{
+		I2C_send_1Byte(p[i]);
+		LCD_I2C_WaitAck();
+		i++;
+	}
+	LCD_I2C_Stop();
+}
+
+/*--------------------------------------------------------------
+  * 名称: LCD_Send_nCmd(uint8_t *p,uint16_t num)
+  * 传入1: *p数组指针
+  * 传入2: num发送数量
+  * 返回: 无
+  * 功能: 向屏幕发送num个命令
+  * 说明: 
+----------------------------------------------------------------*/
+void LCD_Send_nCmd(uint8_t *p,uint16_t num)
+{
+	LCD_I2C_Start();
+	I2C_send_1Byte(OLED_IIC_7ADDR<<1);
+	LCD_I2C_WaitAck();
+	I2C_send_1Byte(0x00);
+	LCD_I2C_WaitAck();
+	uint16_t i=0;
+	while(num>i)
+	{
+		I2C_send_1Byte(p[i]);
+		LCD_I2C_WaitAck();
+		i++;
+	}
+	LCD_I2C_Stop();
+}
+
+
+
+
+/*--------------------------------------------------------------
+  * 名称: LCD_delay_ms(volatile uint32_t ms)
+  * 传入1: ms
+  * 返回: 无
+  * 功能: 软件延时
+  * 说明: 非精准
+----------------------------------------------------------------*/
+void LCD_delay_ms(volatile uint32_t ms) 
+{
+	//delay_ms(ms);
+	
+		volatile uint16_t i;
+		while (ms--) 
+		{
+			i = 10000; //根据实际情况调整
+			while (i--);
+		}
+}
+
+
+/*--------------------------------------------------------------
+  * 名称: LCD_Port_Init()
+  * 传入: 无
+  * 返回: 无
+  * 功能: 屏幕接口初始化
+  * 说明: 
+----------------------------------------------------------------*/
+void LCD_Port_Init(void)
+{
+	LCD_SCL_IO_Init();
+	LCD_SDA_IO_Init();
+	LCD_RES_IO_Init();
+	
+	#if ((LCD_MODE == _FULL_BUFF_DYNA_UPDATE) || (LCD_MODE ==_PAGE_BUFF_DYNA_UPDATE))
+	rcu_periph_clock_enable(RCU_CRC);//动态刷新CRC校验用
+	#endif
+	
+	LCD_RES_Clr();
+	{
+		volatile unsigned int i=10000;
+		while(i--);
+	}
+	LCD_RES_Set();
+
+}
+
+
+
+
+
+
+/*--------------------------------------------------------------
+  * 名称: LCD_Refresh(void)
+  * 功能: 驱动接口,将显存LCD_GRAM全部内容发送至屏幕
+----------------------------------------------------------------*/
+
+//----------------------------普通OLED屏幕刷屏接口-------------------------------------
+#if defined (LCD_USE_NORMAL_OLED)
+
+#if (LCD_MODE == _FULL_BUFF_FULL_UPDATE)
+//---------方式1:全屏刷新----------
+uint8_t LCD_Refresh(void)
+{
+	uint8_t ypage;
+	for(ypage=0;ypage<GRAM_YPAGE_NUM;ypage++)
+	{
+		LCD_Set_Addr(0,ypage);
+		LCD_Send_nDat(&lcd_driver.LCD_GRAM[ypage][0][0],SCREEN_WIDTH);
+	}
+	return 0;
+}
+
+#elif (LCD_MODE == _FULL_BUFF_DYNA_UPDATE)
+//---------方式2:动态刷新----------
+uint8_t LCD_Refresh(void)
+{
+	uint8_t ypage;
+	uint16_t x;
+	for(ypage=0;ypage<GRAM_YPAGE_NUM;ypage++)
+	{
+		uint32_t i_crc;
+		
+		//-----方式1:CRC算法校验-----
+		lcd_crc();
+		//---------------------------
+
+		if(crc[ypage][0] != i_crc)
+		{
+			LCD_Set_Addr(0,ypage);
+			LCD_Send_nDat(&lcd_driver.LCD_GRAM[ypage][0][0],SCREEN_WIDTH);
+		}
+		crc[ypage][0] = i_crc;
+	}
+	return 0;
+}
+//---------方式3:页缓存全局刷新----------
+#elif (LCD_MODE == _PAGE_BUFF_FULL_UPDATE)
+uint8_t LCD_Refresh(void)
+{
+	uint8_t i=0;
+	for(i=0;i<GRAM_YPAGE_NUM;i++)
+	{
+		LCD_Set_Addr(0,lcd_driver.lcd_refresh_ypage);
+		LCD_Send_nDat(&lcd_driver.LCD_GRAM[i][0][0],SCREEN_WIDTH);
+		lcd_driver.lcd_refresh_ypage++;
+		if(lcd_driver.lcd_refresh_ypage >= ((SCREEN_HIGH+7)/8))
+		{
+			lcd_driver.lcd_refresh_ypage = 0;
+			break;
+		}
+	}
+	return lcd_driver.lcd_refresh_ypage;
+}
+//---------方式4:页缓存动态刷新----------
+#elif (LCD_MODE == _PAGE_BUFF_DYNA_UPDATE)
+uint8_t LCD_Refresh(void)
+{
+	//每page做校验,若校验码没变,则不刷新该page
+	uint8_t ypage;
+	uint16_t x;
+	for(ypage=0;ypage<GRAM_YPAGE_NUM;ypage++)
+	{
+		uint16_t i_crc;
+
+		//-----方式1:CRC算法校验-----
+		lcd_crc();
+		//---------------------------
+
+		if(crc[lcd_driver.lcd_refresh_ypage + ypage][0] != i_crc)
+		{
+			LCD_Set_Addr(0,lcd_driver.lcd_refresh_ypage + ypage);
+			LCD_Send_nDat(&lcd_driver.LCD_GRAM[ypage][0][0],SCREEN_WIDTH);
+			crc[lcd_driver.lcd_refresh_ypage + ypage][0] = i_crc;
+		}
+	}
+	lcd_driver.lcd_refresh_ypage += GRAM_YPAGE_NUM;
+	if(lcd_driver.lcd_refresh_ypage >= ((SCREEN_HIGH+7)/8))
+	{
+		lcd_driver.lcd_refresh_ypage = 0;
+	}
+	return lcd_driver.lcd_refresh_ypage;
+}
+#endif
+
+
+
+//----------------------------灰度OLED屏幕刷屏接口-------------------------------------
+#elif defined (LCD_USE_GRAY_OLED)//灰度OLED
+
+#if (LCD_MODE == _FULL_BUFF_FULL_UPDATE)
+//---------方式1:全屏刷新----------
+uint8_t LCD_Refresh(void)
+{
+	uint8_t i;
+	uint16_t x,y;
+	#if defined(GRAY_DRIVER_0DEG)
+	//---扫描方向1(不旋转)----
+	LCD_Set_Addr(0,0,(SCREEN_WIDTH/2-1),(SCREEN_HIGH-1));
+	LCD_I2C_Start();
+	I2C_send_1Byte(OLED_IIC_7ADDR<<1);
+	LCD_I2C_WaitAck();
+	I2C_send_1Byte(0x40);
+	LCD_I2C_WaitAck();
+	for(y=0;y<SCREEN_HIGH;y++)
+	{
+		uint8_t page,mask;
+		page=y/8;
+		mask=(0x01<<y%8);
+		for(x=0;x<SCREEN_WIDTH;)
+		{
+			i = 0x00;
+			//第一个点
+			if(lcd_driver.LCD_GRAM[page][x]&mask)
+			{
+				i = GRAY_COLOUR<<4;
+			}
+			x++;
+			//第二个点
+			if(x<SCREEN_WIDTH)
+			{
+				if(lcd_driver.LCD_GRAM[page][x]&mask)
+				{
+					i |= GRAY_COLOUR;
+				}
+			}
+			x++;
+			I2C_send_1Byte(i);
+			LCD_I2C_WaitAck();
+		}
+	}
+
+	#elif defined(GRAY_DRIVER_90DEG)
+	//---扫描方向2(90度旋转)---
+	LCD_Set_Addr(0,0,(SCREEN_HIGH/2-1),(SCREEN_WIDTH-1));
+	LCD_I2C_Start();
+	I2C_send_1Byte(OLED_IIC_7ADDR<<1);
+	LCD_I2C_WaitAck();
+	I2C_send_1Byte(0x40);
+	LCD_I2C_WaitAck();
+	for(y=0;y<SCREEN_HIGH;y+=2)
+	{
+		uint8_t page1,page2,mask1,mask2;
+		page1=y/8;
+		page2=(y+1)/8;
+		mask1=(0x01<<y%8);
+		mask2=(0x01<<(y+1)%8);
+		for(x=0;x<SCREEN_WIDTH;x++)
+		{
+			i = 0x00;
+			//第一个点
+			if(lcd_driver.LCD_GRAM[page1][x]&mask1)
+			{
+				i = GRAY_COLOUR<<4;
+			}
+			//第二个点
+			if((y+1)<SCREEN_HIGH)
+			{
+				if(lcd_driver.LCD_GRAM[page2][x]&mask2)
+				{
+					i |= GRAY_COLOUR;
+				}
+			}
+			I2C_send_1Byte(i);
+			LCD_I2C_WaitAck();
+		}
+	}
+	#endif
+	LCD_I2C_Stop();
+	return 0;
+}
+#elif (LCD_MODE == _FULL_BUFF_DYNA_UPDATE)
+//---------方式2:动态刷新----------
+uint8_t LCD_Refresh(void)
+{
+	uint8_t ypage,y,i;
+	uint16_t x,ycount;
+	for(ypage=0;ypage<GRAM_YPAGE_NUM;ypage++)
+	{
+		uint16_t i_crc;
+		
+		//-----方式1:CRC算法校验-----
+		lcd_crc();
+		//---------------------------
+
+		if(crc[ypage][0] != i_crc)
+		{
+			ycount = 8* ypage;
+#if defined(GRAY_DRIVER_0DEG)
+			//----扫描方向1(不旋转)---
+			LCD_Set_Addr(0,ycount,(SCREEN_WIDTH/2-1),(SCREEN_HIGH-1));
+			LCD_I2C_Start();
+			I2C_send_1Byte(OLED_IIC_7ADDR<<1);
+			LCD_I2C_WaitAck();
+			I2C_send_1Byte(0x40);
+			LCD_I2C_WaitAck();
+			
+			for(y=0;y<8;y++)
+			{
+				uint8_t mask;
+				if(++ycount >= SCREEN_HIGH){break;}
+				mask=0x01<<(y%8);
+				for(x=0;x<SCREEN_WIDTH;)
+				{
+					//----第一个点----
+					i = 0x00;
+					if(lcd_driver.LCD_GRAM[ypage][x]&mask)
+					{
+						i = GRAY_COLOUR<<4;
+					}
+					//----第二个点----
+					x++;
+					if((lcd_driver.LCD_GRAM[ypage][x]&mask)&&(x<SCREEN_WIDTH))
+					{
+						i |= GRAY_COLOUR;
+					}
+					x++;
+					I2C_send_1Byte(i);
+					LCD_I2C_WaitAck();
+				}
+			}
+
+#elif defined(GRAY_DRIVER_90DEG)
+			//---扫描方向2(90度旋转)----
+			LCD_Set_Addr(ycount/2,0,(SCREEN_HIGH/2-1),(SCREEN_WIDTH-1));
+			LCD_I2C_Start();
+			I2C_send_1Byte(OLED_IIC_7ADDR<<1);
+			LCD_I2C_WaitAck();
+			I2C_send_1Byte(0x40);
+			LCD_I2C_WaitAck();
+			for(y=0;y<8;y+=2)
+			{
+				if(++ycount >= SCREEN_HIGH){break;}
+				for(x=0;x<SCREEN_WIDTH;x++)
+				{
+					//(4位一个点)
+					//----第一个点----
+					i = 0x00;
+					if(lcd_driver.LCD_GRAM[ypage][x]&(0x01<<y))
+					{
+						i = GRAY_COLOUR<<4;
+					}
+					//----第二个点----
+					if((y+1)<SCREEN_HIGH)
+					{
+						if(lcd_driver.LCD_GRAM[ypage][x]&(0x01<<(y+1)))
+						{
+							i |= GRAY_COLOUR;
+						}
+					}
+					I2C_send_1Byte(i);
+					LCD_I2C_WaitAck();
+				}
+			}
+#endif
+			LCD_I2C_Stop();
+			crc[ypage][0] = i_crc;
+		}
+	}
+	return 0;
+}
+//---------方式3:页缓存全局刷新----------
+#elif (LCD_MODE == _PAGE_BUFF_FULL_UPDATE)
+	#error ("_PAGE_BUFF mode not support Gray OLED yet!");
+//---------方式4:页缓存动态刷新----------
+#elif (LCD_MODE == _PAGE_BUFF_DYNA_UPDATE)
+	#error ("_PAGE_BUFF mode not support Gray OLED yet!");
+#endif
+
+
+//----------------------------RGB565屏幕刷屏接口-------------------------------------
+#elif defined (LCD_USE_RGB565)
+	//彩屏TFT屏不支持I2C方式驱动 请更改屏幕驱动IC型号
+	#error ("TFT not support I2C Driver!");
+#endif
+
+
+
+
+
+#endif

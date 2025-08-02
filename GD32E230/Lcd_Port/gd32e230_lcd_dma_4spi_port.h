@@ -1,0 +1,120 @@
+/*
+	Copyright 2025 Lu Zhihao
+	本程序仅供学习用途, 暂不公开对其他用途的授权
+*/
+
+#ifndef GD32E230_LCD_DMA_4SPI_PORT_H
+#define GD32E230_LCD_DMA_4SPI_PORT_H
+
+#include "gd32e23x.h"
+
+typedef volatile enum LCD_dma_step
+{
+	DMA_FREE = 0,
+	DMA_NORMAL_CMD = 1,
+	DMA_REFLASH = 2,
+}lcd_dma_step_t;
+
+
+//-----------------IO接口定义---------------- 
+
+//-----SCL-----
+#define LCD_SCL_IO_Init() \
+	do{\
+		rcu_periph_clock_enable(RCU_GPIOA);\
+		gpio_af_set(GPIOA, GPIO_AF_0, GPIO_PIN_5);\
+		gpio_mode_set(GPIOA, GPIO_MODE_AF, GPIO_PUPD_NONE, GPIO_PIN_5);\
+		gpio_output_options_set(GPIOA, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_5);\
+	}while(0)
+
+//-----SDA-----
+#define LCD_SDA_IO_Init() \
+	do{\
+		rcu_periph_clock_enable(RCU_GPIOA);\
+		gpio_af_set(GPIOA, GPIO_AF_0, GPIO_PIN_7);\
+		gpio_mode_set(GPIOA, GPIO_MODE_AF, GPIO_PUPD_NONE, GPIO_PIN_7);\
+		gpio_output_options_set(GPIOA, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_7);\
+	}while(0)
+
+//-----RES-----
+//#define LCD_RES_Clr() do{gpio_bit_reset(GPIOB,GPIO_PIN_10);}while(0)//库函数操作IO
+//#define LCD_RES_Set() do{gpio_bit_set(GPIOB,GPIO_PIN_10);}while(0)//库函数操作IO
+#define LCD_RES_Clr() do{GPIO_BC(GPIOB) = (uint32_t)GPIO_PIN_10;;}while(0)//直接寄存器操作,节省函数调用时间
+#define LCD_RES_Set() do{GPIO_BOP(GPIOB) = (uint32_t)GPIO_PIN_10;}while(0)//直接寄存器操作,节省函数调用时间
+#define LCD_RES_IO_Init() \
+	do{\
+		rcu_periph_clock_enable(RCU_GPIOB);\
+		gpio_mode_set(GPIOB, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE, GPIO_PIN_10);\
+		gpio_output_options_set(GPIOB, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_10);\
+		LCD_RES_Set();\
+	}while(0)
+
+//-----DC-----
+//#define LCD_DC_Clr()  do{gpio_bit_reset(GPIOB,GPIO_PIN_11);}while(0)//库函数操作IO
+//#define LCD_DC_Set()  do{gpio_bit_set(GPIOB,GPIO_PIN_11);}while(0)//库函数操作IO
+#define LCD_DC_Clr() do{GPIO_BC(GPIOB) = (uint32_t)GPIO_PIN_11;;}while(0)//直接寄存器操作,节省函数调用时间
+#define LCD_DC_Set() do{GPIO_BOP(GPIOB) = (uint32_t)GPIO_PIN_11;}while(0)//直接寄存器操作,节省函数调用时间
+#define LCD_DC_IO_Init() \
+	do{\
+		rcu_periph_clock_enable(RCU_GPIOB);\
+		gpio_mode_set(GPIOB, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE, GPIO_PIN_11);\
+		gpio_output_options_set(GPIOB, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_11);\
+		LCD_DC_Set();\
+	}while(0)
+
+//-----CS-----(可选)
+//#define LCD_CS_Clr()  do{gpio_bit_reset(GPIOA,GPIO_PIN_6);}while(0)//库函数操作IO
+//#define LCD_CS_Set()  do{gpio_bit_set(GPIOA,GPIO_PIN_6);}while(0)//库函数操作IO
+#define LCD_CS_Clr() do{GPIO_BC(GPIOA) = (uint32_t)GPIO_PIN_6;;}while(0)//直接寄存器操作,节省函数调用时间
+#define LCD_CS_Set() do{GPIO_BOP(GPIOA) = (uint32_t)GPIO_PIN_6;}while(0)//直接寄存器操作,节省函数调用时间
+
+#define LCD_CS_IO_Init() \
+	do{\
+		rcu_periph_clock_enable(RCU_GPIOA);\
+		gpio_mode_set(GPIOA, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE, GPIO_PIN_6);\
+		gpio_output_options_set(GPIOA, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_6);\
+		LCD_CS_Set();\
+	}while(0)
+	
+//-----BL-----(可选/BL背光一般RGB TFT屏幕专有)
+//#define LCD_BL_Clr()  do{gpio_bit_reset(GPIOB,GPIO_PIN_0);}while(0)//库函数操作IO
+//#define LCD_BL_Set()  do{gpio_bit_set(GPIOB,GPIO_PIN_0);}while(0)//库函数操作IO
+#define LCD_BL_Clr() do{GPIO_BC(GPIOB) = (uint32_t)GPIO_PIN_0;}while(0)//直接寄存器操作,节省函数调用时间
+#define LCD_BL_Set() do{GPIO_BOP(GPIOB) = (uint32_t)GPIO_PIN_0;}while(0)//直接寄存器操作,节省函数调用时间
+//#define LCD_BL_On() do{LCD_BL_Clr();}while(0)
+//#define LCD_BL_Off() do{LCD_BL_Set();}while(0)
+#define LCD_BL_On() do{LCD_BL_Set();}while(0)
+#define LCD_BL_Off() do{LCD_BL_Clr();}while(0)
+#define LCD_BL_IO_Init() \
+	do{\
+		rcu_periph_clock_enable(RCU_GPIOB);\
+		gpio_mode_set(GPIOB, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE, GPIO_PIN_0);\
+		gpio_output_options_set(GPIOB, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_0);\
+		LCD_BL_On();\
+	}while(0)
+
+	
+
+
+extern volatile lcd_dma_step_t DMA_State;
+extern uint8_t DMA_reflash_step;
+
+
+#define LCD_is_Busy() (DMA_State!=DMA_FREE)
+void LCD_Port_Init(void);//接口初始化	
+void LCD_delay_ms(volatile uint32_t ms);
+void LCD_Send_1Cmd(uint8_t dat);//向屏幕发送1个命令
+void LCD_Send_1Dat(uint8_t dat);//向屏幕发送1个数据
+//static void LCD_Send_nDat(uint8_t *p,uint16_t num);//向屏幕发送num个数据
+void LCD_Send_nCmd(uint8_t *p,uint16_t num);//向屏幕发送num个命令
+void LCD_DMA_SPIx_ISR(void);//需要移植到DMA完毕中断里
+uint8_t LCD_Refresh(void);
+
+	
+		
+		
+		
+#endif
+		
+	
+	
