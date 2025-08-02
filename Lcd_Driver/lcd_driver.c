@@ -1093,7 +1093,7 @@ static void Lcd_Draw_VLine(int16_t x,int16_t y_min, int16_t y_max)
 	}
 }
 
-//高效率画垂直线, 输入x点 Y起点,Y终点
+//高效率画水平线, 输入x点 Y起点,Y终点
 static void Lcd_Draw_HLine(int16_t x_min ,int16_t y, int16_t x_max)
 {
 	uint8_t offset;
@@ -1188,11 +1188,11 @@ void Lcd_Draw_Line(int16_t x1,int16_t y1,int16_t x2,int16_t y2)
 
 
 /*--------------------------------------------------------------
-  * Lcd_Draw_Circel_part(int16_t x0,int16_t y0,uint8_t r,circle_part_t cPart)
+  * Lcd_Draw_Circel_part(int16_t x0,int16_t y0,uint16_t r,circle_part_t cPart)
   * 传入: (x0,y0):起点  r:半径 cPart:圆的部分
   * 功能: 绘制圆形部分
 ----------------------------------------------------------------*/
-void Lcd_Draw_Circel_part(int16_t x0,int16_t y0,uint8_t r,circle_part_t cPart)
+void Lcd_Draw_Circel_part(int16_t x0,int16_t y0,uint16_t r,circle_part_t cPart)
 {
 	int16_t x = 0;
 	int16_t y = r;
@@ -1241,11 +1241,11 @@ void Lcd_Draw_Circel_part(int16_t x0,int16_t y0,uint8_t r,circle_part_t cPart)
 }
 
 /*--------------------------------------------------------------
-  * Lcd_Fill_Circel_part(int16_t x0,int16_t y0,uint8_t r,circle_part_t cPart)
+  * Lcd_Fill_Circel_part(int16_t x0,int16_t y0,uint16_t r,circle_part_t cPart)
   * 传入: (x0,y0):起点  r:半径 cPart:圆的部分
   * 功能: 填充圆形部分
 ----------------------------------------------------------------*/
-void Lcd_Fill_Circel_part(int16_t x0,int16_t y0,uint8_t r,circle_part_t cPart)
+void Lcd_Fill_Circel_part(int16_t x0,int16_t y0,uint16_t r,circle_part_t cPart)
 {
 	int16_t x = 0;
 	int16_t y = r;
@@ -1311,7 +1311,7 @@ void Lcd_Fill_Box(int16_t x_min,int16_t y_min, int16_t x_max, int16_t y_max)
 {
 	uint8_t ypage;
 	uint8_t offset;
-	uint8_t x;
+	uint16_t x;
 
 	if(x_max < x_min)
 	{
@@ -1430,7 +1430,7 @@ void Lcd_Draw_Box(int16_t x_min,int16_t y_min, int16_t x_max, int16_t y_max)
 }
 
 /*--------------------------------------------------------------
-  * 名称: Lcd_Draw_Bitmap(int16_t x0,int16_t y0,uint8_t sizex,uint8_t sizey,uint8_t BMP[])
+  * 名称: Lcd_Draw_Bitmap(int16_t x0,int16_t y0,uint16_t sizex,uint8_t sizey,uint8_t BMP[])
   * 传入1: x0 坐标左上角横坐标点
 	* 传入2: y0 坐标左上角纵坐标点
   * 传入3: sizex 点阵图形x宽度
@@ -1439,11 +1439,11 @@ void Lcd_Draw_Box(int16_t x_min,int16_t y_min, int16_t x_max, int16_t y_max)
   * 功能: 将点阵图形摆放到任意坐标点上
   * 说明: 坐标点支持负数
 ----------------------------------------------------------------*/
-void Lcd_Draw_Bitmap(int16_t x0,int16_t y0,uint8_t sizex,uint8_t sizey,uint8_t BMP[])
+void Lcd_Draw_Bitmap(int16_t x0,int16_t y0,uint16_t sizex,uint16_t sizey,uint8_t BMP[])
 {
 	uint32_t i;
-	uint8_t xi;
-	uint8_t yi;
+	uint16_t xi;
+	uint16_t yi;
 	
 	//---------全屏缓存-----------
 	#if ((LCD_MODE == _FULL_BUFF_FULL_UPDATE) || ((LCD_MODE == _FULL_BUFF_DYNA_UPDATE)))//全屏缓存
@@ -1546,11 +1546,11 @@ void Lcd_Fill_RBox(int16_t x_min,int16_t y_min, int16_t x_max, int16_t y_max, in
 
 
 /*--------------------------------------------------------------
-  * 名称: Lcd_Draw_RBox(int16_t x_min,int16_t y_min, int16_t x_max, int16_t y_max, uint8_t r)
+  * 名称: Lcd_Draw_RBox(int16_t x_min,int16_t y_min, int16_t x_max, int16_t y_max, uint16_t r)
   * 传入: (x_min,y_min)起点 (x_max,y_max)终点 r:半径
   * 功能: 绘制倒圆角镂空矩形
 ----------------------------------------------------------------*/
-void Lcd_Draw_RBox(int16_t x_min,int16_t y_min, int16_t x_max, int16_t y_max, uint8_t r)
+void Lcd_Draw_RBox(int16_t x_min,int16_t y_min, int16_t x_max, int16_t y_max, uint16_t r)
 {
 	int16_t x_min_add_r;
 	int16_t x_max_dec_r;
@@ -1824,7 +1824,7 @@ uint16_t Lcd_Get_UTF8_XLen(uint8_t *p)
 {
 	uint16_t len=0;
 	uint16_t temp_len=0;
-	uint8_t endscape=0;
+	uint16_t endscape=0;
 	while(1)
 	{
 		uint8_t temp = *p & 0xF8;
@@ -2056,14 +2056,15 @@ void lcd_driver_Init(void)
 	
 	
 	//------driver配置默认字体---------
-	//---中英文字体high高度需要一致----
+	//---中英文字体high高度建议一致----
 	
-	
-	//lcd_driver.fonts_ASCII = &ascii_SongTi_8X16;//默认ASCII字体
-	//lcd_driver.fonts_UTF8_cut = &SongTi_UTF8_16X16;//默认UTF8字体(裁切)
-	
-	lcd_driver.fonts_ASCII = &ascii_SongTi_6X12;//默认ASCII字体
-	lcd_driver.fonts_UTF8_cut = &SongTi_UTF8_12X12;//默认UTF8字体(裁切)
+	#if(SCREEN_WIDTH < 240)
+		lcd_driver.fonts_ASCII = &ascii_SongTi_6X12;//默认ASCII字体
+		lcd_driver.fonts_UTF8_cut = &SongTi_UTF8_12X12;//默认UTF8字体(裁切)
+	#else
+		lcd_driver.fonts_ASCII = &ascii_SongTi_8X16;//默认ASCII字体
+		lcd_driver.fonts_UTF8_cut = &SongTi_UTF8_16X16;//默认UTF8字体(裁切)
+	#endif
 
 	//lcd_driver.newline_high = lcd_driver.fonts_ASCII->high;   //文本换行距离 (如果没有使用中文,可选择)
 	lcd_driver.newline_high = lcd_driver.fonts_UTF8_cut->high;//文本换行距离 (选择ASCII字体和UTF8字体最大的一个)

@@ -157,18 +157,18 @@ void Lcd_Draw_Pixl(int16_t x,int16_t y);
 void Lcd_Draw_Line(int16_t x1,int16_t y1,int16_t x2,int16_t y2);
 
 /*--------------------------------------------------------------
-  * Lcd_Draw_Circel_part(int16_t x0,int16_t y0,uint8_t r,circle_part_t cPart)
+  * Lcd_Draw_Circel_part(int16_t x0,int16_t y0,uint16_t r,circle_part_t cPart)
   * 传入: (x0,y0):起点  r:半径 cPart:圆的部分
   * 功能: 绘制圆形部分
 ----------------------------------------------------------------*/
-void Lcd_Draw_Circel_part(int16_t x0,int16_t y0,uint8_t r,circle_part_t cPart);
+void Lcd_Draw_Circel_part(int16_t x0,int16_t y0,uint16_t r,circle_part_t cPart);
 
 /*--------------------------------------------------------------
-  * Lcd_Fill_Circel_part(int16_t x0,int16_t y0,uint8_t r,circle_part_t cPart)
+  * Lcd_Fill_Circel_part(int16_t x0,int16_t y0,uint16_t r,circle_part_t cPart)
   * 传入: (x0,y0):起点  r:半径 cPart:圆的部分
   * 功能: 填充圆形部分
 ----------------------------------------------------------------*/
-void Lcd_Fill_Circel_part(int16_t x0,int16_t y0,uint8_t r,circle_part_t cPart);
+void Lcd_Fill_Circel_part(int16_t x0,int16_t y0,uint16_t r,circle_part_t cPart);
 
 /*--------------------------------------------------------------
   * 名称: Lcd_Draw_Box(int16_t x_min,int16_t y_min, int16_t x_max, int16_t y_max)
@@ -186,7 +186,7 @@ void Lcd_Draw_Box(int16_t x_min,int16_t y_min, int16_t x_max, int16_t y_max);
 void Lcd_Fill_Box(int16_t x_min,int16_t y_min, int16_t x_max, int16_t y_max);
 
 /*--------------------------------------------------------------
-  * 名称: Lcd_Draw_Bitmap(int16_t x0,int16_t y0,uint8_t sizex,uint8_t sizey,uint8_t BMP[])
+  * 名称: Lcd_Draw_Bitmap(int16_t x0,int16_t y0,uint16_t sizex,uint16_t sizey,uint8_t BMP[])
   * 传入1: x0 坐标左上角横坐标点
 	* 传入2: y0 坐标左上角纵坐标点
   * 传入3: sizex 点阵图形x宽度
@@ -195,7 +195,7 @@ void Lcd_Fill_Box(int16_t x_min,int16_t y_min, int16_t x_max, int16_t y_max);
   * 功能: 将点阵图形摆放到任意坐标点上
   * 说明: 坐标点支持负数
 ----------------------------------------------------------------*/
-void Lcd_Draw_Bitmap(int16_t x0,int16_t y0,uint8_t sizex,uint8_t sizey,uint8_t BMP[]);
+void Lcd_Draw_Bitmap(int16_t x0,int16_t y0,uint16_t sizex,uint16_t sizey,uint8_t BMP[]);
 
 /*--------------------------------------------------------------
   * 名称: Lcd_Fill_RBox(int16_t x_min,int16_t y_min, int16_t x_max, int16_t y_max, int8_t r)
@@ -205,11 +205,11 @@ void Lcd_Draw_Bitmap(int16_t x0,int16_t y0,uint8_t sizex,uint8_t sizey,uint8_t B
 void Lcd_Fill_RBox(int16_t x_min,int16_t y_min, int16_t x_max, int16_t y_max, int8_t r);
 
 /*--------------------------------------------------------------
-  * 名称: Lcd_Draw_RBox(int16_t x_min,int16_t y_min, int16_t x_max, int16_t y_max)
+  * 名称: Lcd_Draw_RBox(int16_t x_min,int16_t y_min, int16_t x_max, int16_t y_max, uint16_t r);
   * 传入: (x_min,y_min)起点 (x_max,y_max)终点
-  * 功能: 绘制镂空矩形
+  * 功能: 绘制镂空倒圆角矩形
 ----------------------------------------------------------------*/
-void Lcd_Draw_RBox(int16_t x_min,int16_t y_min, int16_t x_max, int16_t y_max, uint8_t r);
+void Lcd_Draw_RBox(int16_t x_min,int16_t y_min, int16_t x_max, int16_t y_max, uint16_t r);
 
 /*--------------------------------------------------------------
   * 名称: Lcd_Draw_Ascii(int16_t x,int16_t y,uint8_t chr)
