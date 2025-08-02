@@ -126,6 +126,17 @@ typedef struct lcd_driver
 }lcd_driver_t;
 
 
+#if (defined LCD_USE_RGB565)
+/*--------------------------------------------------------------
+  * 名称: RGB_Set_Driver_Colour(uint8_t num,uint16_t colour)
+	* 传入: num 颜色序号 对应设置writer_num的笔刷颜色
+	* 传入: colour 颜色
+	* 功能: 设置驱动笔刷颜色(RGB屏幕专用)
+  * 说明: 
+----------------------------------------------------------------*/
+void RGB_Set_Driver_Colour(uint8_t num,uint16_t colour);
+#endif
+
 /*--------------------------------------------------------------
   * 名称: Lcd_Set_Driver_Mode(lcd_driver_mode_t mode)
   * 传入: mode 驱动模式
@@ -219,18 +230,18 @@ void Lcd_Draw_RBox(int16_t x_min,int16_t y_min, int16_t x_max, int16_t y_max, ui
 void Lcd_Draw_Ascii(int16_t x,int16_t y,uint8_t chr);
 
 /*--------------------------------------------------------------
-  * 名称: void Lcd_Draw_int32(int16_t x,int16_t y,int16_t num)//写数字,自动长度,32位带符号
-  * 传入: (x,y)左上角坐标 num带符号16位数字
-  * 功能: 根据输入的num数字用对应的"ASCII字库"绘制到屏幕对应坐标上
-----------------------------------------------------------------*/
-void Lcd_Draw_int32(int16_t x,int16_t y,int16_t num);
-
-/*--------------------------------------------------------------
   * 名称: void Lcd_Draw_Unicode(int16_t x,int16_t y,unicode_t unicode_id)
   * 传入: (x,y)左上角坐标 unicode_id
   * 功能: 根据输入的unicode_id寻找对应的"裁剪字库"绘制到屏幕坐标上
 ----------------------------------------------------------------*/
 void Lcd_Draw_Unicode(int16_t x,int16_t y,unicode_t unicode_id);
+
+/*--------------------------------------------------------------
+  * 名称: void Lcd_Draw_int32(int16_t x,int16_t y,int16_t num)//写数字,自动长度,32位带符号
+  * 传入: (x,y)左上角坐标 num带符号16位数字
+  * 功能: 根据输入的num数字用对应的"ASCII字库"绘制到屏幕对应坐标上
+----------------------------------------------------------------*/
+void Lcd_Draw_int32(int16_t x,int16_t y,int16_t num);
 
 /*--------------------------------------------------------------
   * 名称: Lcd_Draw_UTF8_String(int16_t x,int16_t y,uint8_t *p)
@@ -258,17 +269,6 @@ uint16_t Lcd_Get_UTF8_YLine(uint8_t *p);
 	* 功能: 清显存,全部清为0x00
 ----------------------------------------------------------------*/
 void Lcd_Clear_GRAM(void);
-
-#if (defined LCD_USE_RGB565)
-/*--------------------------------------------------------------
-  * 名称: RGB_Set_Driver_Colour(uint8_t num,uint16_t colour)
-	* 传入: num 颜色序号 对应设置writer_num的笔刷颜色
-	* 传入: colour 颜色
-	* 功能: 设置驱动笔刷颜色(RGB屏幕专用)
-  * 说明: 
-----------------------------------------------------------------*/
-void RGB_Set_Driver_Colour(uint8_t num,uint16_t colour);
-#endif
 
 /*--------------------------------------------------------------
   * 名称: Lcd_Fill_GRAM(uint8_t n)
