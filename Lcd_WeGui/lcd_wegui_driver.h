@@ -85,10 +85,6 @@ typedef struct Wegui_sysInfo
 	uint16_t cpu_load;//CPU负载
 	uint16_t cpu_time;//刷屏函数总占用时间
 	uint16_t fps_time;//屏幕刷新时间
-	
-	uint8_t* cpu_model;//cpu型号
-	uint8_t* software;//软件名称
-	uint8_t* software_version;//软件版本
 }sysInfo_t;
 //------------------菜单&控件------------------
 

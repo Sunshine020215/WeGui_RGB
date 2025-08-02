@@ -77,6 +77,7 @@ void Wegui_show_mList(uint16_t farmes)
 	
 	//---------------------------------------1.菜单-------------------------------------------------
 	Lcd_Set_Driver_Mode((lcd_driver_mode_t)COLOUR_MLIST_NORMAL_TEXT);//设定笔刷颜色
+	uint8_t id_min=(mList_par.list_y_offset_cur + mList_par.list_y_scape-mList_par.list_font_high)/mList_par.list_y_scape;
 	
 	if(farmes != 0)
 	{
@@ -86,7 +87,7 @@ void Wegui_show_mList(uint16_t farmes)
 		//函数名称:Value_Change_PID_P(cur_value,target_value,P,count)
 		Value_Change_PID_P( mList_par.list_animation_temp_y,
 												(SCREEN_HIGH-1+SCREEN_HIGH/8),
-												(3),
+												(4),
 		                    //(13 - SCREEN_HIGH/36+1),//控制菜单下拉速度[1最快:16最慢]
 												farmes);
 		
@@ -100,7 +101,6 @@ void Wegui_show_mList(uint16_t farmes)
 	}
 
 	
-	uint8_t id_min=(mList_par.list_y_offset_cur + mList_par.list_y_scape-mList_par.list_font_high)/mList_par.list_y_scape;
 	
 	p = Wegui.menu->subMenu;
 	//-----显示首行标题-----
@@ -174,7 +174,7 @@ void Wegui_show_mList(uint16_t farmes)
 				{
 						if(p->menuPar.wSliderTip_Par.pstr != 0x00)
 						{
-							uint8_t str[5];
+							uint8_t str[7];
 							itoa(*p->menuPar.wSliderTip_Par.pstr,str,10);//数值转10进制字符串, 传递回给字符串指针		
 							Lcd_Set_Driver_Mode((lcd_driver_mode_t)COLOUR_MLIST_WSLIDER_NUM);//设定笔刷颜色							
 							Lcd_Draw_UTF8_String	(SCREEN_WIDTH - 1 - Lcd_Get_UTF8_XLen(str) -2,

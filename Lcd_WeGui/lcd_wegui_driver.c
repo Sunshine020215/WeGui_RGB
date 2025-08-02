@@ -14,7 +14,11 @@
 uint16_t Wegui_stick=0;
 Wegui_t Wegui=
 {
-	.setting.brightness=255//默认最大亮度
+	#if (defined LCD_USE_RGB565)
+		.setting.brightness=BL_PWM_MAX,//默认彩屏亮度
+	#else
+		.setting.brightness=127,//默认点阵屏彩屏亮度
+	#endif
 };
 
 #if (defined LCD_USE_RGB565)
@@ -476,8 +480,8 @@ void Wegui_Hello_Word()
 	uint8_t* string = (uint8_t*)"Hello WeGui!\nDriver:SoftI2C";
 	#elif ((LCD_PORT ==_HARD_IIC)||(LCD_PORT ==_HARD_I2C)||(LCD_PORT ==_HARD_I2C0)||(LCD_PORT ==_HARD_I2C1))//硬件IIC驱动
 	uint8_t* string = (uint8_t*)"Hello WeGui!\nDriver:HardI2C";
-	#else //其他驱动 
-	#warning ("_")
+	#else //其他自定义的驱动 
+	#warning ("Driver:Other")
 	uint8_t* string = (uint8_t*)"Hello WeGui!";
 	#endif
 	
