@@ -896,8 +896,8 @@ menu_t m_Setting_About_wSoft=
 	.menuPar.wMessage_Par.Value_string = (uint8_t *)"V0.5",
 	.menuPar.wMessage_Par.Tip_string =
 	{
-		.str_zh_CN=(uint8_t *)"WeGui RGB\n V0.5.0",//中文标题
-	  .str_en_US=(uint8_t *)"WeGui RGB\n V0.5.0",//英文标题
+		.str_zh_CN=(uint8_t *)"WeGui RGB\n V0.5.3",//中文标题
+	  .str_en_US=(uint8_t *)"WeGui RGB\n V0.5.3",//英文标题
 	},
 };
 /*
