@@ -493,7 +493,8 @@ uint8_t LCD_Refresh(void)
 uint8_t LCD_Refresh(void)
 {
 	//每page做校验,若校验码没变,则不刷新该page
-	unsigned char ypage,x,ycount;
+	uint8_t ypage,ycount;
+	uint16_t x;
 	for(ypage=0;ypage<GRAM_YPAGE_NUM;ypage++)
 	{
 		uint32_t i_crc=0x0000;
@@ -605,8 +606,8 @@ uint8_t LCD_Refresh(void)
 uint8_t LCD_Refresh(void)
 {
 	//每page做校验,若校验码没变,则不刷新该page
-	unsigned char ypage,x,ycount;
-
+	uint8_t ypage,ycount;
+	uint16_t x;
 	for(ypage=0;ypage<GRAM_YPAGE_NUM;ypage++)
 	{
 		uint32_t i_crc;

@@ -157,7 +157,7 @@ Section Cross References
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Down) refers to lcd_wegui_menu_mlist.o(i.Wegui_mlist_cursor_Next) for Wegui_mlist_cursor_Next
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Down) refers to lcd_wegui_menu_mlist.o(i.Wegui_mlist_Back_menu) for Wegui_mlist_Back_menu
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Down) refers to stm32f103_wegui_4key_port.o(.data) for .data
-    stm32f103_wegui_4key_port.o(i.Wegui_Key_Down) refers to lcd_wegui_driver.o(.bss) for Wegui
+    stm32f103_wegui_4key_port.o(i.Wegui_Key_Down) refers to lcd_wegui_driver.o(.data) for Wegui
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Down) refers to user_wegui_menu.o(.data) for m_App_UartScreen
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Down) refers to user_wegui_menu.o(.data) for m_App_ThemeClock
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Left) refers to stm32f10x_gpio.o(i.GPIO_ReadInputDataBit) for GPIO_ReadInputDataBit
@@ -166,7 +166,7 @@ Section Cross References
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Left) refers to lcd_wegui_tip.o(i.Wegui_Tip_Quit) for Wegui_Tip_Quit
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Left) refers to lcd_wegui_menu_mlist.o(i.Wegui_mlist_Back_menu) for Wegui_mlist_Back_menu
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Left) refers to stm32f103_wegui_4key_port.o(.data) for .data
-    stm32f103_wegui_4key_port.o(i.Wegui_Key_Left) refers to lcd_wegui_driver.o(.bss) for Wegui
+    stm32f103_wegui_4key_port.o(i.Wegui_Key_Left) refers to lcd_wegui_driver.o(.data) for Wegui
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Left) refers to user_wegui_menu.o(.data) for m_App_UartScreen
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Left) refers to user_wegui_menu.o(.data) for m_App_ThemeClock
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Right) refers to stm32f10x_gpio.o(i.GPIO_ReadInputDataBit) for GPIO_ReadInputDataBit
@@ -176,7 +176,7 @@ Section Cross References
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Right) refers to lcd_wegui_menu_mlist.o(i.Wegui_mlist_Enter_cursor) for Wegui_mlist_Enter_cursor
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Right) refers to lcd_wegui_menu_mlist.o(i.Wegui_mlist_Back_menu) for Wegui_mlist_Back_menu
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Right) refers to stm32f103_wegui_4key_port.o(.data) for .data
-    stm32f103_wegui_4key_port.o(i.Wegui_Key_Right) refers to lcd_wegui_driver.o(.bss) for Wegui
+    stm32f103_wegui_4key_port.o(i.Wegui_Key_Right) refers to lcd_wegui_driver.o(.data) for Wegui
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Right) refers to user_wegui_menu.o(.data) for m_App_UartScreen
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Right) refers to user_wegui_menu.o(.data) for m_App_ThemeClock
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Up) refers to stm32f10x_gpio.o(i.GPIO_ReadInputDataBit) for GPIO_ReadInputDataBit
@@ -186,7 +186,7 @@ Section Cross References
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Up) refers to lcd_wegui_menu_mlist.o(i.Wegui_mlist_cursor_Prev) for Wegui_mlist_cursor_Prev
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Up) refers to lcd_wegui_menu_mlist.o(i.Wegui_mlist_Back_menu) for Wegui_mlist_Back_menu
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Up) refers to stm32f103_wegui_4key_port.o(.data) for .data
-    stm32f103_wegui_4key_port.o(i.Wegui_Key_Up) refers to lcd_wegui_driver.o(.bss) for Wegui
+    stm32f103_wegui_4key_port.o(i.Wegui_Key_Up) refers to lcd_wegui_driver.o(.data) for Wegui
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Up) refers to user_wegui_menu.o(.data) for m_App_UartScreen
     stm32f103_wegui_4key_port.o(i.Wegui_Key_Up) refers to user_wegui_menu.o(.data) for m_App_ThemeClock
     stm32f103_wegui_uart_port.o(i.Get_rxRing_len) refers to stm32f103_wegui_uart_port.o(.bss) for .bss
@@ -198,21 +198,21 @@ Section Cross References
     stm32f103_wegui_uart_port.o(i.Uart_keyLeft) refers to lcd_wegui_tip.o(i.Wegui_Tip_Value_Dec) for Wegui_Tip_Value_Dec
     stm32f103_wegui_uart_port.o(i.Uart_keyLeft) refers to lcd_wegui_tip.o(i.Wegui_Tip_Quit) for Wegui_Tip_Quit
     stm32f103_wegui_uart_port.o(i.Uart_keyLeft) refers to lcd_wegui_menu_mlist.o(i.Wegui_mlist_Back_menu) for Wegui_mlist_Back_menu
-    stm32f103_wegui_uart_port.o(i.Uart_keyLeft) refers to lcd_wegui_driver.o(.bss) for Wegui
+    stm32f103_wegui_uart_port.o(i.Uart_keyLeft) refers to lcd_wegui_driver.o(.data) for Wegui
     stm32f103_wegui_uart_port.o(i.Uart_keyLeft) refers to user_wegui_menu.o(.data) for m_App_UartScreen
     stm32f103_wegui_uart_port.o(i.Uart_keyLeft) refers to user_wegui_menu.o(.data) for m_App_ThemeClock
     stm32f103_wegui_uart_port.o(i.Uart_keyRight) refers to lcd_wegui_tip.o(i.Wegui_Tip_Value_Add) for Wegui_Tip_Value_Add
     stm32f103_wegui_uart_port.o(i.Uart_keyRight) refers to lcd_wegui_tip.o(i.Wegui_Tip_Quit) for Wegui_Tip_Quit
     stm32f103_wegui_uart_port.o(i.Uart_keyRight) refers to lcd_wegui_menu_mlist.o(i.Wegui_mlist_Enter_cursor) for Wegui_mlist_Enter_cursor
     stm32f103_wegui_uart_port.o(i.Uart_keyRight) refers to lcd_wegui_menu_mlist.o(i.Wegui_mlist_Back_menu) for Wegui_mlist_Back_menu
-    stm32f103_wegui_uart_port.o(i.Uart_keyRight) refers to lcd_wegui_driver.o(.bss) for Wegui
+    stm32f103_wegui_uart_port.o(i.Uart_keyRight) refers to lcd_wegui_driver.o(.data) for Wegui
     stm32f103_wegui_uart_port.o(i.Uart_keyRight) refers to user_wegui_menu.o(.data) for m_App_UartScreen
     stm32f103_wegui_uart_port.o(i.Uart_keyRight) refers to user_wegui_menu.o(.data) for m_App_ThemeClock
     stm32f103_wegui_uart_port.o(i.Uart_keyUp) refers to lcd_wegui_tip.o(i.Wegui_Tip_Save_andQuit) for Wegui_Tip_Save_andQuit
     stm32f103_wegui_uart_port.o(i.Uart_keyUp) refers to lcd_wegui_tip.o(i.Wegui_Tip_Quit) for Wegui_Tip_Quit
     stm32f103_wegui_uart_port.o(i.Uart_keyUp) refers to lcd_wegui_menu_mlist.o(i.Wegui_mlist_cursor_Prev) for Wegui_mlist_cursor_Prev
     stm32f103_wegui_uart_port.o(i.Uart_keyUp) refers to lcd_wegui_menu_mlist.o(i.Wegui_mlist_Back_menu) for Wegui_mlist_Back_menu
-    stm32f103_wegui_uart_port.o(i.Uart_keyUp) refers to lcd_wegui_driver.o(.bss) for Wegui
+    stm32f103_wegui_uart_port.o(i.Uart_keyUp) refers to lcd_wegui_driver.o(.data) for Wegui
     stm32f103_wegui_uart_port.o(i.Uart_keyUp) refers to user_wegui_menu.o(.data) for m_App_UartScreen
     stm32f103_wegui_uart_port.o(i.Uart_keyUp) refers to user_wegui_menu.o(.data) for m_App_ThemeClock
     stm32f103_wegui_uart_port.o(i.Wegui_UartSend_1Dat) refers to stm32f10x_usart.o(i.USART_GetFlagStatus) for USART_GetFlagStatus
@@ -242,7 +242,7 @@ Section Cross References
     stm32f103_wegui_uart_port.o(i.Wegui_uart_rx_default_func) refers to lcd_wegui_driver.o(i.Wegui_enter_menu) for Wegui_enter_menu
     stm32f103_wegui_uart_port.o(i.Wegui_uart_rx_default_func) refers to stm32f103_wegui_uart_port.o(.data) for .data
     stm32f103_wegui_uart_port.o(i.Wegui_uart_rx_default_func) refers to user_wegui_menu.o(.data) for m_App_UartScreen
-    stm32f103_wegui_uart_port.o(i.Wegui_uart_rx_default_func) refers to lcd_wegui_driver.o(.bss) for Wegui
+    stm32f103_wegui_uart_port.o(i.Wegui_uart_rx_default_func) refers to lcd_wegui_driver.o(.data) for Wegui
     stm32f103_wegui_uart_port.o(i.Wegui_uart_rx_default_func) refers to user_wegui_menu.o(.data) for m_App_ThemeClock
     stm32f103_wegui_uart_port.o(i.Wegui_uart_rx_default_func) refers to lcd_driver.o(.bss) for lcd_driver
     stm32f103_wegui_uart_port.o(i.Wegui_uart_rx_stick) refers to stm32f103_wegui_uart_port.o(i.Get_rxRing_len) for Get_rxRing_len
@@ -679,17 +679,17 @@ Section Cross References
     user_wegui_menu.o(.data) refers to user_wegui_menu.o(.data) for m_Setting_Display_ScreenFPS
     user_wegui_menu.o(.data) refers to user_wegui_menu.o(.conststring) for .conststring
     user_wegui_menu.o(.data) refers to lcd_wegui_menu_app.o(i.update_Wegui_screen_brightness) for update_Wegui_screen_brightness
-    user_wegui_menu.o(.data) refers to lcd_wegui_driver.o(.bss) for Wegui
+    user_wegui_menu.o(.data) refers to lcd_wegui_driver.o(.data) for Wegui
     user_wegui_menu.o(.data) refers to user_wegui_menu.o(.data) for m_Setting_Display
     user_wegui_menu.o(.data) refers to user_wegui_menu.o(.data) for m_Setting_Display_UI_Speed
     user_wegui_menu.o(.data) refers to user_wegui_menu.o(.conststring) for .conststring
-    user_wegui_menu.o(.data) refers to lcd_wegui_driver.o(.bss) for Wegui
+    user_wegui_menu.o(.data) refers to lcd_wegui_driver.o(.data) for Wegui
     user_wegui_menu.o(.data) refers to user_wegui_menu.o(.data) for m_Setting_Display
     user_wegui_menu.o(.data) refers to user_wegui_menu.o(.conststring) for .conststring
-    user_wegui_menu.o(.data) refers to lcd_wegui_driver.o(.bss) for Wegui
+    user_wegui_menu.o(.data) refers to lcd_wegui_driver.o(.data) for Wegui
     user_wegui_menu.o(.data) refers to user_wegui_menu.o(.data) for m_Setting_Developer
     user_wegui_menu.o(.data) refers to user_wegui_menu.o(.conststring) for .conststring
-    user_wegui_menu.o(.data) refers to lcd_wegui_driver.o(.bss) for Wegui
+    user_wegui_menu.o(.data) refers to lcd_wegui_driver.o(.data) for Wegui
     user_wegui_menu.o(.data) refers to user_wegui_menu.o(.data) for m_Setting_About
     user_wegui_menu.o(.data) refers to user_wegui_menu.o(.data) for m_Setting_About_wSoft
     user_wegui_menu.o(.data) refers to user_wegui_menu.o(.conststring) for .conststring
@@ -700,12 +700,9 @@ Section Cross References
     lcd_wegui_driver.o(i.Lcd_Wegui_Init) refers to lcd_wegui_menu_mlist.o(i.Wegui_mList_Init) for Wegui_mList_Init
     lcd_wegui_driver.o(i.Lcd_Wegui_Init) refers to lcd_wegui_driver.o(i.Wegui_Hello_Word) for Wegui_Hello_Word
     lcd_wegui_driver.o(i.Lcd_Wegui_Init) refers to user_wegui_menu.o(.data) for m_main
-    lcd_wegui_driver.o(i.Lcd_Wegui_Init) refers to lcd_wegui_driver.o(.bss) for .bss
     lcd_wegui_driver.o(i.Lcd_Wegui_Init) refers to lcd_wegui_driver.o(.data) for .data
     lcd_wegui_driver.o(i.Reflash_CpuLoad) refers to lcd_wegui_driver.o(.data) for .data
-    lcd_wegui_driver.o(i.Reflash_CpuLoad) refers to lcd_wegui_driver.o(.bss) for .bss
     lcd_wegui_driver.o(i.Reflash_fps) refers to lcd_wegui_driver.o(.data) for .data
-    lcd_wegui_driver.o(i.Reflash_fps) refers to lcd_wegui_driver.o(.bss) for .bss
     lcd_wegui_driver.o(i.Wegui_1ms_stick) refers to lcd_wegui_driver.o(.data) for .data
     lcd_wegui_driver.o(i.Wegui_Hello_Word) refers to lcd_wegui_tip.o(i.Wegui_Push_Message_tip) for Wegui_Push_Message_tip
     lcd_wegui_driver.o(i.Wegui_enter_menu) refers to lcd_wegui_driver.o(i.Wegui_get_string) for Wegui_get_string
@@ -713,7 +710,7 @@ Section Cross References
     lcd_wegui_driver.o(i.Wegui_enter_menu) refers to lcd_wegui_tip.o(i.Wegui_Push_Slider_tip) for Wegui_Push_Slider_tip
     lcd_wegui_driver.o(i.Wegui_enter_menu) refers to lcd_wegui_menu_mlist.o(i.Wegui_mList_Init) for Wegui_mList_Init
     lcd_wegui_driver.o(i.Wegui_enter_menu) refers to lcd_wegui_menu_mlist.o(.bss) for mList_par
-    lcd_wegui_driver.o(i.Wegui_enter_menu) refers to lcd_wegui_driver.o(.bss) for .bss
+    lcd_wegui_driver.o(i.Wegui_enter_menu) refers to lcd_wegui_driver.o(.data) for .data
     lcd_wegui_driver.o(i.Wegui_loop_func) refers to lcd_driver.o(i.Lcd_Clear_GRAM) for Lcd_Clear_GRAM
     lcd_wegui_driver.o(i.Wegui_loop_func) refers to lcd_wegui_menu_mlist.o(i.Wegui_show_mList) for Wegui_show_mList
     lcd_wegui_driver.o(i.Wegui_loop_func) refers to lcd_wegui_tip.o(i.Wegui_show_tip) for Wegui_show_tip
@@ -724,7 +721,6 @@ Section Cross References
     lcd_wegui_driver.o(i.Wegui_loop_func) refers to stm32f103_wegui_4key_port.o(i.Wegui_Interface_stick) for Wegui_Interface_stick
     lcd_wegui_driver.o(i.Wegui_loop_func) refers to stm32f103_wegui_uart_port.o(i.Wegui_uart_rx_stick) for Wegui_uart_rx_stick
     lcd_wegui_driver.o(i.Wegui_loop_func) refers to lcd_wegui_driver.o(.data) for .data
-    lcd_wegui_driver.o(i.Wegui_loop_func) refers to lcd_wegui_driver.o(.bss) for .bss
     lcd_wegui_driver.o(i.Wegui_update_info) refers to lcd_driver.o(i.Lcd_Set_Driver_Mode) for Lcd_Set_Driver_Mode
     lcd_wegui_driver.o(i.Wegui_update_info) refers to lcd_driver.o(i.Lcd_Draw_Box) for Lcd_Draw_Box
     lcd_wegui_driver.o(i.Wegui_update_info) refers to lcd_driver.o(i.Lcd_Fill_Box) for Lcd_Fill_Box
@@ -733,15 +729,15 @@ Section Cross References
     lcd_wegui_driver.o(i.Wegui_update_info) refers to lcd_driver.o(i.Lcd_Draw_UTF8_String) for Lcd_Draw_UTF8_String
     lcd_wegui_driver.o(i.Wegui_update_info) refers to lcd_driver.o(.bss) for lcd_driver
     lcd_wegui_driver.o(i.Wegui_update_info) refers to lcd_res.o(.constdata) for ascii_SongTi_6X12
-    lcd_wegui_driver.o(i.Wegui_update_info) refers to lcd_wegui_driver.o(.bss) for .bss
+    lcd_wegui_driver.o(i.Wegui_update_info) refers to lcd_wegui_driver.o(.data) for .data
     lcd_wegui_driver.o(i.itoa) refers to memcpya.o(.text) for __aeabi_memcpy4
-    lcd_wegui_menu_app.o(i.Set_language_Chinese) refers to lcd_wegui_driver.o(.bss) for Wegui
-    lcd_wegui_menu_app.o(i.Set_language_English) refers to lcd_wegui_driver.o(.bss) for Wegui
+    lcd_wegui_menu_app.o(i.Set_language_Chinese) refers to lcd_wegui_driver.o(.data) for Wegui
+    lcd_wegui_menu_app.o(i.Set_language_English) refers to lcd_wegui_driver.o(.data) for Wegui
     lcd_wegui_menu_app.o(i.Uart_Screen_App_Begin) refers to lcd_driver.o(i.Lcd_Clear_GRAM) for Lcd_Clear_GRAM
     lcd_wegui_menu_app.o(i.Uart_Screen_App_Begin) refers to lcd_wegui_driver.o(i.Wegui_get_string) for Wegui_get_string
     lcd_wegui_menu_app.o(i.Uart_Screen_App_Begin) refers to lcd_driver.o(i.Lcd_Draw_UTF8_String) for Lcd_Draw_UTF8_String
     lcd_wegui_menu_app.o(i.Uart_Screen_App_Begin) refers to lcd_wegui_menu_app.o(.constdata) for .constdata
-    lcd_wegui_menu_app.o(i.Uart_Screen_App_Begin) refers to lcd_wegui_driver.o(.bss) for Wegui
+    lcd_wegui_menu_app.o(i.Uart_Screen_App_Begin) refers to lcd_wegui_driver.o(.data) for Wegui
     lcd_wegui_menu_app.o(i.m_App_ThemeClock_Begin) refers to lcd_driver.o(i.Lcd_Clear_GRAM) for Lcd_Clear_GRAM
     lcd_wegui_menu_app.o(i.m_App_ThemeClock_Refresh) refers to lcd_driver.o(i.Lcd_Clear_GRAM) for Lcd_Clear_GRAM
     lcd_wegui_menu_app.o(i.m_App_ThemeClock_Refresh) refers to lcd_driver.o(i.Lcd_Set_Driver_Mode) for Lcd_Set_Driver_Mode
@@ -755,26 +751,25 @@ Section Cross References
     lcd_wegui_menu_app.o(i.m_wDemo_wMessage_Pres2_func) refers to lcd_wegui_driver.o(i.Wegui_get_string) for Wegui_get_string
     lcd_wegui_menu_app.o(i.m_wDemo_wMessage_Pres2_func) refers to lcd_wegui_menu_app.o(.constdata) for .constdata
     lcd_wegui_menu_app.o(i.m_wDemo_wMessage_Pres2_func) refers to lcd_wegui_menu_app.o(.data) for .data
-    lcd_wegui_menu_app.o(i.m_wDemo_wMessage_Pres2_func) refers to lcd_wegui_driver.o(.bss) for Wegui
+    lcd_wegui_menu_app.o(i.m_wDemo_wMessage_Pres2_func) refers to lcd_wegui_driver.o(.data) for Wegui
     lcd_wegui_menu_app.o(i.m_wDemo_wMessage_Pres2_func) refers to user_wegui_menu.o(.data) for m_wDemo_wMessage_Pres2
     lcd_wegui_menu_app.o(i.m_wDemo_wMessage_Pres_func) refers to lcd_wegui_driver.o(i.itoa) for itoa
     lcd_wegui_menu_app.o(i.m_wDemo_wMessage_Pres_func) refers to lcd_wegui_menu_app.o(.data) for .data
     lcd_wegui_menu_app.o(i.m_wDemo_wMessage_Pres_func) refers to main.o(.data) for ResADC
     lcd_wegui_menu_app.o(i.m_wDemo_wMessage_Pres_func) refers to user_wegui_menu.o(.data) for m_wDemo_wMessage_Pres
-    lcd_wegui_menu_app.o(i.update_Wegui_screen_brightness) refers to lcd_wegui_driver.o(.bss) for Wegui
-    lcd_wegui_menu_app.o(i.update_Wegui_screen_brightness) refers to lcd_wegui_driver.o(.data) for bl_pwmd
+    lcd_wegui_menu_app.o(i.update_Wegui_screen_brightness) refers to lcd_wegui_driver.o(.data) for Wegui
     lcd_wegui_menu_app.o(.constdata) refers to lcd_wegui_menu_app.o(.conststring) for .conststring
     lcd_wegui_menu_mlist.o(i.Wegui_mList_Init) refers to lcd_driver.o(i.RGB_Set_Driver_Colour) for RGB_Set_Driver_Colour
     lcd_wegui_menu_mlist.o(i.Wegui_mList_Init) refers to lcd_driver.o(.bss) for lcd_driver
     lcd_wegui_menu_mlist.o(i.Wegui_mList_Init) refers to lcd_wegui_menu_mlist.o(.bss) for .bss
     lcd_wegui_menu_mlist.o(i.Wegui_mlist_Back_menu) refers to lcd_wegui_driver.o(i.Wegui_enter_menu) for Wegui_enter_menu
-    lcd_wegui_menu_mlist.o(i.Wegui_mlist_Back_menu) refers to lcd_wegui_driver.o(.bss) for Wegui
+    lcd_wegui_menu_mlist.o(i.Wegui_mlist_Back_menu) refers to lcd_wegui_driver.o(.data) for Wegui
     lcd_wegui_menu_mlist.o(i.Wegui_mlist_Back_menu) refers to lcd_wegui_menu_mlist.o(.bss) for .bss
     lcd_wegui_menu_mlist.o(i.Wegui_mlist_Enter_cursor) refers to lcd_wegui_driver.o(i.Wegui_enter_menu) for Wegui_enter_menu
     lcd_wegui_menu_mlist.o(i.Wegui_mlist_Enter_cursor) refers to lcd_wegui_menu_mlist.o(.bss) for .bss
-    lcd_wegui_menu_mlist.o(i.Wegui_mlist_Enter_cursor) refers to lcd_wegui_driver.o(.bss) for Wegui
+    lcd_wegui_menu_mlist.o(i.Wegui_mlist_Enter_cursor) refers to lcd_wegui_driver.o(.data) for Wegui
     lcd_wegui_menu_mlist.o(i.Wegui_mlist_cursor_Next) refers to lcd_wegui_driver.o(i.Get_submenu_sum) for Get_submenu_sum
-    lcd_wegui_menu_mlist.o(i.Wegui_mlist_cursor_Next) refers to lcd_wegui_driver.o(.bss) for Wegui
+    lcd_wegui_menu_mlist.o(i.Wegui_mlist_cursor_Next) refers to lcd_wegui_driver.o(.data) for Wegui
     lcd_wegui_menu_mlist.o(i.Wegui_mlist_cursor_Next) refers to lcd_wegui_menu_mlist.o(.bss) for .bss
     lcd_wegui_menu_mlist.o(i.Wegui_mlist_cursor_Prev) refers to lcd_wegui_menu_mlist.o(.bss) for .bss
     lcd_wegui_menu_mlist.o(i.Wegui_show_mList) refers to lcd_driver.o(i.Lcd_Set_Driver_Mode) for Lcd_Set_Driver_Mode
@@ -788,19 +783,19 @@ Section Cross References
     lcd_wegui_menu_mlist.o(i.Wegui_show_mList) refers to lcd_driver.o(i.Lcd_Draw_Line) for Lcd_Draw_Line
     lcd_wegui_menu_mlist.o(i.Wegui_show_mList) refers to lcd_driver.o(i.Lcd_Fill_RBox) for Lcd_Fill_RBox
     lcd_wegui_menu_mlist.o(i.Wegui_show_mList) refers to lcd_wegui_menu_mlist.o(.bss) for .bss
-    lcd_wegui_menu_mlist.o(i.Wegui_show_mList) refers to lcd_wegui_driver.o(.bss) for Wegui
+    lcd_wegui_menu_mlist.o(i.Wegui_show_mList) refers to lcd_wegui_driver.o(.data) for Wegui
     lcd_wegui_menu_mlist.o(i.Wegui_show_mList) refers to lcd_driver.o(.bss) for lcd_driver
     lcd_wegui_tip.o(i.Wegui_Push_Message_tip) refers to lcd_driver.o(i.Lcd_Get_UTF8_XLen) for Lcd_Get_UTF8_XLen
     lcd_wegui_tip.o(i.Wegui_Push_Message_tip) refers to lcd_driver.o(i.Lcd_Get_UTF8_YLine) for Lcd_Get_UTF8_YLine
-    lcd_wegui_tip.o(i.Wegui_Push_Message_tip) refers to lcd_wegui_driver.o(.bss) for Wegui
+    lcd_wegui_tip.o(i.Wegui_Push_Message_tip) refers to lcd_wegui_driver.o(.data) for Wegui
     lcd_wegui_tip.o(i.Wegui_Push_Message_tip) refers to lcd_driver.o(.bss) for lcd_driver
     lcd_wegui_tip.o(i.Wegui_Push_Slider_tip) refers to lcd_driver.o(i.Lcd_Get_UTF8_YLine) for Lcd_Get_UTF8_YLine
-    lcd_wegui_tip.o(i.Wegui_Push_Slider_tip) refers to lcd_wegui_driver.o(.bss) for Wegui
+    lcd_wegui_tip.o(i.Wegui_Push_Slider_tip) refers to lcd_wegui_driver.o(.data) for Wegui
     lcd_wegui_tip.o(i.Wegui_Push_Slider_tip) refers to lcd_driver.o(.bss) for lcd_driver
-    lcd_wegui_tip.o(i.Wegui_Tip_Quit) refers to lcd_wegui_driver.o(.bss) for Wegui
-    lcd_wegui_tip.o(i.Wegui_Tip_Save_andQuit) refers to lcd_wegui_driver.o(.bss) for Wegui
-    lcd_wegui_tip.o(i.Wegui_Tip_Value_Add) refers to lcd_wegui_driver.o(.bss) for Wegui
-    lcd_wegui_tip.o(i.Wegui_Tip_Value_Dec) refers to lcd_wegui_driver.o(.bss) for Wegui
+    lcd_wegui_tip.o(i.Wegui_Tip_Quit) refers to lcd_wegui_driver.o(.data) for Wegui
+    lcd_wegui_tip.o(i.Wegui_Tip_Save_andQuit) refers to lcd_wegui_driver.o(.data) for Wegui
+    lcd_wegui_tip.o(i.Wegui_Tip_Value_Add) refers to lcd_wegui_driver.o(.data) for Wegui
+    lcd_wegui_tip.o(i.Wegui_Tip_Value_Dec) refers to lcd_wegui_driver.o(.data) for Wegui
     lcd_wegui_tip.o(i.Wegui_show_tip) refers to lcd_driver.o(i.Lcd_Get_UTF8_YLine) for Lcd_Get_UTF8_YLine
     lcd_wegui_tip.o(i.Wegui_show_tip) refers to lcd_driver.o(i.Lcd_Get_UTF8_XLen) for Lcd_Get_UTF8_XLen
     lcd_wegui_tip.o(i.Wegui_show_tip) refers to lcd_driver.o(i.Lcd_Set_Driver_Mode) for Lcd_Set_Driver_Mode
@@ -808,7 +803,7 @@ Section Cross References
     lcd_wegui_tip.o(i.Wegui_show_tip) refers to lcd_driver.o(i.Lcd_Draw_RBox) for Lcd_Draw_RBox
     lcd_wegui_tip.o(i.Wegui_show_tip) refers to lcd_driver.o(i.Lcd_Draw_UTF8_String) for Lcd_Draw_UTF8_String
     lcd_wegui_tip.o(i.Wegui_show_tip) refers to lcd_wegui_driver.o(i.itoa) for itoa
-    lcd_wegui_tip.o(i.Wegui_show_tip) refers to lcd_wegui_driver.o(.bss) for Wegui
+    lcd_wegui_tip.o(i.Wegui_show_tip) refers to lcd_wegui_driver.o(.data) for Wegui
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000F) for __rt_final_cpp
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$00000011) for __rt_final_exit
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry12b.o(.ARM.Collect$$$$0000000E) for __rt_lib_shutdown_fini
@@ -1273,7 +1268,7 @@ Removing Unused input sections from the image.
     Removing stm32f10x_usart.o(i.USART_StructInit), (22 bytes).
     Removing stm32f10x_usart.o(i.USART_WakeUpConfig), (16 bytes).
     Removing main.o(i.delay_ms), (16 bytes).
-    Removing main.o(i.gui_2bit_demo), (1884 bytes).
+    Removing main.o(i.gui_2bit_demo), (1880 bytes).
     Removing system_stm32f10x.o(i.SystemCoreClockUpdate), (100 bytes).
     Removing stm32f103_lcd_hard_4spi_port.o(i.LCD_Send_1Cmd), (56 bytes).
     Removing stm32f103_lcd_hard_4spi_port.o(i.LCD_Send_nDat), (72 bytes).
@@ -1448,7 +1443,7 @@ Removing Unused input sections from the image.
     Removing gc9a01.o(i.GC9A01_TE_Line_Off), (24 bytes).
     Removing gc9a01.o(i.GC9A01_TE_Line_On), (24 bytes).
 
-616 unused section(s) (total 28028 bytes) removed from the image.
+616 unused section(s) (total 28024 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1459,21 +1454,21 @@ Image Symbol Table
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
     ../clib/../cmprslib/zerorunl2.c          0x00000000   Number         0  __dczerorl2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
     ..\..\Lcd_Driver\gc9a01.c                0x00000000   Number         0  gc9a01.o ABSOLUTE
@@ -1587,206 +1582,206 @@ Image Symbol Table
     i.Lcd_Draw_Bitmap                        0x080008f4   Section        0  lcd_driver.o(i.Lcd_Draw_Bitmap)
     i.Lcd_Draw_Box                           0x08000946   Section        0  lcd_driver.o(i.Lcd_Draw_Box)
     i.Lcd_Draw_Circel_part                   0x0800097c   Section        0  lcd_driver.o(i.Lcd_Draw_Circel_part)
-    i.Lcd_Draw_HLine                         0x08000b1c   Section        0  lcd_driver.o(i.Lcd_Draw_HLine)
-    Lcd_Draw_HLine                           0x08000b1d   Thumb Code    90  lcd_driver.o(i.Lcd_Draw_HLine)
-    i.Lcd_Draw_Line                          0x08000b7c   Section        0  lcd_driver.o(i.Lcd_Draw_Line)
-    i.Lcd_Draw_One_Byte                      0x08000c44   Section        0  lcd_driver.o(i.Lcd_Draw_One_Byte)
-    Lcd_Draw_One_Byte                        0x08000c45   Thumb Code   144  lcd_driver.o(i.Lcd_Draw_One_Byte)
-    i.Lcd_Draw_Pixl                          0x08000cd8   Section        0  lcd_driver.o(i.Lcd_Draw_Pixl)
-    i.Lcd_Draw_RBox                          0x08000ce0   Section        0  lcd_driver.o(i.Lcd_Draw_RBox)
-    i.Lcd_Draw_UTF8_String                   0x08000df8   Section        0  lcd_driver.o(i.Lcd_Draw_UTF8_String)
-    i.Lcd_Draw_Unicode                       0x08000eb0   Section        0  lcd_driver.o(i.Lcd_Draw_Unicode)
-    i.Lcd_Draw_VLine                         0x08000efc   Section        0  lcd_driver.o(i.Lcd_Draw_VLine)
-    Lcd_Draw_VLine                           0x08000efd   Thumb Code   178  lcd_driver.o(i.Lcd_Draw_VLine)
-    i.Lcd_Fill_Box                           0x08000fb8   Section        0  lcd_driver.o(i.Lcd_Fill_Box)
-    i.Lcd_Fill_Circel_part                   0x080010d4   Section        0  lcd_driver.o(i.Lcd_Fill_Circel_part)
-    i.Lcd_Fill_RBox                          0x080012b8   Section        0  lcd_driver.o(i.Lcd_Fill_RBox)
-    i.Lcd_Get_UTF8_XLen                      0x080013c4   Section        0  lcd_driver.o(i.Lcd_Get_UTF8_XLen)
-    i.Lcd_Get_UTF8_YLine                     0x08001450   Section        0  lcd_driver.o(i.Lcd_Get_UTF8_YLine)
-    i.Lcd_Set_Driver_Box                     0x08001498   Section        0  lcd_driver.o(i.Lcd_Set_Driver_Box)
-    i.Lcd_Set_Driver_Mode                    0x080014fc   Section        0  lcd_driver.o(i.Lcd_Set_Driver_Mode)
-    i.Lcd_Wegui_Init                         0x080015dc   Section        0  lcd_wegui_driver.o(i.Lcd_Wegui_Init)
-    i.MemManage_Handler                      0x08001658   Section        0  stm32f10x_it.o(i.MemManage_Handler)
-    i.NMI_Handler                            0x0800165a   Section        0  stm32f10x_it.o(i.NMI_Handler)
-    i.NVIC_Init                              0x0800165c   Section        0  misc.o(i.NVIC_Init)
-    i.PendSV_Handler                         0x080016c0   Section        0  stm32f10x_it.o(i.PendSV_Handler)
-    i.RCC_ADCCLKConfig                       0x080016c4   Section        0  stm32f10x_rcc.o(i.RCC_ADCCLKConfig)
-    i.RCC_AHBPeriphClockCmd                  0x080016d8   Section        0  stm32f10x_rcc.o(i.RCC_AHBPeriphClockCmd)
-    i.RCC_APB1PeriphClockCmd                 0x080016f0   Section        0  stm32f10x_rcc.o(i.RCC_APB1PeriphClockCmd)
-    i.RCC_APB2PeriphClockCmd                 0x08001708   Section        0  stm32f10x_rcc.o(i.RCC_APB2PeriphClockCmd)
-    i.RCC_GetClocksFreq                      0x08001720   Section        0  stm32f10x_rcc.o(i.RCC_GetClocksFreq)
-    i.RCC_PCLK2Config                        0x080017b0   Section        0  stm32f10x_rcc.o(i.RCC_PCLK2Config)
-    i.RGB_Set_Driver_Colour                  0x080017c4   Section        0  lcd_driver.o(i.RGB_Set_Driver_Colour)
-    i.Read_rxRing_buff                       0x080017ec   Section        0  stm32f103_wegui_uart_port.o(i.Read_rxRing_buff)
-    i.Reflash_CpuLoad                        0x08001810   Section        0  lcd_wegui_driver.o(i.Reflash_CpuLoad)
-    Reflash_CpuLoad                          0x08001811   Thumb Code    74  lcd_wegui_driver.o(i.Reflash_CpuLoad)
-    i.Reflash_fps                            0x08001864   Section        0  lcd_wegui_driver.o(i.Reflash_fps)
-    Reflash_fps                              0x08001865   Thumb Code    60  lcd_wegui_driver.o(i.Reflash_fps)
-    i.SPI_Cmd                                0x080018a8   Section        0  stm32f10x_spi.o(i.SPI_Cmd)
-    i.SPI_Init                               0x080018bc   Section        0  stm32f10x_spi.o(i.SPI_Init)
-    i.ST7735_Clear                           0x080018f4   Section        0  st7735.o(i.ST7735_Clear)
-    i.ST7735_Init                            0x08001924   Section        0  st7735.o(i.ST7735_Init)
-    i.ST7735_Set_Addr                        0x08001acc   Section        0  st7735.o(i.ST7735_Set_Addr)
-    i.ST7735_Set_RGB565_Mode                 0x08001b44   Section        0  st7735.o(i.ST7735_Set_RGB565_Mode)
-    i.ST7735_Sleep_Out                       0x08001b5c   Section        0  st7735.o(i.ST7735_Sleep_Out)
-    i.ST7735_Soft_Reset                      0x08001b74   Section        0  st7735.o(i.ST7735_Soft_Reset)
-    i.SVC_Handler                            0x08001b8c   Section        0  stm32f10x_it.o(i.SVC_Handler)
-    i.SetSysClockTo72                        0x08001b90   Section        0  system_stm32f10x.o(i.SetSysClockTo72)
-    SetSysClockTo72                          0x08001b91   Thumb Code   160  system_stm32f10x.o(i.SetSysClockTo72)
-    i.Set_SPI_DataSize_8b                    0x08001c38   Section        0  stm32f103_lcd_hard_4spi_port.o(i.Set_SPI_DataSize_8b)
-    Set_SPI_DataSize_8b                      0x08001c39   Thumb Code    12  stm32f103_lcd_hard_4spi_port.o(i.Set_SPI_DataSize_8b)
-    i.Set_language_Chinese                   0x08001c48   Section        0  lcd_wegui_menu_app.o(i.Set_language_Chinese)
-    i.Set_language_English                   0x08001c58   Section        0  lcd_wegui_menu_app.o(i.Set_language_English)
-    i.SysTick_Handler                        0x08001c68   Section        0  stm32f10x_it.o(i.SysTick_Handler)
-    i.SystemInit                             0x08001c88   Section        0  system_stm32f10x.o(i.SystemInit)
-    i.USART2_IRQHandler                      0x08001cd8   Section        0  stm32f103_wegui_uart_port.o(i.USART2_IRQHandler)
-    i.USART_Cmd                              0x08001d68   Section        0  stm32f10x_usart.o(i.USART_Cmd)
-    i.USART_GetFlagStatus                    0x08001d7c   Section        0  stm32f10x_usart.o(i.USART_GetFlagStatus)
-    i.USART_GetITStatus                      0x08001d8a   Section        0  stm32f10x_usart.o(i.USART_GetITStatus)
-    i.USART_ITConfig                         0x08001dc8   Section        0  stm32f10x_usart.o(i.USART_ITConfig)
-    i.USART_Init                             0x08001df8   Section        0  stm32f10x_usart.o(i.USART_Init)
-    i.USART_ReceiveData                      0x08001ea4   Section        0  stm32f10x_usart.o(i.USART_ReceiveData)
-    i.USART_SendData                         0x08001eac   Section        0  stm32f10x_usart.o(i.USART_SendData)
-    i.Uart_Screen_App_Begin                  0x08001eb4   Section        0  lcd_wegui_menu_app.o(i.Uart_Screen_App_Begin)
-    i.Uart_Screen_App_Loop                   0x08001ee4   Section        0  lcd_wegui_menu_app.o(i.Uart_Screen_App_Loop)
-    i.Uart_Screen_App_Quit                   0x08001ee6   Section        0  lcd_wegui_menu_app.o(i.Uart_Screen_App_Quit)
-    i.Uart_Screen_Refresh                    0x08001ee8   Section        0  lcd_wegui_menu_app.o(i.Uart_Screen_Refresh)
-    i.Uart_keyLeft                           0x08001eec   Section        0  stm32f103_wegui_uart_port.o(i.Uart_keyLeft)
-    Uart_keyLeft                             0x08001eed   Thumb Code    62  stm32f103_wegui_uart_port.o(i.Uart_keyLeft)
-    i.Uart_keyRight                          0x08001f38   Section        0  stm32f103_wegui_uart_port.o(i.Uart_keyRight)
-    Uart_keyRight                            0x08001f39   Thumb Code    66  stm32f103_wegui_uart_port.o(i.Uart_keyRight)
-    i.Uart_keyUp                             0x08001f88   Section        0  stm32f103_wegui_uart_port.o(i.Uart_keyUp)
-    Uart_keyUp                               0x08001f89   Thumb Code    66  stm32f103_wegui_uart_port.o(i.Uart_keyUp)
-    i.UsageFault_Handler                     0x08001fd8   Section        0  stm32f10x_it.o(i.UsageFault_Handler)
-    i.Wegui_1ms_stick                        0x08001fdc   Section        0  lcd_wegui_driver.o(i.Wegui_1ms_stick)
-    i.Wegui_4key_port_Init                   0x08002018   Section        0  stm32f103_wegui_4key_port.o(i.Wegui_4key_port_Init)
-    i.Wegui_Hello_Word                       0x080020c4   Section        0  lcd_wegui_driver.o(i.Wegui_Hello_Word)
-    i.Wegui_Interface_stick                  0x080020f0   Section        0  stm32f103_wegui_4key_port.o(i.Wegui_Interface_stick)
-    i.Wegui_Key_Down                         0x08002114   Section        0  stm32f103_wegui_4key_port.o(i.Wegui_Key_Down)
-    Wegui_Key_Down                           0x08002115   Thumb Code   126  stm32f103_wegui_4key_port.o(i.Wegui_Key_Down)
-    i.Wegui_Key_Left                         0x080021a8   Section        0  stm32f103_wegui_4key_port.o(i.Wegui_Key_Left)
-    Wegui_Key_Left                           0x080021a9   Thumb Code   128  stm32f103_wegui_4key_port.o(i.Wegui_Key_Left)
-    i.Wegui_Key_Right                        0x0800223c   Section        0  stm32f103_wegui_4key_port.o(i.Wegui_Key_Right)
-    Wegui_Key_Right                          0x0800223d   Thumb Code   140  stm32f103_wegui_4key_port.o(i.Wegui_Key_Right)
-    i.Wegui_Key_Up                           0x080022dc   Section        0  stm32f103_wegui_4key_port.o(i.Wegui_Key_Up)
-    Wegui_Key_Up                             0x080022dd   Thumb Code   138  stm32f103_wegui_4key_port.o(i.Wegui_Key_Up)
-    i.Wegui_Push_Message_tip                 0x0800237c   Section        0  lcd_wegui_tip.o(i.Wegui_Push_Message_tip)
-    i.Wegui_Push_Slider_tip                  0x080023f8   Section        0  lcd_wegui_tip.o(i.Wegui_Push_Slider_tip)
-    i.Wegui_Tip_Quit                         0x08002498   Section        0  lcd_wegui_tip.o(i.Wegui_Tip_Quit)
-    i.Wegui_Tip_Save_andQuit                 0x080024ac   Section        0  lcd_wegui_tip.o(i.Wegui_Tip_Save_andQuit)
-    i.Wegui_Tip_Value_Add                    0x080024dc   Section        0  lcd_wegui_tip.o(i.Wegui_Tip_Value_Add)
-    i.Wegui_Tip_Value_Dec                    0x08002514   Section        0  lcd_wegui_tip.o(i.Wegui_Tip_Value_Dec)
-    i.Wegui_UartSend_1Dat                    0x0800254c   Section        0  stm32f103_wegui_uart_port.o(i.Wegui_UartSend_1Dat)
-    i.Wegui_UartSend_nDat                    0x08002570   Section        0  stm32f103_wegui_uart_port.o(i.Wegui_UartSend_nDat)
-    i.Wegui_Uart_Port_Init                   0x0800258c   Section        0  stm32f103_wegui_uart_port.o(i.Wegui_Uart_Port_Init)
-    i.Wegui_enter_menu                       0x08002648   Section        0  lcd_wegui_driver.o(i.Wegui_enter_menu)
-    i.Wegui_get_string                       0x08002714   Section        0  lcd_wegui_driver.o(i.Wegui_get_string)
-    i.Wegui_loop_func                        0x0800271c   Section        0  lcd_wegui_driver.o(i.Wegui_loop_func)
-    i.Wegui_mList_Init                       0x08002800   Section        0  lcd_wegui_menu_mlist.o(i.Wegui_mList_Init)
-    i.Wegui_mlist_Back_menu                  0x0800289c   Section        0  lcd_wegui_menu_mlist.o(i.Wegui_mlist_Back_menu)
-    i.Wegui_mlist_Enter_cursor               0x080028c8   Section        0  lcd_wegui_menu_mlist.o(i.Wegui_mlist_Enter_cursor)
-    i.Wegui_mlist_cursor_Next                0x08002958   Section        0  lcd_wegui_menu_mlist.o(i.Wegui_mlist_cursor_Next)
-    i.Wegui_mlist_cursor_Prev                0x08002978   Section        0  lcd_wegui_menu_mlist.o(i.Wegui_mlist_cursor_Prev)
-    i.Wegui_show_mList                       0x0800298c   Section        0  lcd_wegui_menu_mlist.o(i.Wegui_show_mList)
-    i.Wegui_show_tip                         0x08002e40   Section        0  lcd_wegui_tip.o(i.Wegui_show_tip)
-    i.Wegui_uart_rx_default_func             0x08003100   Section        0  stm32f103_wegui_uart_port.o(i.Wegui_uart_rx_default_func)
-    Wegui_uart_rx_default_func               0x08003101   Thumb Code   712  stm32f103_wegui_uart_port.o(i.Wegui_uart_rx_default_func)
-    i.Wegui_uart_rx_stick                    0x0800347c   Section        0  stm32f103_wegui_uart_port.o(i.Wegui_uart_rx_stick)
-    i.Wegui_update_info                      0x080034c8   Section        0  lcd_wegui_driver.o(i.Wegui_update_info)
-    Wegui_update_info                        0x080034c9   Thumb Code   254  lcd_wegui_driver.o(i.Wegui_update_info)
-    i.Write_rxRing                           0x080035d4   Section        0  stm32f103_wegui_uart_port.o(i.Write_rxRing)
-    i.__scatterload_copy                     0x08003600   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x0800360e   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08003610   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i.itoa                                   0x08003620   Section        0  lcd_wegui_driver.o(i.itoa)
-    i.lcd_driver_Init                        0x080036b8   Section        0  lcd_driver.o(i.lcd_driver_Init)
-    i.lcd_driver_Write_0                     0x08003748   Section        0  lcd_driver.o(i.lcd_driver_Write_0)
-    lcd_driver_Write_0                       0x08003749   Thumb Code    36  lcd_driver.o(i.lcd_driver_Write_0)
-    i.lcd_driver_Write_0_inBox               0x08003770   Section        0  lcd_driver.o(i.lcd_driver_Write_0_inBox)
-    lcd_driver_Write_0_inBox                 0x08003771   Thumb Code    92  lcd_driver.o(i.lcd_driver_Write_0_inBox)
-    i.lcd_driver_Write_1                     0x080037d4   Section        0  lcd_driver.o(i.lcd_driver_Write_1)
-    lcd_driver_Write_1                       0x080037d5   Thumb Code    36  lcd_driver.o(i.lcd_driver_Write_1)
-    i.lcd_driver_Write_1_inBox               0x080037fc   Section        0  lcd_driver.o(i.lcd_driver_Write_1_inBox)
-    lcd_driver_Write_1_inBox                 0x080037fd   Thumb Code    96  lcd_driver.o(i.lcd_driver_Write_1_inBox)
-    i.lcd_driver_Write_2                     0x08003864   Section        0  lcd_driver.o(i.lcd_driver_Write_2)
-    lcd_driver_Write_2                       0x08003865   Thumb Code    36  lcd_driver.o(i.lcd_driver_Write_2)
-    i.lcd_driver_Write_2_inBox               0x0800388c   Section        0  lcd_driver.o(i.lcd_driver_Write_2_inBox)
-    lcd_driver_Write_2_inBox                 0x0800388d   Thumb Code    96  lcd_driver.o(i.lcd_driver_Write_2_inBox)
-    i.lcd_driver_Write_3                     0x080038f4   Section        0  lcd_driver.o(i.lcd_driver_Write_3)
-    lcd_driver_Write_3                       0x080038f5   Thumb Code    36  lcd_driver.o(i.lcd_driver_Write_3)
-    i.lcd_driver_Write_3_inBox               0x0800391c   Section        0  lcd_driver.o(i.lcd_driver_Write_3_inBox)
-    lcd_driver_Write_3_inBox                 0x0800391d   Thumb Code    96  lcd_driver.o(i.lcd_driver_Write_3_inBox)
-    i.lcd_driver_Write_4                     0x08003984   Section        0  lcd_driver.o(i.lcd_driver_Write_4)
-    lcd_driver_Write_4                       0x08003985   Thumb Code    36  lcd_driver.o(i.lcd_driver_Write_4)
-    i.lcd_driver_Write_4_inBox               0x080039ac   Section        0  lcd_driver.o(i.lcd_driver_Write_4_inBox)
-    lcd_driver_Write_4_inBox                 0x080039ad   Thumb Code    96  lcd_driver.o(i.lcd_driver_Write_4_inBox)
-    i.lcd_driver_Write_5                     0x08003a14   Section        0  lcd_driver.o(i.lcd_driver_Write_5)
-    lcd_driver_Write_5                       0x08003a15   Thumb Code    36  lcd_driver.o(i.lcd_driver_Write_5)
-    i.lcd_driver_Write_5_inBox               0x08003a3c   Section        0  lcd_driver.o(i.lcd_driver_Write_5_inBox)
-    lcd_driver_Write_5_inBox                 0x08003a3d   Thumb Code    96  lcd_driver.o(i.lcd_driver_Write_5_inBox)
-    i.lcd_driver_Write_6                     0x08003aa4   Section        0  lcd_driver.o(i.lcd_driver_Write_6)
-    lcd_driver_Write_6                       0x08003aa5   Thumb Code    36  lcd_driver.o(i.lcd_driver_Write_6)
-    i.lcd_driver_Write_6_inBox               0x08003acc   Section        0  lcd_driver.o(i.lcd_driver_Write_6_inBox)
-    lcd_driver_Write_6_inBox                 0x08003acd   Thumb Code    96  lcd_driver.o(i.lcd_driver_Write_6_inBox)
-    i.lcd_driver_Write_7                     0x08003b34   Section        0  lcd_driver.o(i.lcd_driver_Write_7)
-    lcd_driver_Write_7                       0x08003b35   Thumb Code    36  lcd_driver.o(i.lcd_driver_Write_7)
-    i.lcd_driver_Write_7_inBox               0x08003b5c   Section        0  lcd_driver.o(i.lcd_driver_Write_7_inBox)
-    lcd_driver_Write_7_inBox                 0x08003b5d   Thumb Code    96  lcd_driver.o(i.lcd_driver_Write_7_inBox)
-    i.lcd_driver_Write_inv                   0x08003bc4   Section        0  lcd_driver.o(i.lcd_driver_Write_inv)
-    lcd_driver_Write_inv                     0x08003bc5   Thumb Code    36  lcd_driver.o(i.lcd_driver_Write_inv)
-    i.lcd_driver_Write_inv_inBox             0x08003bec   Section        0  lcd_driver.o(i.lcd_driver_Write_inv_inBox)
-    lcd_driver_Write_inv_inBox               0x08003bed   Thumb Code    82  lcd_driver.o(i.lcd_driver_Write_inv_inBox)
-    i.m_App_ThemeClock_Begin                 0x08003c48   Section        0  lcd_wegui_menu_app.o(i.m_App_ThemeClock_Begin)
-    i.m_App_ThemeClock_Loop                  0x08003c4c   Section        0  lcd_wegui_menu_app.o(i.m_App_ThemeClock_Loop)
-    i.m_App_ThemeClock_Quit                  0x08003c4e   Section        0  lcd_wegui_menu_app.o(i.m_App_ThemeClock_Quit)
-    i.m_App_ThemeClock_Refresh               0x08003c50   Section        0  lcd_wegui_menu_app.o(i.m_App_ThemeClock_Refresh)
-    i.m_wDemo_wMessage_ADC_func              0x08003d08   Section        0  lcd_wegui_menu_app.o(i.m_wDemo_wMessage_ADC_func)
-    i.m_wDemo_wMessage_Pres2_func            0x08003d2c   Section        0  lcd_wegui_menu_app.o(i.m_wDemo_wMessage_Pres2_func)
-    i.m_wDemo_wMessage_Pres_func             0x08003d78   Section        0  lcd_wegui_menu_app.o(i.m_wDemo_wMessage_Pres_func)
-    i.main                                   0x08003d9c   Section        0  main.o(i.main)
-    i.rxRing_par_Init                        0x08003df4   Section        0  stm32f103_wegui_uart_port.o(i.rxRing_par_Init)
-    i.startup_init                           0x08003e04   Section        0  main.o(i.startup_init)
-    i.update_Wegui_screen_brightness         0x08003f20   Section        0  lcd_wegui_menu_app.o(i.update_Wegui_screen_brightness)
-    .constdata                               0x08003f34   Section       18  lcd_driver.o(.constdata)
-    cal_1                                    0x08003f34   Data          18  lcd_driver.o(.constdata)
-    .constdata                               0x08003f48   Section       12  lcd_res.o(.constdata)
-    .constdata                               0x08003f54   Section       12  lcd_res.o(.constdata)
-    .constdata                               0x08003f60   Section       40  lcd_wegui_menu_app.o(.constdata)
-    .conststring                             0x08003f88   Section       21  user_wegui_menu.o(.conststring)
-    .conststring                             0x08003fa0   Section       50  user_wegui_menu.o(.conststring)
-    .conststring                             0x08003fd4   Section       53  user_wegui_menu.o(.conststring)
-    .conststring                             0x0800400c   Section       58  user_wegui_menu.o(.conststring)
-    .conststring                             0x08004048   Section       39  user_wegui_menu.o(.conststring)
-    .conststring                             0x08004070   Section       36  user_wegui_menu.o(.conststring)
-    .conststring                             0x08004094   Section       36  user_wegui_menu.o(.conststring)
-    .conststring                             0x080040b8   Section       36  user_wegui_menu.o(.conststring)
-    .conststring                             0x080040dc   Section       36  user_wegui_menu.o(.conststring)
-    .conststring                             0x08004100   Section       36  user_wegui_menu.o(.conststring)
-    .conststring                             0x08004124   Section       41  user_wegui_menu.o(.conststring)
-    .conststring                             0x08004150   Section       77  user_wegui_menu.o(.conststring)
-    .conststring                             0x080041a0   Section       10  user_wegui_menu.o(.conststring)
-    .conststring                             0x080041ac   Section       54  user_wegui_menu.o(.conststring)
-    .conststring                             0x080041e4   Section       24  user_wegui_menu.o(.conststring)
-    .conststring                             0x080041fc   Section       16  user_wegui_menu.o(.conststring)
-    .conststring                             0x0800420c   Section       37  user_wegui_menu.o(.conststring)
-    .conststring                             0x08004234   Section       39  user_wegui_menu.o(.conststring)
-    .conststring                             0x0800425c   Section       47  user_wegui_menu.o(.conststring)
-    .conststring                             0x0800428c   Section       39  user_wegui_menu.o(.conststring)
-    .conststring                             0x080042b4   Section       46  user_wegui_menu.o(.conststring)
-    .conststring                             0x080042e4   Section       57  user_wegui_menu.o(.conststring)
-    .conststring                             0x08004320   Section       60  user_wegui_menu.o(.conststring)
-    .conststring                             0x0800435c   Section       35  user_wegui_menu.o(.conststring)
-    .conststring                             0x08004380   Section       42  user_wegui_menu.o(.conststring)
-    .conststring                             0x080043ac   Section       53  user_wegui_menu.o(.conststring)
-    .conststring                             0x080043e4   Section       42  user_wegui_menu.o(.conststring)
-    .conststring                             0x08004410   Section       67  user_wegui_menu.o(.conststring)
-    .conststring                             0x08004454   Section       54  user_wegui_menu.o(.conststring)
-    .conststring                             0x0800448c   Section       31  user_wegui_menu.o(.conststring)
-    .conststring                             0x080044ac   Section       35  user_wegui_menu.o(.conststring)
-    .conststring                             0x080044d0   Section       37  user_wegui_menu.o(.conststring)
-    .conststring                             0x080044f8   Section       71  lcd_wegui_menu_app.o(.conststring)
-    .conststrlit                             0x08004540   Section     1141  lcd_res.o(.conststrlit)
-    .conststrlit                             0x080049b8   Section     1797  lcd_res.o(.conststrlit)
+    i.Lcd_Draw_HLine                         0x08000b24   Section        0  lcd_driver.o(i.Lcd_Draw_HLine)
+    Lcd_Draw_HLine                           0x08000b25   Thumb Code    90  lcd_driver.o(i.Lcd_Draw_HLine)
+    i.Lcd_Draw_Line                          0x08000b84   Section        0  lcd_driver.o(i.Lcd_Draw_Line)
+    i.Lcd_Draw_One_Byte                      0x08000c4c   Section        0  lcd_driver.o(i.Lcd_Draw_One_Byte)
+    Lcd_Draw_One_Byte                        0x08000c4d   Thumb Code   144  lcd_driver.o(i.Lcd_Draw_One_Byte)
+    i.Lcd_Draw_Pixl                          0x08000ce0   Section        0  lcd_driver.o(i.Lcd_Draw_Pixl)
+    i.Lcd_Draw_RBox                          0x08000ce8   Section        0  lcd_driver.o(i.Lcd_Draw_RBox)
+    i.Lcd_Draw_UTF8_String                   0x08000e00   Section        0  lcd_driver.o(i.Lcd_Draw_UTF8_String)
+    i.Lcd_Draw_Unicode                       0x08000eb8   Section        0  lcd_driver.o(i.Lcd_Draw_Unicode)
+    i.Lcd_Draw_VLine                         0x08000f04   Section        0  lcd_driver.o(i.Lcd_Draw_VLine)
+    Lcd_Draw_VLine                           0x08000f05   Thumb Code   178  lcd_driver.o(i.Lcd_Draw_VLine)
+    i.Lcd_Fill_Box                           0x08000fc0   Section        0  lcd_driver.o(i.Lcd_Fill_Box)
+    i.Lcd_Fill_Circel_part                   0x080010dc   Section        0  lcd_driver.o(i.Lcd_Fill_Circel_part)
+    i.Lcd_Fill_RBox                          0x080012cc   Section        0  lcd_driver.o(i.Lcd_Fill_RBox)
+    i.Lcd_Get_UTF8_XLen                      0x080013d8   Section        0  lcd_driver.o(i.Lcd_Get_UTF8_XLen)
+    i.Lcd_Get_UTF8_YLine                     0x08001464   Section        0  lcd_driver.o(i.Lcd_Get_UTF8_YLine)
+    i.Lcd_Set_Driver_Box                     0x080014ac   Section        0  lcd_driver.o(i.Lcd_Set_Driver_Box)
+    i.Lcd_Set_Driver_Mode                    0x08001510   Section        0  lcd_driver.o(i.Lcd_Set_Driver_Mode)
+    i.Lcd_Wegui_Init                         0x080015f0   Section        0  lcd_wegui_driver.o(i.Lcd_Wegui_Init)
+    i.MemManage_Handler                      0x0800163c   Section        0  stm32f10x_it.o(i.MemManage_Handler)
+    i.NMI_Handler                            0x0800163e   Section        0  stm32f10x_it.o(i.NMI_Handler)
+    i.NVIC_Init                              0x08001640   Section        0  misc.o(i.NVIC_Init)
+    i.PendSV_Handler                         0x080016a4   Section        0  stm32f10x_it.o(i.PendSV_Handler)
+    i.RCC_ADCCLKConfig                       0x080016a8   Section        0  stm32f10x_rcc.o(i.RCC_ADCCLKConfig)
+    i.RCC_AHBPeriphClockCmd                  0x080016bc   Section        0  stm32f10x_rcc.o(i.RCC_AHBPeriphClockCmd)
+    i.RCC_APB1PeriphClockCmd                 0x080016d4   Section        0  stm32f10x_rcc.o(i.RCC_APB1PeriphClockCmd)
+    i.RCC_APB2PeriphClockCmd                 0x080016ec   Section        0  stm32f10x_rcc.o(i.RCC_APB2PeriphClockCmd)
+    i.RCC_GetClocksFreq                      0x08001704   Section        0  stm32f10x_rcc.o(i.RCC_GetClocksFreq)
+    i.RCC_PCLK2Config                        0x08001794   Section        0  stm32f10x_rcc.o(i.RCC_PCLK2Config)
+    i.RGB_Set_Driver_Colour                  0x080017a8   Section        0  lcd_driver.o(i.RGB_Set_Driver_Colour)
+    i.Read_rxRing_buff                       0x080017d0   Section        0  stm32f103_wegui_uart_port.o(i.Read_rxRing_buff)
+    i.Reflash_CpuLoad                        0x080017f4   Section        0  lcd_wegui_driver.o(i.Reflash_CpuLoad)
+    Reflash_CpuLoad                          0x080017f5   Thumb Code    76  lcd_wegui_driver.o(i.Reflash_CpuLoad)
+    i.Reflash_fps                            0x08001844   Section        0  lcd_wegui_driver.o(i.Reflash_fps)
+    Reflash_fps                              0x08001845   Thumb Code    62  lcd_wegui_driver.o(i.Reflash_fps)
+    i.SPI_Cmd                                0x08001888   Section        0  stm32f10x_spi.o(i.SPI_Cmd)
+    i.SPI_Init                               0x0800189c   Section        0  stm32f10x_spi.o(i.SPI_Init)
+    i.ST7735_Clear                           0x080018d4   Section        0  st7735.o(i.ST7735_Clear)
+    i.ST7735_Init                            0x08001904   Section        0  st7735.o(i.ST7735_Init)
+    i.ST7735_Set_Addr                        0x08001aac   Section        0  st7735.o(i.ST7735_Set_Addr)
+    i.ST7735_Set_RGB565_Mode                 0x08001b24   Section        0  st7735.o(i.ST7735_Set_RGB565_Mode)
+    i.ST7735_Sleep_Out                       0x08001b3c   Section        0  st7735.o(i.ST7735_Sleep_Out)
+    i.ST7735_Soft_Reset                      0x08001b54   Section        0  st7735.o(i.ST7735_Soft_Reset)
+    i.SVC_Handler                            0x08001b6c   Section        0  stm32f10x_it.o(i.SVC_Handler)
+    i.SetSysClockTo72                        0x08001b70   Section        0  system_stm32f10x.o(i.SetSysClockTo72)
+    SetSysClockTo72                          0x08001b71   Thumb Code   160  system_stm32f10x.o(i.SetSysClockTo72)
+    i.Set_SPI_DataSize_8b                    0x08001c18   Section        0  stm32f103_lcd_hard_4spi_port.o(i.Set_SPI_DataSize_8b)
+    Set_SPI_DataSize_8b                      0x08001c19   Thumb Code    12  stm32f103_lcd_hard_4spi_port.o(i.Set_SPI_DataSize_8b)
+    i.Set_language_Chinese                   0x08001c28   Section        0  lcd_wegui_menu_app.o(i.Set_language_Chinese)
+    i.Set_language_English                   0x08001c38   Section        0  lcd_wegui_menu_app.o(i.Set_language_English)
+    i.SysTick_Handler                        0x08001c48   Section        0  stm32f10x_it.o(i.SysTick_Handler)
+    i.SystemInit                             0x08001c68   Section        0  system_stm32f10x.o(i.SystemInit)
+    i.USART2_IRQHandler                      0x08001cb8   Section        0  stm32f103_wegui_uart_port.o(i.USART2_IRQHandler)
+    i.USART_Cmd                              0x08001d48   Section        0  stm32f10x_usart.o(i.USART_Cmd)
+    i.USART_GetFlagStatus                    0x08001d5c   Section        0  stm32f10x_usart.o(i.USART_GetFlagStatus)
+    i.USART_GetITStatus                      0x08001d6a   Section        0  stm32f10x_usart.o(i.USART_GetITStatus)
+    i.USART_ITConfig                         0x08001da8   Section        0  stm32f10x_usart.o(i.USART_ITConfig)
+    i.USART_Init                             0x08001dd8   Section        0  stm32f10x_usart.o(i.USART_Init)
+    i.USART_ReceiveData                      0x08001e84   Section        0  stm32f10x_usart.o(i.USART_ReceiveData)
+    i.USART_SendData                         0x08001e8c   Section        0  stm32f10x_usart.o(i.USART_SendData)
+    i.Uart_Screen_App_Begin                  0x08001e94   Section        0  lcd_wegui_menu_app.o(i.Uart_Screen_App_Begin)
+    i.Uart_Screen_App_Loop                   0x08001ec4   Section        0  lcd_wegui_menu_app.o(i.Uart_Screen_App_Loop)
+    i.Uart_Screen_App_Quit                   0x08001ec6   Section        0  lcd_wegui_menu_app.o(i.Uart_Screen_App_Quit)
+    i.Uart_Screen_Refresh                    0x08001ec8   Section        0  lcd_wegui_menu_app.o(i.Uart_Screen_Refresh)
+    i.Uart_keyLeft                           0x08001ecc   Section        0  stm32f103_wegui_uart_port.o(i.Uart_keyLeft)
+    Uart_keyLeft                             0x08001ecd   Thumb Code    62  stm32f103_wegui_uart_port.o(i.Uart_keyLeft)
+    i.Uart_keyRight                          0x08001f18   Section        0  stm32f103_wegui_uart_port.o(i.Uart_keyRight)
+    Uart_keyRight                            0x08001f19   Thumb Code    66  stm32f103_wegui_uart_port.o(i.Uart_keyRight)
+    i.Uart_keyUp                             0x08001f68   Section        0  stm32f103_wegui_uart_port.o(i.Uart_keyUp)
+    Uart_keyUp                               0x08001f69   Thumb Code    66  stm32f103_wegui_uart_port.o(i.Uart_keyUp)
+    i.UsageFault_Handler                     0x08001fb8   Section        0  stm32f10x_it.o(i.UsageFault_Handler)
+    i.Wegui_1ms_stick                        0x08001fbc   Section        0  lcd_wegui_driver.o(i.Wegui_1ms_stick)
+    i.Wegui_4key_port_Init                   0x08001ff8   Section        0  stm32f103_wegui_4key_port.o(i.Wegui_4key_port_Init)
+    i.Wegui_Hello_Word                       0x080020a4   Section        0  lcd_wegui_driver.o(i.Wegui_Hello_Word)
+    i.Wegui_Interface_stick                  0x080020d0   Section        0  stm32f103_wegui_4key_port.o(i.Wegui_Interface_stick)
+    i.Wegui_Key_Down                         0x080020f4   Section        0  stm32f103_wegui_4key_port.o(i.Wegui_Key_Down)
+    Wegui_Key_Down                           0x080020f5   Thumb Code   126  stm32f103_wegui_4key_port.o(i.Wegui_Key_Down)
+    i.Wegui_Key_Left                         0x08002188   Section        0  stm32f103_wegui_4key_port.o(i.Wegui_Key_Left)
+    Wegui_Key_Left                           0x08002189   Thumb Code   128  stm32f103_wegui_4key_port.o(i.Wegui_Key_Left)
+    i.Wegui_Key_Right                        0x0800221c   Section        0  stm32f103_wegui_4key_port.o(i.Wegui_Key_Right)
+    Wegui_Key_Right                          0x0800221d   Thumb Code   140  stm32f103_wegui_4key_port.o(i.Wegui_Key_Right)
+    i.Wegui_Key_Up                           0x080022bc   Section        0  stm32f103_wegui_4key_port.o(i.Wegui_Key_Up)
+    Wegui_Key_Up                             0x080022bd   Thumb Code   138  stm32f103_wegui_4key_port.o(i.Wegui_Key_Up)
+    i.Wegui_Push_Message_tip                 0x0800235c   Section        0  lcd_wegui_tip.o(i.Wegui_Push_Message_tip)
+    i.Wegui_Push_Slider_tip                  0x080023d8   Section        0  lcd_wegui_tip.o(i.Wegui_Push_Slider_tip)
+    i.Wegui_Tip_Quit                         0x08002478   Section        0  lcd_wegui_tip.o(i.Wegui_Tip_Quit)
+    i.Wegui_Tip_Save_andQuit                 0x0800248c   Section        0  lcd_wegui_tip.o(i.Wegui_Tip_Save_andQuit)
+    i.Wegui_Tip_Value_Add                    0x080024bc   Section        0  lcd_wegui_tip.o(i.Wegui_Tip_Value_Add)
+    i.Wegui_Tip_Value_Dec                    0x080024f4   Section        0  lcd_wegui_tip.o(i.Wegui_Tip_Value_Dec)
+    i.Wegui_UartSend_1Dat                    0x0800252c   Section        0  stm32f103_wegui_uart_port.o(i.Wegui_UartSend_1Dat)
+    i.Wegui_UartSend_nDat                    0x08002550   Section        0  stm32f103_wegui_uart_port.o(i.Wegui_UartSend_nDat)
+    i.Wegui_Uart_Port_Init                   0x0800256c   Section        0  stm32f103_wegui_uart_port.o(i.Wegui_Uart_Port_Init)
+    i.Wegui_enter_menu                       0x08002628   Section        0  lcd_wegui_driver.o(i.Wegui_enter_menu)
+    i.Wegui_get_string                       0x080026f4   Section        0  lcd_wegui_driver.o(i.Wegui_get_string)
+    i.Wegui_loop_func                        0x080026fc   Section        0  lcd_wegui_driver.o(i.Wegui_loop_func)
+    i.Wegui_mList_Init                       0x080027e0   Section        0  lcd_wegui_menu_mlist.o(i.Wegui_mList_Init)
+    i.Wegui_mlist_Back_menu                  0x0800287c   Section        0  lcd_wegui_menu_mlist.o(i.Wegui_mlist_Back_menu)
+    i.Wegui_mlist_Enter_cursor               0x080028a8   Section        0  lcd_wegui_menu_mlist.o(i.Wegui_mlist_Enter_cursor)
+    i.Wegui_mlist_cursor_Next                0x08002938   Section        0  lcd_wegui_menu_mlist.o(i.Wegui_mlist_cursor_Next)
+    i.Wegui_mlist_cursor_Prev                0x08002958   Section        0  lcd_wegui_menu_mlist.o(i.Wegui_mlist_cursor_Prev)
+    i.Wegui_show_mList                       0x0800296c   Section        0  lcd_wegui_menu_mlist.o(i.Wegui_show_mList)
+    i.Wegui_show_tip                         0x08002e24   Section        0  lcd_wegui_tip.o(i.Wegui_show_tip)
+    i.Wegui_uart_rx_default_func             0x080030e4   Section        0  stm32f103_wegui_uart_port.o(i.Wegui_uart_rx_default_func)
+    Wegui_uart_rx_default_func               0x080030e5   Thumb Code   712  stm32f103_wegui_uart_port.o(i.Wegui_uart_rx_default_func)
+    i.Wegui_uart_rx_stick                    0x08003460   Section        0  stm32f103_wegui_uart_port.o(i.Wegui_uart_rx_stick)
+    i.Wegui_update_info                      0x080034ac   Section        0  lcd_wegui_driver.o(i.Wegui_update_info)
+    Wegui_update_info                        0x080034ad   Thumb Code   254  lcd_wegui_driver.o(i.Wegui_update_info)
+    i.Write_rxRing                           0x080035b8   Section        0  stm32f103_wegui_uart_port.o(i.Write_rxRing)
+    i.__scatterload_copy                     0x080035e4   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x080035f2   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x080035f4   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.itoa                                   0x08003604   Section        0  lcd_wegui_driver.o(i.itoa)
+    i.lcd_driver_Init                        0x0800369c   Section        0  lcd_driver.o(i.lcd_driver_Init)
+    i.lcd_driver_Write_0                     0x0800372c   Section        0  lcd_driver.o(i.lcd_driver_Write_0)
+    lcd_driver_Write_0                       0x0800372d   Thumb Code    36  lcd_driver.o(i.lcd_driver_Write_0)
+    i.lcd_driver_Write_0_inBox               0x08003754   Section        0  lcd_driver.o(i.lcd_driver_Write_0_inBox)
+    lcd_driver_Write_0_inBox                 0x08003755   Thumb Code    92  lcd_driver.o(i.lcd_driver_Write_0_inBox)
+    i.lcd_driver_Write_1                     0x080037b8   Section        0  lcd_driver.o(i.lcd_driver_Write_1)
+    lcd_driver_Write_1                       0x080037b9   Thumb Code    36  lcd_driver.o(i.lcd_driver_Write_1)
+    i.lcd_driver_Write_1_inBox               0x080037e0   Section        0  lcd_driver.o(i.lcd_driver_Write_1_inBox)
+    lcd_driver_Write_1_inBox                 0x080037e1   Thumb Code    96  lcd_driver.o(i.lcd_driver_Write_1_inBox)
+    i.lcd_driver_Write_2                     0x08003848   Section        0  lcd_driver.o(i.lcd_driver_Write_2)
+    lcd_driver_Write_2                       0x08003849   Thumb Code    36  lcd_driver.o(i.lcd_driver_Write_2)
+    i.lcd_driver_Write_2_inBox               0x08003870   Section        0  lcd_driver.o(i.lcd_driver_Write_2_inBox)
+    lcd_driver_Write_2_inBox                 0x08003871   Thumb Code    96  lcd_driver.o(i.lcd_driver_Write_2_inBox)
+    i.lcd_driver_Write_3                     0x080038d8   Section        0  lcd_driver.o(i.lcd_driver_Write_3)
+    lcd_driver_Write_3                       0x080038d9   Thumb Code    36  lcd_driver.o(i.lcd_driver_Write_3)
+    i.lcd_driver_Write_3_inBox               0x08003900   Section        0  lcd_driver.o(i.lcd_driver_Write_3_inBox)
+    lcd_driver_Write_3_inBox                 0x08003901   Thumb Code    96  lcd_driver.o(i.lcd_driver_Write_3_inBox)
+    i.lcd_driver_Write_4                     0x08003968   Section        0  lcd_driver.o(i.lcd_driver_Write_4)
+    lcd_driver_Write_4                       0x08003969   Thumb Code    36  lcd_driver.o(i.lcd_driver_Write_4)
+    i.lcd_driver_Write_4_inBox               0x08003990   Section        0  lcd_driver.o(i.lcd_driver_Write_4_inBox)
+    lcd_driver_Write_4_inBox                 0x08003991   Thumb Code    96  lcd_driver.o(i.lcd_driver_Write_4_inBox)
+    i.lcd_driver_Write_5                     0x080039f8   Section        0  lcd_driver.o(i.lcd_driver_Write_5)
+    lcd_driver_Write_5                       0x080039f9   Thumb Code    36  lcd_driver.o(i.lcd_driver_Write_5)
+    i.lcd_driver_Write_5_inBox               0x08003a20   Section        0  lcd_driver.o(i.lcd_driver_Write_5_inBox)
+    lcd_driver_Write_5_inBox                 0x08003a21   Thumb Code    96  lcd_driver.o(i.lcd_driver_Write_5_inBox)
+    i.lcd_driver_Write_6                     0x08003a88   Section        0  lcd_driver.o(i.lcd_driver_Write_6)
+    lcd_driver_Write_6                       0x08003a89   Thumb Code    36  lcd_driver.o(i.lcd_driver_Write_6)
+    i.lcd_driver_Write_6_inBox               0x08003ab0   Section        0  lcd_driver.o(i.lcd_driver_Write_6_inBox)
+    lcd_driver_Write_6_inBox                 0x08003ab1   Thumb Code    96  lcd_driver.o(i.lcd_driver_Write_6_inBox)
+    i.lcd_driver_Write_7                     0x08003b18   Section        0  lcd_driver.o(i.lcd_driver_Write_7)
+    lcd_driver_Write_7                       0x08003b19   Thumb Code    36  lcd_driver.o(i.lcd_driver_Write_7)
+    i.lcd_driver_Write_7_inBox               0x08003b40   Section        0  lcd_driver.o(i.lcd_driver_Write_7_inBox)
+    lcd_driver_Write_7_inBox                 0x08003b41   Thumb Code    96  lcd_driver.o(i.lcd_driver_Write_7_inBox)
+    i.lcd_driver_Write_inv                   0x08003ba8   Section        0  lcd_driver.o(i.lcd_driver_Write_inv)
+    lcd_driver_Write_inv                     0x08003ba9   Thumb Code    36  lcd_driver.o(i.lcd_driver_Write_inv)
+    i.lcd_driver_Write_inv_inBox             0x08003bd0   Section        0  lcd_driver.o(i.lcd_driver_Write_inv_inBox)
+    lcd_driver_Write_inv_inBox               0x08003bd1   Thumb Code    82  lcd_driver.o(i.lcd_driver_Write_inv_inBox)
+    i.m_App_ThemeClock_Begin                 0x08003c2c   Section        0  lcd_wegui_menu_app.o(i.m_App_ThemeClock_Begin)
+    i.m_App_ThemeClock_Loop                  0x08003c30   Section        0  lcd_wegui_menu_app.o(i.m_App_ThemeClock_Loop)
+    i.m_App_ThemeClock_Quit                  0x08003c32   Section        0  lcd_wegui_menu_app.o(i.m_App_ThemeClock_Quit)
+    i.m_App_ThemeClock_Refresh               0x08003c34   Section        0  lcd_wegui_menu_app.o(i.m_App_ThemeClock_Refresh)
+    i.m_wDemo_wMessage_ADC_func              0x08003cec   Section        0  lcd_wegui_menu_app.o(i.m_wDemo_wMessage_ADC_func)
+    i.m_wDemo_wMessage_Pres2_func            0x08003d10   Section        0  lcd_wegui_menu_app.o(i.m_wDemo_wMessage_Pres2_func)
+    i.m_wDemo_wMessage_Pres_func             0x08003d5c   Section        0  lcd_wegui_menu_app.o(i.m_wDemo_wMessage_Pres_func)
+    i.main                                   0x08003d80   Section        0  main.o(i.main)
+    i.rxRing_par_Init                        0x08003dd4   Section        0  stm32f103_wegui_uart_port.o(i.rxRing_par_Init)
+    i.startup_init                           0x08003de4   Section        0  main.o(i.startup_init)
+    i.update_Wegui_screen_brightness         0x08003f00   Section        0  lcd_wegui_menu_app.o(i.update_Wegui_screen_brightness)
+    .constdata                               0x08003f14   Section       18  lcd_driver.o(.constdata)
+    cal_1                                    0x08003f14   Data          18  lcd_driver.o(.constdata)
+    .constdata                               0x08003f28   Section       12  lcd_res.o(.constdata)
+    .constdata                               0x08003f34   Section       12  lcd_res.o(.constdata)
+    .constdata                               0x08003f40   Section       40  lcd_wegui_menu_app.o(.constdata)
+    .conststring                             0x08003f68   Section       21  user_wegui_menu.o(.conststring)
+    .conststring                             0x08003f80   Section       50  user_wegui_menu.o(.conststring)
+    .conststring                             0x08003fb4   Section       53  user_wegui_menu.o(.conststring)
+    .conststring                             0x08003fec   Section       58  user_wegui_menu.o(.conststring)
+    .conststring                             0x08004028   Section       39  user_wegui_menu.o(.conststring)
+    .conststring                             0x08004050   Section       36  user_wegui_menu.o(.conststring)
+    .conststring                             0x08004074   Section       36  user_wegui_menu.o(.conststring)
+    .conststring                             0x08004098   Section       36  user_wegui_menu.o(.conststring)
+    .conststring                             0x080040bc   Section       36  user_wegui_menu.o(.conststring)
+    .conststring                             0x080040e0   Section       36  user_wegui_menu.o(.conststring)
+    .conststring                             0x08004104   Section       41  user_wegui_menu.o(.conststring)
+    .conststring                             0x08004130   Section       77  user_wegui_menu.o(.conststring)
+    .conststring                             0x08004180   Section       10  user_wegui_menu.o(.conststring)
+    .conststring                             0x0800418c   Section       54  user_wegui_menu.o(.conststring)
+    .conststring                             0x080041c4   Section       24  user_wegui_menu.o(.conststring)
+    .conststring                             0x080041dc   Section       16  user_wegui_menu.o(.conststring)
+    .conststring                             0x080041ec   Section       37  user_wegui_menu.o(.conststring)
+    .conststring                             0x08004214   Section       39  user_wegui_menu.o(.conststring)
+    .conststring                             0x0800423c   Section       47  user_wegui_menu.o(.conststring)
+    .conststring                             0x0800426c   Section       39  user_wegui_menu.o(.conststring)
+    .conststring                             0x08004294   Section       46  user_wegui_menu.o(.conststring)
+    .conststring                             0x080042c4   Section       57  user_wegui_menu.o(.conststring)
+    .conststring                             0x08004300   Section       60  user_wegui_menu.o(.conststring)
+    .conststring                             0x0800433c   Section       35  user_wegui_menu.o(.conststring)
+    .conststring                             0x08004360   Section       42  user_wegui_menu.o(.conststring)
+    .conststring                             0x0800438c   Section       53  user_wegui_menu.o(.conststring)
+    .conststring                             0x080043c4   Section       42  user_wegui_menu.o(.conststring)
+    .conststring                             0x080043f0   Section       67  user_wegui_menu.o(.conststring)
+    .conststring                             0x08004434   Section       54  user_wegui_menu.o(.conststring)
+    .conststring                             0x0800446c   Section       31  user_wegui_menu.o(.conststring)
+    .conststring                             0x0800448c   Section       35  user_wegui_menu.o(.conststring)
+    .conststring                             0x080044b0   Section       37  user_wegui_menu.o(.conststring)
+    .conststring                             0x080044d8   Section       71  lcd_wegui_menu_app.o(.conststring)
+    .conststrlit                             0x08004520   Section     1141  lcd_res.o(.conststrlit)
+    .conststrlit                             0x08004998   Section     1797  lcd_res.o(.conststrlit)
     .data                                    0x20000000   Section       20  stm32f10x_rcc.o(.data)
     ADCPrescTable                            0x20000000   Data           4  stm32f10x_rcc.o(.data)
     APBAHBPrescTable                         0x20000004   Data          16  stm32f10x_rcc.o(.data)
@@ -1832,7 +1827,7 @@ Image Symbol Table
     .data                                    0x200006ec   Section       56  user_wegui_menu.o(.data)
     .data                                    0x20000724   Section       56  user_wegui_menu.o(.data)
     .data                                    0x2000075c   Section       56  user_wegui_menu.o(.data)
-    .data                                    0x20000794   Section       24  lcd_wegui_driver.o(.data)
+    .data                                    0x20000794   Section       88  lcd_wegui_driver.o(.data)
     sum_count                                0x20000794   Data           1  lcd_wegui_driver.o(.data)
     sum_count                                0x20000795   Data           1  lcd_wegui_driver.o(.data)
     ui_farmes                                0x20000796   Data           1  lcd_wegui_driver.o(.data)
@@ -1845,18 +1840,17 @@ Image Symbol Table
     fps_time_count                           0x200007a6   Data           2  lcd_wegui_driver.o(.data)
     time_count                               0x200007a8   Data           2  lcd_wegui_driver.o(.data)
     i                                        0x200007aa   Data           2  lcd_wegui_driver.o(.data)
-    .data                                    0x200007ac   Section       15  lcd_wegui_menu_app.o(.data)
-    num                                      0x200007ac   Data           1  lcd_wegui_menu_app.o(.data)
-    string                                   0x200007ad   Data           7  lcd_wegui_menu_app.o(.data)
-    string                                   0x200007b4   Data           7  lcd_wegui_menu_app.o(.data)
-    .bss                                     0x200007bc   Section       80  stm32f103_lcd_hard_4spi_port.o(.bss)
-    crc                                      0x200007bc   Data          80  stm32f103_lcd_hard_4spi_port.o(.bss)
-    .bss                                     0x2000080c   Section       70  stm32f103_wegui_uart_port.o(.bss)
-    .bss                                     0x20000854   Section     7744  lcd_driver.o(.bss)
-    colour_lastime                           0x20000854   Data          16  lcd_driver.o(.bss)
-    .bss                                     0x20002694   Section       76  lcd_wegui_driver.o(.bss)
-    .bss                                     0x200026e0   Section       40  lcd_wegui_menu_mlist.o(.bss)
-    STACK                                    0x20002708   Section     1024  startup_stm32f10x_md.o(STACK)
+    .data                                    0x200007ec   Section       15  lcd_wegui_menu_app.o(.data)
+    num                                      0x200007ec   Data           1  lcd_wegui_menu_app.o(.data)
+    string                                   0x200007ed   Data           7  lcd_wegui_menu_app.o(.data)
+    string                                   0x200007f4   Data           7  lcd_wegui_menu_app.o(.data)
+    .bss                                     0x200007fc   Section       80  stm32f103_lcd_hard_4spi_port.o(.bss)
+    crc                                      0x200007fc   Data          80  stm32f103_lcd_hard_4spi_port.o(.bss)
+    .bss                                     0x2000084c   Section       70  stm32f103_wegui_uart_port.o(.bss)
+    .bss                                     0x20000894   Section     7744  lcd_driver.o(.bss)
+    colour_lastime                           0x20000894   Data          16  lcd_driver.o(.bss)
+    .bss                                     0x200026d4   Section       40  lcd_wegui_menu_mlist.o(.bss)
+    STACK                                    0x20002700   Section     1024  startup_stm32f10x_md.o(STACK)
 
     Global Symbols
 
@@ -1965,103 +1959,103 @@ Image Symbol Table
     Lcd_Draw_Ascii                           0x080008cd   Thumb Code    34  lcd_driver.o(i.Lcd_Draw_Ascii)
     Lcd_Draw_Bitmap                          0x080008f5   Thumb Code    82  lcd_driver.o(i.Lcd_Draw_Bitmap)
     Lcd_Draw_Box                             0x08000947   Thumb Code    52  lcd_driver.o(i.Lcd_Draw_Box)
-    Lcd_Draw_Circel_part                     0x0800097d   Thumb Code   402  lcd_driver.o(i.Lcd_Draw_Circel_part)
-    Lcd_Draw_Line                            0x08000b7d   Thumb Code   200  lcd_driver.o(i.Lcd_Draw_Line)
-    Lcd_Draw_Pixl                            0x08000cd9   Thumb Code     6  lcd_driver.o(i.Lcd_Draw_Pixl)
-    Lcd_Draw_RBox                            0x08000ce1   Thumb Code   266  lcd_driver.o(i.Lcd_Draw_RBox)
-    Lcd_Draw_UTF8_String                     0x08000df9   Thumb Code   180  lcd_driver.o(i.Lcd_Draw_UTF8_String)
-    Lcd_Draw_Unicode                         0x08000eb1   Thumb Code    72  lcd_driver.o(i.Lcd_Draw_Unicode)
-    Lcd_Fill_Box                             0x08000fb9   Thumb Code   276  lcd_driver.o(i.Lcd_Fill_Box)
-    Lcd_Fill_Circel_part                     0x080010d5   Thumb Code   470  lcd_driver.o(i.Lcd_Fill_Circel_part)
-    Lcd_Fill_RBox                            0x080012b9   Thumb Code   254  lcd_driver.o(i.Lcd_Fill_RBox)
-    Lcd_Get_UTF8_XLen                        0x080013c5   Thumb Code   134  lcd_driver.o(i.Lcd_Get_UTF8_XLen)
-    Lcd_Get_UTF8_YLine                       0x08001451   Thumb Code    72  lcd_driver.o(i.Lcd_Get_UTF8_YLine)
-    Lcd_Set_Driver_Box                       0x08001499   Thumb Code    96  lcd_driver.o(i.Lcd_Set_Driver_Box)
-    Lcd_Set_Driver_Mode                      0x080014fd   Thumb Code   148  lcd_driver.o(i.Lcd_Set_Driver_Mode)
-    Lcd_Wegui_Init                           0x080015dd   Thumb Code    78  lcd_wegui_driver.o(i.Lcd_Wegui_Init)
-    MemManage_Handler                        0x08001659   Thumb Code     2  stm32f10x_it.o(i.MemManage_Handler)
-    NMI_Handler                              0x0800165b   Thumb Code     2  stm32f10x_it.o(i.NMI_Handler)
-    NVIC_Init                                0x0800165d   Thumb Code    94  misc.o(i.NVIC_Init)
-    PendSV_Handler                           0x080016c1   Thumb Code     2  stm32f10x_it.o(i.PendSV_Handler)
-    RCC_ADCCLKConfig                         0x080016c5   Thumb Code    14  stm32f10x_rcc.o(i.RCC_ADCCLKConfig)
-    RCC_AHBPeriphClockCmd                    0x080016d9   Thumb Code    18  stm32f10x_rcc.o(i.RCC_AHBPeriphClockCmd)
-    RCC_APB1PeriphClockCmd                   0x080016f1   Thumb Code    18  stm32f10x_rcc.o(i.RCC_APB1PeriphClockCmd)
-    RCC_APB2PeriphClockCmd                   0x08001709   Thumb Code    18  stm32f10x_rcc.o(i.RCC_APB2PeriphClockCmd)
-    RCC_GetClocksFreq                        0x08001721   Thumb Code   128  stm32f10x_rcc.o(i.RCC_GetClocksFreq)
-    RCC_PCLK2Config                          0x080017b1   Thumb Code    16  stm32f10x_rcc.o(i.RCC_PCLK2Config)
-    RGB_Set_Driver_Colour                    0x080017c5   Thumb Code    34  lcd_driver.o(i.RGB_Set_Driver_Colour)
-    Read_rxRing_buff                         0x080017ed   Thumb Code    30  stm32f103_wegui_uart_port.o(i.Read_rxRing_buff)
-    SPI_Cmd                                  0x080018a9   Thumb Code    20  stm32f10x_spi.o(i.SPI_Cmd)
-    SPI_Init                                 0x080018bd   Thumb Code    56  stm32f10x_spi.o(i.SPI_Init)
-    ST7735_Clear                             0x080018f5   Thumb Code    46  st7735.o(i.ST7735_Clear)
-    ST7735_Init                              0x08001925   Thumb Code   316  st7735.o(i.ST7735_Init)
-    ST7735_Set_Addr                          0x08001acd   Thumb Code    98  st7735.o(i.ST7735_Set_Addr)
-    ST7735_Set_RGB565_Mode                   0x08001b45   Thumb Code    18  st7735.o(i.ST7735_Set_RGB565_Mode)
-    ST7735_Sleep_Out                         0x08001b5d   Thumb Code    18  st7735.o(i.ST7735_Sleep_Out)
-    ST7735_Soft_Reset                        0x08001b75   Thumb Code    18  st7735.o(i.ST7735_Soft_Reset)
-    SVC_Handler                              0x08001b8d   Thumb Code     2  stm32f10x_it.o(i.SVC_Handler)
-    Set_language_Chinese                     0x08001c49   Thumb Code    10  lcd_wegui_menu_app.o(i.Set_language_Chinese)
-    Set_language_English                     0x08001c59   Thumb Code    10  lcd_wegui_menu_app.o(i.Set_language_English)
-    SysTick_Handler                          0x08001c69   Thumb Code    26  stm32f10x_it.o(i.SysTick_Handler)
-    SystemInit                               0x08001c89   Thumb Code    64  system_stm32f10x.o(i.SystemInit)
-    USART2_IRQHandler                        0x08001cd9   Thumb Code   134  stm32f103_wegui_uart_port.o(i.USART2_IRQHandler)
-    USART_Cmd                                0x08001d69   Thumb Code    20  stm32f10x_usart.o(i.USART_Cmd)
-    USART_GetFlagStatus                      0x08001d7d   Thumb Code    14  stm32f10x_usart.o(i.USART_GetFlagStatus)
-    USART_GetITStatus                        0x08001d8b   Thumb Code    62  stm32f10x_usart.o(i.USART_GetITStatus)
-    USART_ITConfig                           0x08001dc9   Thumb Code    48  stm32f10x_usart.o(i.USART_ITConfig)
-    USART_Init                               0x08001df9   Thumb Code   166  stm32f10x_usart.o(i.USART_Init)
-    USART_ReceiveData                        0x08001ea5   Thumb Code     8  stm32f10x_usart.o(i.USART_ReceiveData)
-    USART_SendData                           0x08001ead   Thumb Code     8  stm32f10x_usart.o(i.USART_SendData)
-    Uart_Screen_App_Begin                    0x08001eb5   Thumb Code    40  lcd_wegui_menu_app.o(i.Uart_Screen_App_Begin)
-    Uart_Screen_App_Loop                     0x08001ee5   Thumb Code     2  lcd_wegui_menu_app.o(i.Uart_Screen_App_Loop)
-    Uart_Screen_App_Quit                     0x08001ee7   Thumb Code     2  lcd_wegui_menu_app.o(i.Uart_Screen_App_Quit)
-    Uart_Screen_Refresh                      0x08001ee9   Thumb Code     2  lcd_wegui_menu_app.o(i.Uart_Screen_Refresh)
-    UsageFault_Handler                       0x08001fd9   Thumb Code     2  stm32f10x_it.o(i.UsageFault_Handler)
-    Wegui_1ms_stick                          0x08001fdd   Thumb Code    52  lcd_wegui_driver.o(i.Wegui_1ms_stick)
-    Wegui_4key_port_Init                     0x08002019   Thumb Code   164  stm32f103_wegui_4key_port.o(i.Wegui_4key_port_Init)
-    Wegui_Hello_Word                         0x080020c5   Thumb Code    12  lcd_wegui_driver.o(i.Wegui_Hello_Word)
-    Wegui_Interface_stick                    0x080020f1   Thumb Code    34  stm32f103_wegui_4key_port.o(i.Wegui_Interface_stick)
-    Wegui_Push_Message_tip                   0x0800237d   Thumb Code   116  lcd_wegui_tip.o(i.Wegui_Push_Message_tip)
-    Wegui_Push_Slider_tip                    0x080023f9   Thumb Code   140  lcd_wegui_tip.o(i.Wegui_Push_Slider_tip)
-    Wegui_Tip_Quit                           0x08002499   Thumb Code    16  lcd_wegui_tip.o(i.Wegui_Tip_Quit)
-    Wegui_Tip_Save_andQuit                   0x080024ad   Thumb Code    44  lcd_wegui_tip.o(i.Wegui_Tip_Save_andQuit)
-    Wegui_Tip_Value_Add                      0x080024dd   Thumb Code    50  lcd_wegui_tip.o(i.Wegui_Tip_Value_Add)
-    Wegui_Tip_Value_Dec                      0x08002515   Thumb Code    50  lcd_wegui_tip.o(i.Wegui_Tip_Value_Dec)
-    Wegui_UartSend_1Dat                      0x0800254d   Thumb Code    30  stm32f103_wegui_uart_port.o(i.Wegui_UartSend_1Dat)
-    Wegui_UartSend_nDat                      0x08002571   Thumb Code    26  stm32f103_wegui_uart_port.o(i.Wegui_UartSend_nDat)
-    Wegui_Uart_Port_Init                     0x0800258d   Thumb Code   176  stm32f103_wegui_uart_port.o(i.Wegui_Uart_Port_Init)
-    Wegui_enter_menu                         0x08002649   Thumb Code   196  lcd_wegui_driver.o(i.Wegui_enter_menu)
-    Wegui_get_string                         0x08002715   Thumb Code     8  lcd_wegui_driver.o(i.Wegui_get_string)
-    Wegui_loop_func                          0x0800271d   Thumb Code   220  lcd_wegui_driver.o(i.Wegui_loop_func)
-    Wegui_mList_Init                         0x08002801   Thumb Code   148  lcd_wegui_menu_mlist.o(i.Wegui_mList_Init)
-    Wegui_mlist_Back_menu                    0x0800289d   Thumb Code    36  lcd_wegui_menu_mlist.o(i.Wegui_mlist_Back_menu)
-    Wegui_mlist_Enter_cursor                 0x080028c9   Thumb Code   136  lcd_wegui_menu_mlist.o(i.Wegui_mlist_Enter_cursor)
-    Wegui_mlist_cursor_Next                  0x08002959   Thumb Code    24  lcd_wegui_menu_mlist.o(i.Wegui_mlist_cursor_Next)
-    Wegui_mlist_cursor_Prev                  0x08002979   Thumb Code    14  lcd_wegui_menu_mlist.o(i.Wegui_mlist_cursor_Prev)
-    Wegui_show_mList                         0x0800298d   Thumb Code  1204  lcd_wegui_menu_mlist.o(i.Wegui_show_mList)
-    Wegui_show_tip                           0x08002e41   Thumb Code   698  lcd_wegui_tip.o(i.Wegui_show_tip)
-    Wegui_uart_rx_stick                      0x0800347d   Thumb Code    72  stm32f103_wegui_uart_port.o(i.Wegui_uart_rx_stick)
-    Write_rxRing                             0x080035d5   Thumb Code    40  stm32f103_wegui_uart_port.o(i.Write_rxRing)
-    __scatterload_copy                       0x08003601   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x0800360f   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08003611   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    itoa                                     0x08003621   Thumb Code   112  lcd_wegui_driver.o(i.itoa)
-    lcd_driver_Init                          0x080036b9   Thumb Code   130  lcd_driver.o(i.lcd_driver_Init)
-    m_App_ThemeClock_Begin                   0x08003c49   Thumb Code     4  lcd_wegui_menu_app.o(i.m_App_ThemeClock_Begin)
-    m_App_ThemeClock_Loop                    0x08003c4d   Thumb Code     2  lcd_wegui_menu_app.o(i.m_App_ThemeClock_Loop)
-    m_App_ThemeClock_Quit                    0x08003c4f   Thumb Code     2  lcd_wegui_menu_app.o(i.m_App_ThemeClock_Quit)
-    m_App_ThemeClock_Refresh                 0x08003c51   Thumb Code   176  lcd_wegui_menu_app.o(i.m_App_ThemeClock_Refresh)
-    m_wDemo_wMessage_ADC_func                0x08003d09   Thumb Code    24  lcd_wegui_menu_app.o(i.m_wDemo_wMessage_ADC_func)
-    m_wDemo_wMessage_Pres2_func              0x08003d2d   Thumb Code    58  lcd_wegui_menu_app.o(i.m_wDemo_wMessage_Pres2_func)
-    m_wDemo_wMessage_Pres_func               0x08003d79   Thumb Code    24  lcd_wegui_menu_app.o(i.m_wDemo_wMessage_Pres_func)
-    main                                     0x08003d9d   Thumb Code    76  main.o(i.main)
-    rxRing_par_Init                          0x08003df5   Thumb Code    12  stm32f103_wegui_uart_port.o(i.rxRing_par_Init)
-    startup_init                             0x08003e05   Thumb Code   256  main.o(i.startup_init)
-    update_Wegui_screen_brightness           0x08003f21   Thumb Code    12  lcd_wegui_menu_app.o(i.update_Wegui_screen_brightness)
-    ascii_SongTi_6X12                        0x08003f48   Data          12  lcd_res.o(.constdata)
-    SongTi_UTF8_12X12                        0x08003f54   Data          12  lcd_res.o(.constdata)
-    Region$$Table$$Base                      0x080050c0   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x080050e0   Number         0  anon$$obj.o(Region$$Table)
+    Lcd_Draw_Circel_part                     0x0800097d   Thumb Code   412  lcd_driver.o(i.Lcd_Draw_Circel_part)
+    Lcd_Draw_Line                            0x08000b85   Thumb Code   200  lcd_driver.o(i.Lcd_Draw_Line)
+    Lcd_Draw_Pixl                            0x08000ce1   Thumb Code     6  lcd_driver.o(i.Lcd_Draw_Pixl)
+    Lcd_Draw_RBox                            0x08000ce9   Thumb Code   266  lcd_driver.o(i.Lcd_Draw_RBox)
+    Lcd_Draw_UTF8_String                     0x08000e01   Thumb Code   180  lcd_driver.o(i.Lcd_Draw_UTF8_String)
+    Lcd_Draw_Unicode                         0x08000eb9   Thumb Code    72  lcd_driver.o(i.Lcd_Draw_Unicode)
+    Lcd_Fill_Box                             0x08000fc1   Thumb Code   276  lcd_driver.o(i.Lcd_Fill_Box)
+    Lcd_Fill_Circel_part                     0x080010dd   Thumb Code   482  lcd_driver.o(i.Lcd_Fill_Circel_part)
+    Lcd_Fill_RBox                            0x080012cd   Thumb Code   254  lcd_driver.o(i.Lcd_Fill_RBox)
+    Lcd_Get_UTF8_XLen                        0x080013d9   Thumb Code   134  lcd_driver.o(i.Lcd_Get_UTF8_XLen)
+    Lcd_Get_UTF8_YLine                       0x08001465   Thumb Code    72  lcd_driver.o(i.Lcd_Get_UTF8_YLine)
+    Lcd_Set_Driver_Box                       0x080014ad   Thumb Code    96  lcd_driver.o(i.Lcd_Set_Driver_Box)
+    Lcd_Set_Driver_Mode                      0x08001511   Thumb Code   148  lcd_driver.o(i.Lcd_Set_Driver_Mode)
+    Lcd_Wegui_Init                           0x080015f1   Thumb Code    68  lcd_wegui_driver.o(i.Lcd_Wegui_Init)
+    MemManage_Handler                        0x0800163d   Thumb Code     2  stm32f10x_it.o(i.MemManage_Handler)
+    NMI_Handler                              0x0800163f   Thumb Code     2  stm32f10x_it.o(i.NMI_Handler)
+    NVIC_Init                                0x08001641   Thumb Code    94  misc.o(i.NVIC_Init)
+    PendSV_Handler                           0x080016a5   Thumb Code     2  stm32f10x_it.o(i.PendSV_Handler)
+    RCC_ADCCLKConfig                         0x080016a9   Thumb Code    14  stm32f10x_rcc.o(i.RCC_ADCCLKConfig)
+    RCC_AHBPeriphClockCmd                    0x080016bd   Thumb Code    18  stm32f10x_rcc.o(i.RCC_AHBPeriphClockCmd)
+    RCC_APB1PeriphClockCmd                   0x080016d5   Thumb Code    18  stm32f10x_rcc.o(i.RCC_APB1PeriphClockCmd)
+    RCC_APB2PeriphClockCmd                   0x080016ed   Thumb Code    18  stm32f10x_rcc.o(i.RCC_APB2PeriphClockCmd)
+    RCC_GetClocksFreq                        0x08001705   Thumb Code   128  stm32f10x_rcc.o(i.RCC_GetClocksFreq)
+    RCC_PCLK2Config                          0x08001795   Thumb Code    16  stm32f10x_rcc.o(i.RCC_PCLK2Config)
+    RGB_Set_Driver_Colour                    0x080017a9   Thumb Code    34  lcd_driver.o(i.RGB_Set_Driver_Colour)
+    Read_rxRing_buff                         0x080017d1   Thumb Code    30  stm32f103_wegui_uart_port.o(i.Read_rxRing_buff)
+    SPI_Cmd                                  0x08001889   Thumb Code    20  stm32f10x_spi.o(i.SPI_Cmd)
+    SPI_Init                                 0x0800189d   Thumb Code    56  stm32f10x_spi.o(i.SPI_Init)
+    ST7735_Clear                             0x080018d5   Thumb Code    46  st7735.o(i.ST7735_Clear)
+    ST7735_Init                              0x08001905   Thumb Code   316  st7735.o(i.ST7735_Init)
+    ST7735_Set_Addr                          0x08001aad   Thumb Code    98  st7735.o(i.ST7735_Set_Addr)
+    ST7735_Set_RGB565_Mode                   0x08001b25   Thumb Code    18  st7735.o(i.ST7735_Set_RGB565_Mode)
+    ST7735_Sleep_Out                         0x08001b3d   Thumb Code    18  st7735.o(i.ST7735_Sleep_Out)
+    ST7735_Soft_Reset                        0x08001b55   Thumb Code    18  st7735.o(i.ST7735_Soft_Reset)
+    SVC_Handler                              0x08001b6d   Thumb Code     2  stm32f10x_it.o(i.SVC_Handler)
+    Set_language_Chinese                     0x08001c29   Thumb Code    10  lcd_wegui_menu_app.o(i.Set_language_Chinese)
+    Set_language_English                     0x08001c39   Thumb Code    10  lcd_wegui_menu_app.o(i.Set_language_English)
+    SysTick_Handler                          0x08001c49   Thumb Code    26  stm32f10x_it.o(i.SysTick_Handler)
+    SystemInit                               0x08001c69   Thumb Code    64  system_stm32f10x.o(i.SystemInit)
+    USART2_IRQHandler                        0x08001cb9   Thumb Code   134  stm32f103_wegui_uart_port.o(i.USART2_IRQHandler)
+    USART_Cmd                                0x08001d49   Thumb Code    20  stm32f10x_usart.o(i.USART_Cmd)
+    USART_GetFlagStatus                      0x08001d5d   Thumb Code    14  stm32f10x_usart.o(i.USART_GetFlagStatus)
+    USART_GetITStatus                        0x08001d6b   Thumb Code    62  stm32f10x_usart.o(i.USART_GetITStatus)
+    USART_ITConfig                           0x08001da9   Thumb Code    48  stm32f10x_usart.o(i.USART_ITConfig)
+    USART_Init                               0x08001dd9   Thumb Code   166  stm32f10x_usart.o(i.USART_Init)
+    USART_ReceiveData                        0x08001e85   Thumb Code     8  stm32f10x_usart.o(i.USART_ReceiveData)
+    USART_SendData                           0x08001e8d   Thumb Code     8  stm32f10x_usart.o(i.USART_SendData)
+    Uart_Screen_App_Begin                    0x08001e95   Thumb Code    40  lcd_wegui_menu_app.o(i.Uart_Screen_App_Begin)
+    Uart_Screen_App_Loop                     0x08001ec5   Thumb Code     2  lcd_wegui_menu_app.o(i.Uart_Screen_App_Loop)
+    Uart_Screen_App_Quit                     0x08001ec7   Thumb Code     2  lcd_wegui_menu_app.o(i.Uart_Screen_App_Quit)
+    Uart_Screen_Refresh                      0x08001ec9   Thumb Code     2  lcd_wegui_menu_app.o(i.Uart_Screen_Refresh)
+    UsageFault_Handler                       0x08001fb9   Thumb Code     2  stm32f10x_it.o(i.UsageFault_Handler)
+    Wegui_1ms_stick                          0x08001fbd   Thumb Code    52  lcd_wegui_driver.o(i.Wegui_1ms_stick)
+    Wegui_4key_port_Init                     0x08001ff9   Thumb Code   164  stm32f103_wegui_4key_port.o(i.Wegui_4key_port_Init)
+    Wegui_Hello_Word                         0x080020a5   Thumb Code    12  lcd_wegui_driver.o(i.Wegui_Hello_Word)
+    Wegui_Interface_stick                    0x080020d1   Thumb Code    34  stm32f103_wegui_4key_port.o(i.Wegui_Interface_stick)
+    Wegui_Push_Message_tip                   0x0800235d   Thumb Code   116  lcd_wegui_tip.o(i.Wegui_Push_Message_tip)
+    Wegui_Push_Slider_tip                    0x080023d9   Thumb Code   140  lcd_wegui_tip.o(i.Wegui_Push_Slider_tip)
+    Wegui_Tip_Quit                           0x08002479   Thumb Code    16  lcd_wegui_tip.o(i.Wegui_Tip_Quit)
+    Wegui_Tip_Save_andQuit                   0x0800248d   Thumb Code    44  lcd_wegui_tip.o(i.Wegui_Tip_Save_andQuit)
+    Wegui_Tip_Value_Add                      0x080024bd   Thumb Code    50  lcd_wegui_tip.o(i.Wegui_Tip_Value_Add)
+    Wegui_Tip_Value_Dec                      0x080024f5   Thumb Code    50  lcd_wegui_tip.o(i.Wegui_Tip_Value_Dec)
+    Wegui_UartSend_1Dat                      0x0800252d   Thumb Code    30  stm32f103_wegui_uart_port.o(i.Wegui_UartSend_1Dat)
+    Wegui_UartSend_nDat                      0x08002551   Thumb Code    26  stm32f103_wegui_uart_port.o(i.Wegui_UartSend_nDat)
+    Wegui_Uart_Port_Init                     0x0800256d   Thumb Code   176  stm32f103_wegui_uart_port.o(i.Wegui_Uart_Port_Init)
+    Wegui_enter_menu                         0x08002629   Thumb Code   196  lcd_wegui_driver.o(i.Wegui_enter_menu)
+    Wegui_get_string                         0x080026f5   Thumb Code     8  lcd_wegui_driver.o(i.Wegui_get_string)
+    Wegui_loop_func                          0x080026fd   Thumb Code   222  lcd_wegui_driver.o(i.Wegui_loop_func)
+    Wegui_mList_Init                         0x080027e1   Thumb Code   148  lcd_wegui_menu_mlist.o(i.Wegui_mList_Init)
+    Wegui_mlist_Back_menu                    0x0800287d   Thumb Code    36  lcd_wegui_menu_mlist.o(i.Wegui_mlist_Back_menu)
+    Wegui_mlist_Enter_cursor                 0x080028a9   Thumb Code   136  lcd_wegui_menu_mlist.o(i.Wegui_mlist_Enter_cursor)
+    Wegui_mlist_cursor_Next                  0x08002939   Thumb Code    24  lcd_wegui_menu_mlist.o(i.Wegui_mlist_cursor_Next)
+    Wegui_mlist_cursor_Prev                  0x08002959   Thumb Code    14  lcd_wegui_menu_mlist.o(i.Wegui_mlist_cursor_Prev)
+    Wegui_show_mList                         0x0800296d   Thumb Code  1190  lcd_wegui_menu_mlist.o(i.Wegui_show_mList)
+    Wegui_show_tip                           0x08002e25   Thumb Code   698  lcd_wegui_tip.o(i.Wegui_show_tip)
+    Wegui_uart_rx_stick                      0x08003461   Thumb Code    72  stm32f103_wegui_uart_port.o(i.Wegui_uart_rx_stick)
+    Write_rxRing                             0x080035b9   Thumb Code    40  stm32f103_wegui_uart_port.o(i.Write_rxRing)
+    __scatterload_copy                       0x080035e5   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x080035f3   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x080035f5   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    itoa                                     0x08003605   Thumb Code   112  lcd_wegui_driver.o(i.itoa)
+    lcd_driver_Init                          0x0800369d   Thumb Code   130  lcd_driver.o(i.lcd_driver_Init)
+    m_App_ThemeClock_Begin                   0x08003c2d   Thumb Code     4  lcd_wegui_menu_app.o(i.m_App_ThemeClock_Begin)
+    m_App_ThemeClock_Loop                    0x08003c31   Thumb Code     2  lcd_wegui_menu_app.o(i.m_App_ThemeClock_Loop)
+    m_App_ThemeClock_Quit                    0x08003c33   Thumb Code     2  lcd_wegui_menu_app.o(i.m_App_ThemeClock_Quit)
+    m_App_ThemeClock_Refresh                 0x08003c35   Thumb Code   176  lcd_wegui_menu_app.o(i.m_App_ThemeClock_Refresh)
+    m_wDemo_wMessage_ADC_func                0x08003ced   Thumb Code    24  lcd_wegui_menu_app.o(i.m_wDemo_wMessage_ADC_func)
+    m_wDemo_wMessage_Pres2_func              0x08003d11   Thumb Code    58  lcd_wegui_menu_app.o(i.m_wDemo_wMessage_Pres2_func)
+    m_wDemo_wMessage_Pres_func               0x08003d5d   Thumb Code    24  lcd_wegui_menu_app.o(i.m_wDemo_wMessage_Pres_func)
+    main                                     0x08003d81   Thumb Code    72  main.o(i.main)
+    rxRing_par_Init                          0x08003dd5   Thumb Code    12  stm32f103_wegui_uart_port.o(i.rxRing_par_Init)
+    startup_init                             0x08003de5   Thumb Code   256  main.o(i.startup_init)
+    update_Wegui_screen_brightness           0x08003f01   Thumb Code    12  lcd_wegui_menu_app.o(i.update_Wegui_screen_brightness)
+    ascii_SongTi_6X12                        0x08003f28   Data          12  lcd_res.o(.constdata)
+    SongTi_UTF8_12X12                        0x08003f34   Data          12  lcd_res.o(.constdata)
+    Region$$Table$$Base                      0x080050a0   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x080050c0   Number         0  anon$$obj.o(Region$$Table)
     adc_en                                   0x20000014   Data           1  main.o(.data)
     ResADC                                   0x20000016   Data           2  main.o(.data)
     apptimer_ms                              0x20000018   Data           4  main.o(.data)
@@ -2112,11 +2106,11 @@ Image Symbol Table
     m_Setting_About_wSoft                    0x2000075c   Data          56  user_wegui_menu.o(.data)
     bl_pwmd                                  0x20000798   Data           1  lcd_wegui_driver.o(.data)
     Wegui_stick                              0x2000079a   Data           2  lcd_wegui_driver.o(.data)
-    rxRing                                   0x2000080c   Data          70  stm32f103_wegui_uart_port.o(.bss)
-    lcd_driver                               0x20000864   Data        7728  lcd_driver.o(.bss)
-    Wegui                                    0x20002694   Data          76  lcd_wegui_driver.o(.bss)
-    mList_par                                0x200026e0   Data          40  lcd_wegui_menu_mlist.o(.bss)
-    __initial_sp                             0x20002b08   Data           0  startup_stm32f10x_md.o(STACK)
+    Wegui                                    0x200007ac   Data          64  lcd_wegui_driver.o(.data)
+    rxRing                                   0x2000084c   Data          70  stm32f103_wegui_uart_port.o(.bss)
+    lcd_driver                               0x200008a4   Data        7728  lcd_driver.o(.bss)
+    mList_par                                0x200026d4   Data          40  lcd_wegui_menu_mlist.o(.bss)
+    __initial_sp                             0x20002b00   Data           0  startup_stm32f10x_md.o(STACK)
 
 
 
@@ -2126,27 +2120,27 @@ Memory Map of the image
 
   Image Entry point : 0x080000ed
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000589c, Max: 0x00010000, ABSOLUTE, COMPRESSED[0x000053a0])
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000058bc, Max: 0x00010000, ABSOLUTE, COMPRESSED[0x00005380])
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000050e0, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000050c0, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x08000000   0x000000ec   Data   RO           19    RESET               startup_stm32f10x_md.o
-    0x080000ec   0x080000ec   0x00000000   Code   RO         5328  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x080000ec   0x080000ec   0x00000004   Code   RO         5335    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x080000f0   0x080000f0   0x00000004   Code   RO         5338    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x080000f4   0x080000f4   0x00000000   Code   RO         5340    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x080000f4   0x080000f4   0x00000000   Code   RO         5342    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x080000f4   0x080000f4   0x00000008   Code   RO         5343    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x080000fc   0x080000fc   0x00000004   Code   RO         5350    .ARM.Collect$$$$0000000E  mc_w.l(entry12b.o)
-    0x08000100   0x08000100   0x00000000   Code   RO         5345    .ARM.Collect$$$$0000000F  mc_w.l(entry10a.o)
-    0x08000100   0x08000100   0x00000000   Code   RO         5347    .ARM.Collect$$$$00000011  mc_w.l(entry11a.o)
-    0x08000100   0x08000100   0x00000004   Code   RO         5336    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x080000ec   0x080000ec   0x00000000   Code   RO         5327  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x080000ec   0x080000ec   0x00000004   Code   RO         5334    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x080000f0   0x080000f0   0x00000004   Code   RO         5337    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x080000f4   0x080000f4   0x00000000   Code   RO         5339    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x080000f4   0x080000f4   0x00000000   Code   RO         5341    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x080000f4   0x080000f4   0x00000008   Code   RO         5342    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x080000fc   0x080000fc   0x00000004   Code   RO         5349    .ARM.Collect$$$$0000000E  mc_w.l(entry12b.o)
+    0x08000100   0x08000100   0x00000000   Code   RO         5344    .ARM.Collect$$$$0000000F  mc_w.l(entry10a.o)
+    0x08000100   0x08000100   0x00000000   Code   RO         5346    .ARM.Collect$$$$00000011  mc_w.l(entry11a.o)
+    0x08000100   0x08000100   0x00000004   Code   RO         5335    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x08000104   0x08000104   0x00000024   Code   RO           20    .text               startup_stm32f10x_md.o
-    0x08000128   0x08000128   0x00000024   Code   RO         5331    .text               mc_w.l(memcpya.o)
-    0x0800014c   0x0800014c   0x00000024   Code   RO         5351    .text               mc_w.l(init.o)
-    0x08000170   0x08000170   0x00000056   Code   RO         5361    .text               mc_w.l(__dczerorl2.o)
+    0x08000128   0x08000128   0x00000024   Code   RO         5330    .text               mc_w.l(memcpya.o)
+    0x0800014c   0x0800014c   0x00000024   Code   RO         5350    .text               mc_w.l(init.o)
+    0x08000170   0x08000170   0x00000056   Code   RO         5360    .text               mc_w.l(__dczerorl2.o)
     0x080001c6   0x080001c6   0x00000014   Code   RO          149    i.ADC_Cmd           stm32f10x_adc.o
     0x080001da   0x080001da   0x0000000e   Code   RO          157    i.ADC_GetCalibrationStatus  stm32f10x_adc.o
     0x080001e8   0x080001e8   0x00000006   Code   RO          158    i.ADC_GetConversionValue  stm32f10x_adc.o
@@ -2183,213 +2177,213 @@ Memory Map of the image
     0x080008f4   0x080008f4   0x00000052   Code   RO         3534    i.Lcd_Draw_Bitmap   lcd_driver.o
     0x08000946   0x08000946   0x00000034   Code   RO         3535    i.Lcd_Draw_Box      lcd_driver.o
     0x0800097a   0x0800097a   0x00000002   PAD
-    0x0800097c   0x0800097c   0x000001a0   Code   RO         3536    i.Lcd_Draw_Circel_part  lcd_driver.o
-    0x08000b1c   0x08000b1c   0x00000060   Code   RO         3537    i.Lcd_Draw_HLine    lcd_driver.o
-    0x08000b7c   0x08000b7c   0x000000c8   Code   RO         3538    i.Lcd_Draw_Line     lcd_driver.o
-    0x08000c44   0x08000c44   0x00000094   Code   RO         3539    i.Lcd_Draw_One_Byte  lcd_driver.o
-    0x08000cd8   0x08000cd8   0x00000006   Code   RO         3540    i.Lcd_Draw_Pixl     lcd_driver.o
-    0x08000cde   0x08000cde   0x00000002   PAD
-    0x08000ce0   0x08000ce0   0x00000118   Code   RO         3541    i.Lcd_Draw_RBox     lcd_driver.o
-    0x08000df8   0x08000df8   0x000000b8   Code   RO         3542    i.Lcd_Draw_UTF8_String  lcd_driver.o
-    0x08000eb0   0x08000eb0   0x0000004c   Code   RO         3543    i.Lcd_Draw_Unicode  lcd_driver.o
-    0x08000efc   0x08000efc   0x000000bc   Code   RO         3544    i.Lcd_Draw_VLine    lcd_driver.o
-    0x08000fb8   0x08000fb8   0x0000011c   Code   RO         3546    i.Lcd_Fill_Box      lcd_driver.o
-    0x080010d4   0x080010d4   0x000001e4   Code   RO         3547    i.Lcd_Fill_Circel_part  lcd_driver.o
-    0x080012b8   0x080012b8   0x0000010c   Code   RO         3549    i.Lcd_Fill_RBox     lcd_driver.o
-    0x080013c4   0x080013c4   0x0000008c   Code   RO         3550    i.Lcd_Get_UTF8_XLen  lcd_driver.o
-    0x08001450   0x08001450   0x00000048   Code   RO         3551    i.Lcd_Get_UTF8_YLine  lcd_driver.o
-    0x08001498   0x08001498   0x00000064   Code   RO         3552    i.Lcd_Set_Driver_Box  lcd_driver.o
-    0x080014fc   0x080014fc   0x000000e0   Code   RO         3553    i.Lcd_Set_Driver_Mode  lcd_driver.o
-    0x080015dc   0x080015dc   0x0000007c   Code   RO         5040    i.Lcd_Wegui_Init    lcd_wegui_driver.o
-    0x08001658   0x08001658   0x00000002   Code   RO         3148    i.MemManage_Handler  stm32f10x_it.o
-    0x0800165a   0x0800165a   0x00000002   Code   RO         3149    i.NMI_Handler       stm32f10x_it.o
-    0x0800165c   0x0800165c   0x00000064   Code   RO           24    i.NVIC_Init         misc.o
-    0x080016c0   0x080016c0   0x00000002   Code   RO         3150    i.PendSV_Handler    stm32f10x_it.o
-    0x080016c2   0x080016c2   0x00000002   PAD
-    0x080016c4   0x080016c4   0x00000014   Code   RO         1670    i.RCC_ADCCLKConfig  stm32f10x_rcc.o
-    0x080016d8   0x080016d8   0x00000018   Code   RO         1671    i.RCC_AHBPeriphClockCmd  stm32f10x_rcc.o
-    0x080016f0   0x080016f0   0x00000018   Code   RO         1672    i.RCC_APB1PeriphClockCmd  stm32f10x_rcc.o
-    0x08001708   0x08001708   0x00000018   Code   RO         1674    i.RCC_APB2PeriphClockCmd  stm32f10x_rcc.o
-    0x08001720   0x08001720   0x00000090   Code   RO         1682    i.RCC_GetClocksFreq  stm32f10x_rcc.o
-    0x080017b0   0x080017b0   0x00000014   Code   RO         1694    i.RCC_PCLK2Config   stm32f10x_rcc.o
-    0x080017c4   0x080017c4   0x00000028   Code   RO         3554    i.RGB_Set_Driver_Colour  lcd_driver.o
-    0x080017ec   0x080017ec   0x00000024   Code   RO         3438    i.Read_rxRing_buff  stm32f103_wegui_uart_port.o
-    0x08001810   0x08001810   0x00000054   Code   RO         5041    i.Reflash_CpuLoad   lcd_wegui_driver.o
-    0x08001864   0x08001864   0x00000044   Code   RO         5042    i.Reflash_fps       lcd_wegui_driver.o
-    0x080018a8   0x080018a8   0x00000014   Code   RO         2683    i.SPI_Cmd           stm32f10x_spi.o
-    0x080018bc   0x080018bc   0x00000038   Code   RO         2696    i.SPI_Init          stm32f10x_spi.o
-    0x080018f4   0x080018f4   0x0000002e   Code   RO         4181    i.ST7735_Clear      st7735.o
-    0x08001922   0x08001922   0x00000002   PAD
-    0x08001924   0x08001924   0x000001a8   Code   RO         4186    i.ST7735_Init       st7735.o
-    0x08001acc   0x08001acc   0x00000078   Code   RO         4191    i.ST7735_Set_Addr   st7735.o
-    0x08001b44   0x08001b44   0x00000018   Code   RO         4193    i.ST7735_Set_RGB565_Mode  st7735.o
-    0x08001b5c   0x08001b5c   0x00000018   Code   RO         4196    i.ST7735_Sleep_Out  st7735.o
-    0x08001b74   0x08001b74   0x00000018   Code   RO         4197    i.ST7735_Soft_Reset  st7735.o
-    0x08001b8c   0x08001b8c   0x00000002   Code   RO         3151    i.SVC_Handler       stm32f10x_it.o
-    0x08001b8e   0x08001b8e   0x00000002   PAD
-    0x08001b90   0x08001b90   0x000000a8   Code   RO         3215    i.SetSysClockTo72   system_stm32f10x.o
-    0x08001c38   0x08001c38   0x00000010   Code   RO         3262    i.Set_SPI_DataSize_8b  stm32f103_lcd_hard_4spi_port.o
-    0x08001c48   0x08001c48   0x00000010   Code   RO         5122    i.Set_language_Chinese  lcd_wegui_menu_app.o
-    0x08001c58   0x08001c58   0x00000010   Code   RO         5123    i.Set_language_English  lcd_wegui_menu_app.o
-    0x08001c68   0x08001c68   0x00000020   Code   RO         3152    i.SysTick_Handler   stm32f10x_it.o
-    0x08001c88   0x08001c88   0x00000050   Code   RO         3217    i.SystemInit        system_stm32f10x.o
-    0x08001cd8   0x08001cd8   0x00000090   Code   RO         3439    i.USART2_IRQHandler  stm32f103_wegui_uart_port.o
-    0x08001d68   0x08001d68   0x00000014   Code   RO         2880    i.USART_Cmd         stm32f10x_usart.o
-    0x08001d7c   0x08001d7c   0x0000000e   Code   RO         2883    i.USART_GetFlagStatus  stm32f10x_usart.o
-    0x08001d8a   0x08001d8a   0x0000003e   Code   RO         2884    i.USART_GetITStatus  stm32f10x_usart.o
-    0x08001dc8   0x08001dc8   0x00000030   Code   RO         2886    i.USART_ITConfig    stm32f10x_usart.o
-    0x08001df8   0x08001df8   0x000000ac   Code   RO         2887    i.USART_Init        stm32f10x_usart.o
-    0x08001ea4   0x08001ea4   0x00000008   Code   RO         2894    i.USART_ReceiveData  stm32f10x_usart.o
-    0x08001eac   0x08001eac   0x00000008   Code   RO         2897    i.USART_SendData    stm32f10x_usart.o
-    0x08001eb4   0x08001eb4   0x00000030   Code   RO         5124    i.Uart_Screen_App_Begin  lcd_wegui_menu_app.o
-    0x08001ee4   0x08001ee4   0x00000002   Code   RO         5125    i.Uart_Screen_App_Loop  lcd_wegui_menu_app.o
-    0x08001ee6   0x08001ee6   0x00000002   Code   RO         5126    i.Uart_Screen_App_Quit  lcd_wegui_menu_app.o
-    0x08001ee8   0x08001ee8   0x00000002   Code   RO         5127    i.Uart_Screen_Refresh  lcd_wegui_menu_app.o
-    0x08001eea   0x08001eea   0x00000002   PAD
-    0x08001eec   0x08001eec   0x0000004c   Code   RO         3440    i.Uart_keyLeft      stm32f103_wegui_uart_port.o
-    0x08001f38   0x08001f38   0x00000050   Code   RO         3441    i.Uart_keyRight     stm32f103_wegui_uart_port.o
-    0x08001f88   0x08001f88   0x00000050   Code   RO         3442    i.Uart_keyUp        stm32f103_wegui_uart_port.o
-    0x08001fd8   0x08001fd8   0x00000002   Code   RO         3153    i.UsageFault_Handler  stm32f10x_it.o
-    0x08001fda   0x08001fda   0x00000002   PAD
-    0x08001fdc   0x08001fdc   0x0000003c   Code   RO         5043    i.Wegui_1ms_stick   lcd_wegui_driver.o
-    0x08002018   0x08002018   0x000000ac   Code   RO         3361    i.Wegui_4key_port_Init  stm32f103_wegui_4key_port.o
-    0x080020c4   0x080020c4   0x0000002c   Code   RO         5044    i.Wegui_Hello_Word  lcd_wegui_driver.o
-    0x080020f0   0x080020f0   0x00000022   Code   RO         3362    i.Wegui_Interface_stick  stm32f103_wegui_4key_port.o
-    0x08002112   0x08002112   0x00000002   PAD
-    0x08002114   0x08002114   0x00000094   Code   RO         3363    i.Wegui_Key_Down    stm32f103_wegui_4key_port.o
-    0x080021a8   0x080021a8   0x00000094   Code   RO         3364    i.Wegui_Key_Left    stm32f103_wegui_4key_port.o
-    0x0800223c   0x0800223c   0x000000a0   Code   RO         3365    i.Wegui_Key_Right   stm32f103_wegui_4key_port.o
-    0x080022dc   0x080022dc   0x000000a0   Code   RO         3366    i.Wegui_Key_Up      stm32f103_wegui_4key_port.o
-    0x0800237c   0x0800237c   0x0000007c   Code   RO         5276    i.Wegui_Push_Message_tip  lcd_wegui_tip.o
-    0x080023f8   0x080023f8   0x000000a0   Code   RO         5277    i.Wegui_Push_Slider_tip  lcd_wegui_tip.o
-    0x08002498   0x08002498   0x00000014   Code   RO         5278    i.Wegui_Tip_Quit    lcd_wegui_tip.o
-    0x080024ac   0x080024ac   0x00000030   Code   RO         5279    i.Wegui_Tip_Save_andQuit  lcd_wegui_tip.o
-    0x080024dc   0x080024dc   0x00000038   Code   RO         5280    i.Wegui_Tip_Value_Add  lcd_wegui_tip.o
-    0x08002514   0x08002514   0x00000038   Code   RO         5281    i.Wegui_Tip_Value_Dec  lcd_wegui_tip.o
-    0x0800254c   0x0800254c   0x00000024   Code   RO         3443    i.Wegui_UartSend_1Dat  stm32f103_wegui_uart_port.o
-    0x08002570   0x08002570   0x0000001a   Code   RO         3444    i.Wegui_UartSend_nDat  stm32f103_wegui_uart_port.o
-    0x0800258a   0x0800258a   0x00000002   PAD
-    0x0800258c   0x0800258c   0x000000bc   Code   RO         3445    i.Wegui_Uart_Port_Init  stm32f103_wegui_uart_port.o
-    0x08002648   0x08002648   0x000000cc   Code   RO         5045    i.Wegui_enter_menu  lcd_wegui_driver.o
-    0x08002714   0x08002714   0x00000008   Code   RO         5046    i.Wegui_get_string  lcd_wegui_driver.o
-    0x0800271c   0x0800271c   0x000000e4   Code   RO         5047    i.Wegui_loop_func   lcd_wegui_driver.o
-    0x08002800   0x08002800   0x0000009c   Code   RO         5224    i.Wegui_mList_Init  lcd_wegui_menu_mlist.o
-    0x0800289c   0x0800289c   0x0000002c   Code   RO         5225    i.Wegui_mlist_Back_menu  lcd_wegui_menu_mlist.o
-    0x080028c8   0x080028c8   0x00000090   Code   RO         5226    i.Wegui_mlist_Enter_cursor  lcd_wegui_menu_mlist.o
-    0x08002958   0x08002958   0x00000020   Code   RO         5227    i.Wegui_mlist_cursor_Next  lcd_wegui_menu_mlist.o
-    0x08002978   0x08002978   0x00000014   Code   RO         5228    i.Wegui_mlist_cursor_Prev  lcd_wegui_menu_mlist.o
-    0x0800298c   0x0800298c   0x000004b4   Code   RO         5229    i.Wegui_show_mList  lcd_wegui_menu_mlist.o
-    0x08002e40   0x08002e40   0x000002c0   Code   RO         5282    i.Wegui_show_tip    lcd_wegui_tip.o
-    0x08003100   0x08003100   0x0000037c   Code   RO         3446    i.Wegui_uart_rx_default_func  stm32f103_wegui_uart_port.o
-    0x0800347c   0x0800347c   0x0000004c   Code   RO         3447    i.Wegui_uart_rx_stick  stm32f103_wegui_uart_port.o
-    0x080034c8   0x080034c8   0x0000010c   Code   RO         5048    i.Wegui_update_info  lcd_wegui_driver.o
-    0x080035d4   0x080035d4   0x0000002c   Code   RO         3448    i.Write_rxRing      stm32f103_wegui_uart_port.o
-    0x08003600   0x08003600   0x0000000e   Code   RO         5355    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x0800360e   0x0800360e   0x00000002   Code   RO         5356    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08003610   0x08003610   0x0000000e   Code   RO         5357    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x0800361e   0x0800361e   0x00000002   PAD
-    0x08003620   0x08003620   0x00000098   Code   RO         5049    i.itoa              lcd_wegui_driver.o
-    0x080036b8   0x080036b8   0x00000090   Code   RO         3555    i.lcd_driver_Init   lcd_driver.o
-    0x08003748   0x08003748   0x00000028   Code   RO         3556    i.lcd_driver_Write_0  lcd_driver.o
-    0x08003770   0x08003770   0x00000064   Code   RO         3557    i.lcd_driver_Write_0_inBox  lcd_driver.o
-    0x080037d4   0x080037d4   0x00000028   Code   RO         3558    i.lcd_driver_Write_1  lcd_driver.o
-    0x080037fc   0x080037fc   0x00000068   Code   RO         3559    i.lcd_driver_Write_1_inBox  lcd_driver.o
-    0x08003864   0x08003864   0x00000028   Code   RO         3560    i.lcd_driver_Write_2  lcd_driver.o
-    0x0800388c   0x0800388c   0x00000068   Code   RO         3561    i.lcd_driver_Write_2_inBox  lcd_driver.o
-    0x080038f4   0x080038f4   0x00000028   Code   RO         3562    i.lcd_driver_Write_3  lcd_driver.o
-    0x0800391c   0x0800391c   0x00000068   Code   RO         3563    i.lcd_driver_Write_3_inBox  lcd_driver.o
-    0x08003984   0x08003984   0x00000028   Code   RO         3564    i.lcd_driver_Write_4  lcd_driver.o
-    0x080039ac   0x080039ac   0x00000068   Code   RO         3565    i.lcd_driver_Write_4_inBox  lcd_driver.o
-    0x08003a14   0x08003a14   0x00000028   Code   RO         3566    i.lcd_driver_Write_5  lcd_driver.o
-    0x08003a3c   0x08003a3c   0x00000068   Code   RO         3567    i.lcd_driver_Write_5_inBox  lcd_driver.o
-    0x08003aa4   0x08003aa4   0x00000028   Code   RO         3568    i.lcd_driver_Write_6  lcd_driver.o
-    0x08003acc   0x08003acc   0x00000068   Code   RO         3569    i.lcd_driver_Write_6_inBox  lcd_driver.o
-    0x08003b34   0x08003b34   0x00000028   Code   RO         3570    i.lcd_driver_Write_7  lcd_driver.o
-    0x08003b5c   0x08003b5c   0x00000068   Code   RO         3571    i.lcd_driver_Write_7_inBox  lcd_driver.o
-    0x08003bc4   0x08003bc4   0x00000028   Code   RO         3572    i.lcd_driver_Write_inv  lcd_driver.o
-    0x08003bec   0x08003bec   0x0000005c   Code   RO         3573    i.lcd_driver_Write_inv_inBox  lcd_driver.o
-    0x08003c48   0x08003c48   0x00000004   Code   RO         5128    i.m_App_ThemeClock_Begin  lcd_wegui_menu_app.o
-    0x08003c4c   0x08003c4c   0x00000002   Code   RO         5129    i.m_App_ThemeClock_Loop  lcd_wegui_menu_app.o
-    0x08003c4e   0x08003c4e   0x00000002   Code   RO         5130    i.m_App_ThemeClock_Quit  lcd_wegui_menu_app.o
-    0x08003c50   0x08003c50   0x000000b8   Code   RO         5131    i.m_App_ThemeClock_Refresh  lcd_wegui_menu_app.o
-    0x08003d08   0x08003d08   0x00000024   Code   RO         5132    i.m_wDemo_wMessage_ADC_func  lcd_wegui_menu_app.o
-    0x08003d2c   0x08003d2c   0x0000004c   Code   RO         5133    i.m_wDemo_wMessage_Pres2_func  lcd_wegui_menu_app.o
-    0x08003d78   0x08003d78   0x00000024   Code   RO         5134    i.m_wDemo_wMessage_Pres_func  lcd_wegui_menu_app.o
-    0x08003d9c   0x08003d9c   0x00000058   Code   RO         3059    i.main              main.o
-    0x08003df4   0x08003df4   0x00000010   Code   RO         3450    i.rxRing_par_Init   stm32f103_wegui_uart_port.o
-    0x08003e04   0x08003e04   0x0000011c   Code   RO         3060    i.startup_init      main.o
-    0x08003f20   0x08003f20   0x00000014   Code   RO         5135    i.update_Wegui_screen_brightness  lcd_wegui_menu_app.o
-    0x08003f34   0x08003f34   0x00000012   Data   RO         3575    .constdata          lcd_driver.o
-    0x08003f46   0x08003f46   0x00000002   PAD
-    0x08003f48   0x08003f48   0x0000000c   Data   RO         3780    .constdata          lcd_res.o
-    0x08003f54   0x08003f54   0x0000000c   Data   RO         3783    .constdata          lcd_res.o
-    0x08003f60   0x08003f60   0x00000028   Data   RO         5136    .constdata          lcd_wegui_menu_app.o
-    0x08003f88   0x08003f88   0x00000015   Data   RO         4956    .conststring        user_wegui_menu.o
-    0x08003f9d   0x08003f9d   0x00000003   PAD
-    0x08003fa0   0x08003fa0   0x00000032   Data   RO         4957    .conststring        user_wegui_menu.o
-    0x08003fd2   0x08003fd2   0x00000002   PAD
-    0x08003fd4   0x08003fd4   0x00000035   Data   RO         4958    .conststring        user_wegui_menu.o
-    0x08004009   0x08004009   0x00000003   PAD
-    0x0800400c   0x0800400c   0x0000003a   Data   RO         4959    .conststring        user_wegui_menu.o
-    0x08004046   0x08004046   0x00000002   PAD
-    0x08004048   0x08004048   0x00000027   Data   RO         4960    .conststring        user_wegui_menu.o
-    0x0800406f   0x0800406f   0x00000001   PAD
-    0x08004070   0x08004070   0x00000024   Data   RO         4961    .conststring        user_wegui_menu.o
-    0x08004094   0x08004094   0x00000024   Data   RO         4962    .conststring        user_wegui_menu.o
-    0x080040b8   0x080040b8   0x00000024   Data   RO         4963    .conststring        user_wegui_menu.o
-    0x080040dc   0x080040dc   0x00000024   Data   RO         4964    .conststring        user_wegui_menu.o
-    0x08004100   0x08004100   0x00000024   Data   RO         4965    .conststring        user_wegui_menu.o
-    0x08004124   0x08004124   0x00000029   Data   RO         4966    .conststring        user_wegui_menu.o
-    0x0800414d   0x0800414d   0x00000003   PAD
-    0x08004150   0x08004150   0x0000004d   Data   RO         4967    .conststring        user_wegui_menu.o
-    0x0800419d   0x0800419d   0x00000003   PAD
-    0x080041a0   0x080041a0   0x0000000a   Data   RO         4968    .conststring        user_wegui_menu.o
-    0x080041aa   0x080041aa   0x00000002   PAD
-    0x080041ac   0x080041ac   0x00000036   Data   RO         4969    .conststring        user_wegui_menu.o
-    0x080041e2   0x080041e2   0x00000002   PAD
-    0x080041e4   0x080041e4   0x00000018   Data   RO         4970    .conststring        user_wegui_menu.o
-    0x080041fc   0x080041fc   0x00000010   Data   RO         4972    .conststring        user_wegui_menu.o
-    0x0800420c   0x0800420c   0x00000025   Data   RO         4973    .conststring        user_wegui_menu.o
-    0x08004231   0x08004231   0x00000003   PAD
-    0x08004234   0x08004234   0x00000027   Data   RO         4974    .conststring        user_wegui_menu.o
-    0x0800425b   0x0800425b   0x00000001   PAD
-    0x0800425c   0x0800425c   0x0000002f   Data   RO         4975    .conststring        user_wegui_menu.o
-    0x0800428b   0x0800428b   0x00000001   PAD
-    0x0800428c   0x0800428c   0x00000027   Data   RO         4976    .conststring        user_wegui_menu.o
-    0x080042b3   0x080042b3   0x00000001   PAD
-    0x080042b4   0x080042b4   0x0000002e   Data   RO         4977    .conststring        user_wegui_menu.o
-    0x080042e2   0x080042e2   0x00000002   PAD
-    0x080042e4   0x080042e4   0x00000039   Data   RO         4978    .conststring        user_wegui_menu.o
-    0x0800431d   0x0800431d   0x00000003   PAD
-    0x08004320   0x08004320   0x0000003c   Data   RO         4979    .conststring        user_wegui_menu.o
-    0x0800435c   0x0800435c   0x00000023   Data   RO         4980    .conststring        user_wegui_menu.o
-    0x0800437f   0x0800437f   0x00000001   PAD
-    0x08004380   0x08004380   0x0000002a   Data   RO         4981    .conststring        user_wegui_menu.o
-    0x080043aa   0x080043aa   0x00000002   PAD
-    0x080043ac   0x080043ac   0x00000035   Data   RO         4982    .conststring        user_wegui_menu.o
-    0x080043e1   0x080043e1   0x00000003   PAD
-    0x080043e4   0x080043e4   0x0000002a   Data   RO         4983    .conststring        user_wegui_menu.o
-    0x0800440e   0x0800440e   0x00000002   PAD
-    0x08004410   0x08004410   0x00000043   Data   RO         4984    .conststring        user_wegui_menu.o
-    0x08004453   0x08004453   0x00000001   PAD
-    0x08004454   0x08004454   0x00000036   Data   RO         4985    .conststring        user_wegui_menu.o
-    0x0800448a   0x0800448a   0x00000002   PAD
-    0x0800448c   0x0800448c   0x0000001f   Data   RO         4986    .conststring        user_wegui_menu.o
-    0x080044ab   0x080044ab   0x00000001   PAD
-    0x080044ac   0x080044ac   0x00000023   Data   RO         4987    .conststring        user_wegui_menu.o
-    0x080044cf   0x080044cf   0x00000001   PAD
-    0x080044d0   0x080044d0   0x00000025   Data   RO         4988    .conststring        user_wegui_menu.o
-    0x080044f5   0x080044f5   0x00000003   PAD
-    0x080044f8   0x080044f8   0x00000047   Data   RO         5137    .conststring        lcd_wegui_menu_app.o
-    0x0800453f   0x0800453f   0x00000001   PAD
-    0x08004540   0x08004540   0x00000475   Data   RO         3784    .conststrlit        lcd_res.o
-    0x080049b5   0x080049b5   0x00000003   PAD
-    0x080049b8   0x080049b8   0x00000705   Data   RO         3787    .conststrlit        lcd_res.o
-    0x080050bd   0x080050bd   0x00000003   PAD
-    0x080050c0   0x080050c0   0x00000020   Data   RO         5353    Region$$Table       anon$$obj.o
+    0x0800097c   0x0800097c   0x000001a8   Code   RO         3536    i.Lcd_Draw_Circel_part  lcd_driver.o
+    0x08000b24   0x08000b24   0x00000060   Code   RO         3537    i.Lcd_Draw_HLine    lcd_driver.o
+    0x08000b84   0x08000b84   0x000000c8   Code   RO         3538    i.Lcd_Draw_Line     lcd_driver.o
+    0x08000c4c   0x08000c4c   0x00000094   Code   RO         3539    i.Lcd_Draw_One_Byte  lcd_driver.o
+    0x08000ce0   0x08000ce0   0x00000006   Code   RO         3540    i.Lcd_Draw_Pixl     lcd_driver.o
+    0x08000ce6   0x08000ce6   0x00000002   PAD
+    0x08000ce8   0x08000ce8   0x00000118   Code   RO         3541    i.Lcd_Draw_RBox     lcd_driver.o
+    0x08000e00   0x08000e00   0x000000b8   Code   RO         3542    i.Lcd_Draw_UTF8_String  lcd_driver.o
+    0x08000eb8   0x08000eb8   0x0000004c   Code   RO         3543    i.Lcd_Draw_Unicode  lcd_driver.o
+    0x08000f04   0x08000f04   0x000000bc   Code   RO         3544    i.Lcd_Draw_VLine    lcd_driver.o
+    0x08000fc0   0x08000fc0   0x0000011c   Code   RO         3546    i.Lcd_Fill_Box      lcd_driver.o
+    0x080010dc   0x080010dc   0x000001f0   Code   RO         3547    i.Lcd_Fill_Circel_part  lcd_driver.o
+    0x080012cc   0x080012cc   0x0000010c   Code   RO         3549    i.Lcd_Fill_RBox     lcd_driver.o
+    0x080013d8   0x080013d8   0x0000008c   Code   RO         3550    i.Lcd_Get_UTF8_XLen  lcd_driver.o
+    0x08001464   0x08001464   0x00000048   Code   RO         3551    i.Lcd_Get_UTF8_YLine  lcd_driver.o
+    0x080014ac   0x080014ac   0x00000064   Code   RO         3552    i.Lcd_Set_Driver_Box  lcd_driver.o
+    0x08001510   0x08001510   0x000000e0   Code   RO         3553    i.Lcd_Set_Driver_Mode  lcd_driver.o
+    0x080015f0   0x080015f0   0x0000004c   Code   RO         5040    i.Lcd_Wegui_Init    lcd_wegui_driver.o
+    0x0800163c   0x0800163c   0x00000002   Code   RO         3148    i.MemManage_Handler  stm32f10x_it.o
+    0x0800163e   0x0800163e   0x00000002   Code   RO         3149    i.NMI_Handler       stm32f10x_it.o
+    0x08001640   0x08001640   0x00000064   Code   RO           24    i.NVIC_Init         misc.o
+    0x080016a4   0x080016a4   0x00000002   Code   RO         3150    i.PendSV_Handler    stm32f10x_it.o
+    0x080016a6   0x080016a6   0x00000002   PAD
+    0x080016a8   0x080016a8   0x00000014   Code   RO         1670    i.RCC_ADCCLKConfig  stm32f10x_rcc.o
+    0x080016bc   0x080016bc   0x00000018   Code   RO         1671    i.RCC_AHBPeriphClockCmd  stm32f10x_rcc.o
+    0x080016d4   0x080016d4   0x00000018   Code   RO         1672    i.RCC_APB1PeriphClockCmd  stm32f10x_rcc.o
+    0x080016ec   0x080016ec   0x00000018   Code   RO         1674    i.RCC_APB2PeriphClockCmd  stm32f10x_rcc.o
+    0x08001704   0x08001704   0x00000090   Code   RO         1682    i.RCC_GetClocksFreq  stm32f10x_rcc.o
+    0x08001794   0x08001794   0x00000014   Code   RO         1694    i.RCC_PCLK2Config   stm32f10x_rcc.o
+    0x080017a8   0x080017a8   0x00000028   Code   RO         3554    i.RGB_Set_Driver_Colour  lcd_driver.o
+    0x080017d0   0x080017d0   0x00000024   Code   RO         3438    i.Read_rxRing_buff  stm32f103_wegui_uart_port.o
+    0x080017f4   0x080017f4   0x00000050   Code   RO         5041    i.Reflash_CpuLoad   lcd_wegui_driver.o
+    0x08001844   0x08001844   0x00000044   Code   RO         5042    i.Reflash_fps       lcd_wegui_driver.o
+    0x08001888   0x08001888   0x00000014   Code   RO         2683    i.SPI_Cmd           stm32f10x_spi.o
+    0x0800189c   0x0800189c   0x00000038   Code   RO         2696    i.SPI_Init          stm32f10x_spi.o
+    0x080018d4   0x080018d4   0x0000002e   Code   RO         4181    i.ST7735_Clear      st7735.o
+    0x08001902   0x08001902   0x00000002   PAD
+    0x08001904   0x08001904   0x000001a8   Code   RO         4186    i.ST7735_Init       st7735.o
+    0x08001aac   0x08001aac   0x00000078   Code   RO         4191    i.ST7735_Set_Addr   st7735.o
+    0x08001b24   0x08001b24   0x00000018   Code   RO         4193    i.ST7735_Set_RGB565_Mode  st7735.o
+    0x08001b3c   0x08001b3c   0x00000018   Code   RO         4196    i.ST7735_Sleep_Out  st7735.o
+    0x08001b54   0x08001b54   0x00000018   Code   RO         4197    i.ST7735_Soft_Reset  st7735.o
+    0x08001b6c   0x08001b6c   0x00000002   Code   RO         3151    i.SVC_Handler       stm32f10x_it.o
+    0x08001b6e   0x08001b6e   0x00000002   PAD
+    0x08001b70   0x08001b70   0x000000a8   Code   RO         3215    i.SetSysClockTo72   system_stm32f10x.o
+    0x08001c18   0x08001c18   0x00000010   Code   RO         3262    i.Set_SPI_DataSize_8b  stm32f103_lcd_hard_4spi_port.o
+    0x08001c28   0x08001c28   0x00000010   Code   RO         5121    i.Set_language_Chinese  lcd_wegui_menu_app.o
+    0x08001c38   0x08001c38   0x00000010   Code   RO         5122    i.Set_language_English  lcd_wegui_menu_app.o
+    0x08001c48   0x08001c48   0x00000020   Code   RO         3152    i.SysTick_Handler   stm32f10x_it.o
+    0x08001c68   0x08001c68   0x00000050   Code   RO         3217    i.SystemInit        system_stm32f10x.o
+    0x08001cb8   0x08001cb8   0x00000090   Code   RO         3439    i.USART2_IRQHandler  stm32f103_wegui_uart_port.o
+    0x08001d48   0x08001d48   0x00000014   Code   RO         2880    i.USART_Cmd         stm32f10x_usart.o
+    0x08001d5c   0x08001d5c   0x0000000e   Code   RO         2883    i.USART_GetFlagStatus  stm32f10x_usart.o
+    0x08001d6a   0x08001d6a   0x0000003e   Code   RO         2884    i.USART_GetITStatus  stm32f10x_usart.o
+    0x08001da8   0x08001da8   0x00000030   Code   RO         2886    i.USART_ITConfig    stm32f10x_usart.o
+    0x08001dd8   0x08001dd8   0x000000ac   Code   RO         2887    i.USART_Init        stm32f10x_usart.o
+    0x08001e84   0x08001e84   0x00000008   Code   RO         2894    i.USART_ReceiveData  stm32f10x_usart.o
+    0x08001e8c   0x08001e8c   0x00000008   Code   RO         2897    i.USART_SendData    stm32f10x_usart.o
+    0x08001e94   0x08001e94   0x00000030   Code   RO         5123    i.Uart_Screen_App_Begin  lcd_wegui_menu_app.o
+    0x08001ec4   0x08001ec4   0x00000002   Code   RO         5124    i.Uart_Screen_App_Loop  lcd_wegui_menu_app.o
+    0x08001ec6   0x08001ec6   0x00000002   Code   RO         5125    i.Uart_Screen_App_Quit  lcd_wegui_menu_app.o
+    0x08001ec8   0x08001ec8   0x00000002   Code   RO         5126    i.Uart_Screen_Refresh  lcd_wegui_menu_app.o
+    0x08001eca   0x08001eca   0x00000002   PAD
+    0x08001ecc   0x08001ecc   0x0000004c   Code   RO         3440    i.Uart_keyLeft      stm32f103_wegui_uart_port.o
+    0x08001f18   0x08001f18   0x00000050   Code   RO         3441    i.Uart_keyRight     stm32f103_wegui_uart_port.o
+    0x08001f68   0x08001f68   0x00000050   Code   RO         3442    i.Uart_keyUp        stm32f103_wegui_uart_port.o
+    0x08001fb8   0x08001fb8   0x00000002   Code   RO         3153    i.UsageFault_Handler  stm32f10x_it.o
+    0x08001fba   0x08001fba   0x00000002   PAD
+    0x08001fbc   0x08001fbc   0x0000003c   Code   RO         5043    i.Wegui_1ms_stick   lcd_wegui_driver.o
+    0x08001ff8   0x08001ff8   0x000000ac   Code   RO         3361    i.Wegui_4key_port_Init  stm32f103_wegui_4key_port.o
+    0x080020a4   0x080020a4   0x0000002c   Code   RO         5044    i.Wegui_Hello_Word  lcd_wegui_driver.o
+    0x080020d0   0x080020d0   0x00000022   Code   RO         3362    i.Wegui_Interface_stick  stm32f103_wegui_4key_port.o
+    0x080020f2   0x080020f2   0x00000002   PAD
+    0x080020f4   0x080020f4   0x00000094   Code   RO         3363    i.Wegui_Key_Down    stm32f103_wegui_4key_port.o
+    0x08002188   0x08002188   0x00000094   Code   RO         3364    i.Wegui_Key_Left    stm32f103_wegui_4key_port.o
+    0x0800221c   0x0800221c   0x000000a0   Code   RO         3365    i.Wegui_Key_Right   stm32f103_wegui_4key_port.o
+    0x080022bc   0x080022bc   0x000000a0   Code   RO         3366    i.Wegui_Key_Up      stm32f103_wegui_4key_port.o
+    0x0800235c   0x0800235c   0x0000007c   Code   RO         5275    i.Wegui_Push_Message_tip  lcd_wegui_tip.o
+    0x080023d8   0x080023d8   0x000000a0   Code   RO         5276    i.Wegui_Push_Slider_tip  lcd_wegui_tip.o
+    0x08002478   0x08002478   0x00000014   Code   RO         5277    i.Wegui_Tip_Quit    lcd_wegui_tip.o
+    0x0800248c   0x0800248c   0x00000030   Code   RO         5278    i.Wegui_Tip_Save_andQuit  lcd_wegui_tip.o
+    0x080024bc   0x080024bc   0x00000038   Code   RO         5279    i.Wegui_Tip_Value_Add  lcd_wegui_tip.o
+    0x080024f4   0x080024f4   0x00000038   Code   RO         5280    i.Wegui_Tip_Value_Dec  lcd_wegui_tip.o
+    0x0800252c   0x0800252c   0x00000024   Code   RO         3443    i.Wegui_UartSend_1Dat  stm32f103_wegui_uart_port.o
+    0x08002550   0x08002550   0x0000001a   Code   RO         3444    i.Wegui_UartSend_nDat  stm32f103_wegui_uart_port.o
+    0x0800256a   0x0800256a   0x00000002   PAD
+    0x0800256c   0x0800256c   0x000000bc   Code   RO         3445    i.Wegui_Uart_Port_Init  stm32f103_wegui_uart_port.o
+    0x08002628   0x08002628   0x000000cc   Code   RO         5045    i.Wegui_enter_menu  lcd_wegui_driver.o
+    0x080026f4   0x080026f4   0x00000008   Code   RO         5046    i.Wegui_get_string  lcd_wegui_driver.o
+    0x080026fc   0x080026fc   0x000000e4   Code   RO         5047    i.Wegui_loop_func   lcd_wegui_driver.o
+    0x080027e0   0x080027e0   0x0000009c   Code   RO         5223    i.Wegui_mList_Init  lcd_wegui_menu_mlist.o
+    0x0800287c   0x0800287c   0x0000002c   Code   RO         5224    i.Wegui_mlist_Back_menu  lcd_wegui_menu_mlist.o
+    0x080028a8   0x080028a8   0x00000090   Code   RO         5225    i.Wegui_mlist_Enter_cursor  lcd_wegui_menu_mlist.o
+    0x08002938   0x08002938   0x00000020   Code   RO         5226    i.Wegui_mlist_cursor_Next  lcd_wegui_menu_mlist.o
+    0x08002958   0x08002958   0x00000014   Code   RO         5227    i.Wegui_mlist_cursor_Prev  lcd_wegui_menu_mlist.o
+    0x0800296c   0x0800296c   0x000004b8   Code   RO         5228    i.Wegui_show_mList  lcd_wegui_menu_mlist.o
+    0x08002e24   0x08002e24   0x000002c0   Code   RO         5281    i.Wegui_show_tip    lcd_wegui_tip.o
+    0x080030e4   0x080030e4   0x0000037c   Code   RO         3446    i.Wegui_uart_rx_default_func  stm32f103_wegui_uart_port.o
+    0x08003460   0x08003460   0x0000004c   Code   RO         3447    i.Wegui_uart_rx_stick  stm32f103_wegui_uart_port.o
+    0x080034ac   0x080034ac   0x0000010c   Code   RO         5048    i.Wegui_update_info  lcd_wegui_driver.o
+    0x080035b8   0x080035b8   0x0000002c   Code   RO         3448    i.Write_rxRing      stm32f103_wegui_uart_port.o
+    0x080035e4   0x080035e4   0x0000000e   Code   RO         5354    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x080035f2   0x080035f2   0x00000002   Code   RO         5355    i.__scatterload_null  mc_w.l(handlers.o)
+    0x080035f4   0x080035f4   0x0000000e   Code   RO         5356    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08003602   0x08003602   0x00000002   PAD
+    0x08003604   0x08003604   0x00000098   Code   RO         5049    i.itoa              lcd_wegui_driver.o
+    0x0800369c   0x0800369c   0x00000090   Code   RO         3555    i.lcd_driver_Init   lcd_driver.o
+    0x0800372c   0x0800372c   0x00000028   Code   RO         3556    i.lcd_driver_Write_0  lcd_driver.o
+    0x08003754   0x08003754   0x00000064   Code   RO         3557    i.lcd_driver_Write_0_inBox  lcd_driver.o
+    0x080037b8   0x080037b8   0x00000028   Code   RO         3558    i.lcd_driver_Write_1  lcd_driver.o
+    0x080037e0   0x080037e0   0x00000068   Code   RO         3559    i.lcd_driver_Write_1_inBox  lcd_driver.o
+    0x08003848   0x08003848   0x00000028   Code   RO         3560    i.lcd_driver_Write_2  lcd_driver.o
+    0x08003870   0x08003870   0x00000068   Code   RO         3561    i.lcd_driver_Write_2_inBox  lcd_driver.o
+    0x080038d8   0x080038d8   0x00000028   Code   RO         3562    i.lcd_driver_Write_3  lcd_driver.o
+    0x08003900   0x08003900   0x00000068   Code   RO         3563    i.lcd_driver_Write_3_inBox  lcd_driver.o
+    0x08003968   0x08003968   0x00000028   Code   RO         3564    i.lcd_driver_Write_4  lcd_driver.o
+    0x08003990   0x08003990   0x00000068   Code   RO         3565    i.lcd_driver_Write_4_inBox  lcd_driver.o
+    0x080039f8   0x080039f8   0x00000028   Code   RO         3566    i.lcd_driver_Write_5  lcd_driver.o
+    0x08003a20   0x08003a20   0x00000068   Code   RO         3567    i.lcd_driver_Write_5_inBox  lcd_driver.o
+    0x08003a88   0x08003a88   0x00000028   Code   RO         3568    i.lcd_driver_Write_6  lcd_driver.o
+    0x08003ab0   0x08003ab0   0x00000068   Code   RO         3569    i.lcd_driver_Write_6_inBox  lcd_driver.o
+    0x08003b18   0x08003b18   0x00000028   Code   RO         3570    i.lcd_driver_Write_7  lcd_driver.o
+    0x08003b40   0x08003b40   0x00000068   Code   RO         3571    i.lcd_driver_Write_7_inBox  lcd_driver.o
+    0x08003ba8   0x08003ba8   0x00000028   Code   RO         3572    i.lcd_driver_Write_inv  lcd_driver.o
+    0x08003bd0   0x08003bd0   0x0000005c   Code   RO         3573    i.lcd_driver_Write_inv_inBox  lcd_driver.o
+    0x08003c2c   0x08003c2c   0x00000004   Code   RO         5127    i.m_App_ThemeClock_Begin  lcd_wegui_menu_app.o
+    0x08003c30   0x08003c30   0x00000002   Code   RO         5128    i.m_App_ThemeClock_Loop  lcd_wegui_menu_app.o
+    0x08003c32   0x08003c32   0x00000002   Code   RO         5129    i.m_App_ThemeClock_Quit  lcd_wegui_menu_app.o
+    0x08003c34   0x08003c34   0x000000b8   Code   RO         5130    i.m_App_ThemeClock_Refresh  lcd_wegui_menu_app.o
+    0x08003cec   0x08003cec   0x00000024   Code   RO         5131    i.m_wDemo_wMessage_ADC_func  lcd_wegui_menu_app.o
+    0x08003d10   0x08003d10   0x0000004c   Code   RO         5132    i.m_wDemo_wMessage_Pres2_func  lcd_wegui_menu_app.o
+    0x08003d5c   0x08003d5c   0x00000024   Code   RO         5133    i.m_wDemo_wMessage_Pres_func  lcd_wegui_menu_app.o
+    0x08003d80   0x08003d80   0x00000054   Code   RO         3059    i.main              main.o
+    0x08003dd4   0x08003dd4   0x00000010   Code   RO         3450    i.rxRing_par_Init   stm32f103_wegui_uart_port.o
+    0x08003de4   0x08003de4   0x0000011c   Code   RO         3060    i.startup_init      main.o
+    0x08003f00   0x08003f00   0x00000014   Code   RO         5134    i.update_Wegui_screen_brightness  lcd_wegui_menu_app.o
+    0x08003f14   0x08003f14   0x00000012   Data   RO         3575    .constdata          lcd_driver.o
+    0x08003f26   0x08003f26   0x00000002   PAD
+    0x08003f28   0x08003f28   0x0000000c   Data   RO         3780    .constdata          lcd_res.o
+    0x08003f34   0x08003f34   0x0000000c   Data   RO         3783    .constdata          lcd_res.o
+    0x08003f40   0x08003f40   0x00000028   Data   RO         5135    .constdata          lcd_wegui_menu_app.o
+    0x08003f68   0x08003f68   0x00000015   Data   RO         4956    .conststring        user_wegui_menu.o
+    0x08003f7d   0x08003f7d   0x00000003   PAD
+    0x08003f80   0x08003f80   0x00000032   Data   RO         4957    .conststring        user_wegui_menu.o
+    0x08003fb2   0x08003fb2   0x00000002   PAD
+    0x08003fb4   0x08003fb4   0x00000035   Data   RO         4958    .conststring        user_wegui_menu.o
+    0x08003fe9   0x08003fe9   0x00000003   PAD
+    0x08003fec   0x08003fec   0x0000003a   Data   RO         4959    .conststring        user_wegui_menu.o
+    0x08004026   0x08004026   0x00000002   PAD
+    0x08004028   0x08004028   0x00000027   Data   RO         4960    .conststring        user_wegui_menu.o
+    0x0800404f   0x0800404f   0x00000001   PAD
+    0x08004050   0x08004050   0x00000024   Data   RO         4961    .conststring        user_wegui_menu.o
+    0x08004074   0x08004074   0x00000024   Data   RO         4962    .conststring        user_wegui_menu.o
+    0x08004098   0x08004098   0x00000024   Data   RO         4963    .conststring        user_wegui_menu.o
+    0x080040bc   0x080040bc   0x00000024   Data   RO         4964    .conststring        user_wegui_menu.o
+    0x080040e0   0x080040e0   0x00000024   Data   RO         4965    .conststring        user_wegui_menu.o
+    0x08004104   0x08004104   0x00000029   Data   RO         4966    .conststring        user_wegui_menu.o
+    0x0800412d   0x0800412d   0x00000003   PAD
+    0x08004130   0x08004130   0x0000004d   Data   RO         4967    .conststring        user_wegui_menu.o
+    0x0800417d   0x0800417d   0x00000003   PAD
+    0x08004180   0x08004180   0x0000000a   Data   RO         4968    .conststring        user_wegui_menu.o
+    0x0800418a   0x0800418a   0x00000002   PAD
+    0x0800418c   0x0800418c   0x00000036   Data   RO         4969    .conststring        user_wegui_menu.o
+    0x080041c2   0x080041c2   0x00000002   PAD
+    0x080041c4   0x080041c4   0x00000018   Data   RO         4970    .conststring        user_wegui_menu.o
+    0x080041dc   0x080041dc   0x00000010   Data   RO         4972    .conststring        user_wegui_menu.o
+    0x080041ec   0x080041ec   0x00000025   Data   RO         4973    .conststring        user_wegui_menu.o
+    0x08004211   0x08004211   0x00000003   PAD
+    0x08004214   0x08004214   0x00000027   Data   RO         4974    .conststring        user_wegui_menu.o
+    0x0800423b   0x0800423b   0x00000001   PAD
+    0x0800423c   0x0800423c   0x0000002f   Data   RO         4975    .conststring        user_wegui_menu.o
+    0x0800426b   0x0800426b   0x00000001   PAD
+    0x0800426c   0x0800426c   0x00000027   Data   RO         4976    .conststring        user_wegui_menu.o
+    0x08004293   0x08004293   0x00000001   PAD
+    0x08004294   0x08004294   0x0000002e   Data   RO         4977    .conststring        user_wegui_menu.o
+    0x080042c2   0x080042c2   0x00000002   PAD
+    0x080042c4   0x080042c4   0x00000039   Data   RO         4978    .conststring        user_wegui_menu.o
+    0x080042fd   0x080042fd   0x00000003   PAD
+    0x08004300   0x08004300   0x0000003c   Data   RO         4979    .conststring        user_wegui_menu.o
+    0x0800433c   0x0800433c   0x00000023   Data   RO         4980    .conststring        user_wegui_menu.o
+    0x0800435f   0x0800435f   0x00000001   PAD
+    0x08004360   0x08004360   0x0000002a   Data   RO         4981    .conststring        user_wegui_menu.o
+    0x0800438a   0x0800438a   0x00000002   PAD
+    0x0800438c   0x0800438c   0x00000035   Data   RO         4982    .conststring        user_wegui_menu.o
+    0x080043c1   0x080043c1   0x00000003   PAD
+    0x080043c4   0x080043c4   0x0000002a   Data   RO         4983    .conststring        user_wegui_menu.o
+    0x080043ee   0x080043ee   0x00000002   PAD
+    0x080043f0   0x080043f0   0x00000043   Data   RO         4984    .conststring        user_wegui_menu.o
+    0x08004433   0x08004433   0x00000001   PAD
+    0x08004434   0x08004434   0x00000036   Data   RO         4985    .conststring        user_wegui_menu.o
+    0x0800446a   0x0800446a   0x00000002   PAD
+    0x0800446c   0x0800446c   0x0000001f   Data   RO         4986    .conststring        user_wegui_menu.o
+    0x0800448b   0x0800448b   0x00000001   PAD
+    0x0800448c   0x0800448c   0x00000023   Data   RO         4987    .conststring        user_wegui_menu.o
+    0x080044af   0x080044af   0x00000001   PAD
+    0x080044b0   0x080044b0   0x00000025   Data   RO         4988    .conststring        user_wegui_menu.o
+    0x080044d5   0x080044d5   0x00000003   PAD
+    0x080044d8   0x080044d8   0x00000047   Data   RO         5136    .conststring        lcd_wegui_menu_app.o
+    0x0800451f   0x0800451f   0x00000001   PAD
+    0x08004520   0x08004520   0x00000475   Data   RO         3784    .conststrlit        lcd_res.o
+    0x08004995   0x08004995   0x00000003   PAD
+    0x08004998   0x08004998   0x00000705   Data   RO         3787    .conststrlit        lcd_res.o
+    0x0800509d   0x0800509d   0x00000003   PAD
+    0x080050a0   0x080050a0   0x00000020   Data   RO         5352    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080050e0, Size: 0x00002b08, Max: 0x00005000, ABSOLUTE, COMPRESSED[0x000002c0])
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080050c0, Size: 0x00002b00, Max: 0x00005000, ABSOLUTE, COMPRESSED[0x000002c0])
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2434,16 +2428,16 @@ Memory Map of the image
     0x200006ec   COMPRESSED   0x00000038   Data   RW         5020    .data               user_wegui_menu.o
     0x20000724   COMPRESSED   0x00000038   Data   RW         5021    .data               user_wegui_menu.o
     0x2000075c   COMPRESSED   0x00000038   Data   RW         5022    .data               user_wegui_menu.o
-    0x20000794   COMPRESSED   0x00000018   Data   RW         5051    .data               lcd_wegui_driver.o
-    0x200007ac   COMPRESSED   0x0000000f   Data   RW         5138    .data               lcd_wegui_menu_app.o
-    0x200007bb   COMPRESSED   0x00000001   PAD
-    0x200007bc        -       0x00000050   Zero   RW         3263    .bss                stm32f103_lcd_hard_4spi_port.o
-    0x2000080c        -       0x00000046   Zero   RW         3451    .bss                stm32f103_wegui_uart_port.o
-    0x20000852   COMPRESSED   0x00000002   PAD
-    0x20000854        -       0x00001e40   Zero   RW         3574    .bss                lcd_driver.o
-    0x20002694        -       0x0000004c   Zero   RW         5050    .bss                lcd_wegui_driver.o
-    0x200026e0        -       0x00000028   Zero   RW         5230    .bss                lcd_wegui_menu_mlist.o
-    0x20002708        -       0x00000400   Zero   RW           17    STACK               startup_stm32f10x_md.o
+    0x20000794   COMPRESSED   0x00000058   Data   RW         5050    .data               lcd_wegui_driver.o
+    0x200007ec   COMPRESSED   0x0000000f   Data   RW         5137    .data               lcd_wegui_menu_app.o
+    0x200007fb   COMPRESSED   0x00000001   PAD
+    0x200007fc        -       0x00000050   Zero   RW         3263    .bss                stm32f103_lcd_hard_4spi_port.o
+    0x2000084c        -       0x00000046   Zero   RW         3451    .bss                stm32f103_wegui_uart_port.o
+    0x20000892   COMPRESSED   0x00000002   PAD
+    0x20000894        -       0x00001e40   Zero   RW         3574    .bss                lcd_driver.o
+    0x200026d4        -       0x00000028   Zero   RW         5229    .bss                lcd_wegui_menu_mlist.o
+    0x200026fc   COMPRESSED   0x00000004   PAD
+    0x20002700        -       0x00000400   Zero   RW           17    STACK               startup_stm32f10x_md.o
 
 
 ==============================================================================
@@ -2454,18 +2448,18 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
          0          0          0          0          0       4540   core_cm3.o
-      4856        350         18          0       7744      31491   lcd_driver.o
+      4876        348         18          0       7744      31499   lcd_driver.o
          0          0       2962          0          0       1393   lcd_res.o
-      1270        174          0         24         76      11493   lcd_wegui_driver.o
+      1218        126          0         88          0      11433   lcd_wegui_driver.o
        446         78        111         15          0       7851   lcd_wegui_menu_app.o
-      1600         62          0          0         40       6805   lcd_wegui_menu_mlist.o
+      1604         62          0          0         40       6773   lcd_wegui_menu_mlist.o
       1168         54          0          0          0       5456   lcd_wegui_tip.o
-       416         44          0          8          0      19122   main.o
+       412         44          0          8          0      19126   main.o
        100          6          0          0          0     245900   misc.o
-         0          0          0          0          0       3352   sh1106.o
+         0          0          0          0          0       3296   sh1106.o
        662        148          0          0          0       5407   st7735.o
         36          8        236          0       1024        904   startup_stm32f10x_md.o
-       934         74          0          0         80       5949   stm32f103_lcd_hard_4spi_port.o
+       934         74          0          0         80       5921   stm32f103_lcd_hard_4spi_port.o
        986        100          0         24          0       7459   stm32f103_wegui_4key_port.o
       1706        288          0          8         70      25165   stm32f103_wegui_uart_port.o
        282         10          0          0          0       8013   stm32f10x_adc.o
@@ -2478,9 +2472,9 @@ Image component sizes
          0          0       1344       1850          0       1988   user_wegui_menu.o
 
     ----------------------------------------------------------------------
-     15730       1482       4760       1980       9036     419883   Object Totals
+     15698       1432       4760       2044       8964     419719   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        22          0         57          3          2          0   (incl. Padding)
+        22          0         57          3          6          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -2520,15 +2514,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     15944       1498       4760       1980       9036     412347   Grand Totals
-     15944       1498       4760        704       9036     412347   ELF Image Totals (compressed)
-     15944       1498       4760        704          0          0   ROM Totals
+     15912       1448       4760       2044       8964     412183   Grand Totals
+     15912       1448       4760        704       8964     412183   ELF Image Totals (compressed)
+     15912       1448       4760        704          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                20704 (  20.22kB)
-    Total RW  Size (RW Data + ZI Data)             11016 (  10.76kB)
-    Total ROM Size (Code + RO Data + RW Data)      21408 (  20.91kB)
+    Total RO  Size (Code + RO Data)                20672 (  20.19kB)
+    Total RW  Size (RW Data + ZI Data)             11008 (  10.75kB)
+    Total ROM Size (Code + RO Data + RW Data)      21376 (  20.88kB)
 
 ==============================================================================
 

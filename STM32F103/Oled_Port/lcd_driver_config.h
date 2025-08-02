@@ -1,21 +1,23 @@
-#ifndef LCD_DRIVER_CONFIG_H
-#define LCD_DRIVER_CONFIG_H
 /*
 	Copyright 2025 Lu Zhihao
 	本程序仅供学习用途, 暂不公开对其他用途的授权
 */
+#ifndef LCD_DRIVER_CONFIG_H
+#define LCD_DRIVER_CONFIG_H
 
 /*--------------------------------------------------------------
   * Wegui : V0.5
   * Author: KOUFU
 	* https://space.bilibili.com/526926544
-	* https://github.com/KOUFU-DIY/WeGui_OLED
+	* https://github.com/KOUFU-DIY/WeGui_RGB
 ----------------------------------------------------------------*/
 /*--------------------------------------------------------------
-	* 版本更新 : WeGui RGB V0.5.1
-	* 1.修复页缓存大小不对齐,动态刷新模式的数据溢出问题!
-	* 2.修复屏幕分辨率宽度大于255引起的问题
-	* 3.修复进退菜单的一些问题
+	* 版本更新 : WeGui RGB V0.5.3
+	* 1.新支持型号:GD32E230C8,其引脚与F103一致,RAM缩减仅8k
+	* 2.修复TFT屏幕分辨率宽度大于255引起的问题
+	* 3.STM32F103版本动态刷新暂不支持细分, 大屏的动态刷新效果不佳, 若真有需要, 请催更
+	* 4.GD32E230供动态刷新细分的支持
+
 	
   * 版本更新 : WeGui RGB V0.5 
 	* WeGui OLED进阶版:WeGui RGB初版发布!
@@ -23,7 +25,6 @@
 	* 2. 完善"关于"和"开发者选项"列表中
 	* 3. 新增TFT屏幕的背光调节功能
 	* 4. 在OLED基础上增加了彩屏RGB多色玩法,持更多配色主题,更佳的视觉效果
-	
 	* 5.1 RGB版本基继承了OLED的所有功能, 部分功能作修改
 	* 5.2 OLED原本在write_1模式下执行Lcd_Clear_GRAM();显存会写0xff,
 	* 5.3 OLED原本在write_0模式下执行Lcd_Clear_GRAM();显存会写0x00,

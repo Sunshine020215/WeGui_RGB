@@ -858,9 +858,8 @@ int main(void)
 		//--------------主循环-----------------
 		if(sys1ms_stick)//1ms动作
 		{
-			sys1ms_stick--;
 			//1.主题时钟APP demo用
-			apptimer_ms++;
+			apptimer_ms+=sys1ms_stick;
 			//2.闪灯 若程序阻塞,灯会闪变慢
 			LED_Func();
 			//3.检测外部可调电阻ADC,取其值用于控件菜单演示
@@ -870,6 +869,7 @@ int main(void)
 				ADC_SoftwareStartConvCmd(ADC1, ENABLE);
 				m_wDemo_wMessage_ADC_func();//刷新将要显示的ADC值
 			}
+			sys1ms_stick = 0;
 		}
 	}
 }

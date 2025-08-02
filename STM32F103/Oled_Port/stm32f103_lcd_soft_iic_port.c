@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
 	Copyright 2025 Lu Zhihao
 	本程序仅供学习用途, 暂不公开对其他用途的授权
@@ -592,7 +591,7 @@ uint8_t LCD_Refresh(void)
 
 
 #endif
-=======
+
 /*
 	Copyright 2025 Lu Zhihao
 	本程序仅供学习用途, 暂不公开对其他用途的授权
@@ -1185,4 +1184,3 @@ uint8_t LCD_Refresh(void)
 
 
 #endif
->>>>>>> ea0fd6d6fb5590d308dd88f313413dd7bf3852fd
