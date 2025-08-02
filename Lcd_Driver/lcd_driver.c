@@ -16,6 +16,39 @@ const static uint8_t cal_1[] = {0x00,0x01,0x03,0x07,0x0F,0x1F,0x3F,0x7F,0xFF,0x5
 
 //--------------------------------------------------------------驱动接口--------------------------------------------------------------
 
+	
+	#if (defined LCD_USE_RGB565)
+/*--------------------------------------------------------------
+  * 名称: RGB_Set_Driver_Colour(uint8_t num,uint16_t colour)
+	* 传入: num 颜色序号 对应设置writer_num的笔刷颜色
+	* 传入: colour 颜色
+	* 功能: 设置驱动笔刷颜色
+  * 说明: 
+----------------------------------------------------------------*/
+void RGB_Set_Driver_Colour(uint8_t num,uint16_t colour)
+{
+		#if (LCD_COLOUR_BIT == 1)
+		static uint16_t colour_lastime[2]={0x0000,0x0000};
+		#elif (LCD_COLOUR_BIT == 2)
+		static uint16_t colour_lastime[4]={0x0000,0x0000,0x0000,0x0000};
+		#elif (LCD_COLOUR_BIT == 3)
+		static uint16_t colour_lastime[8]={0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000};
+		#else
+		#error("not support LCD_COLOUR_BIT!")
+		#endif
+		
+		if(colour_lastime[num] != colour)
+		{
+			lcd_driver.colour[num] = colour_lastime[num] = colour;
+			#if((LCD_MODE == _FULL_BUFF_DYNA_UPDATE) || (LCD_MODE == _PAGE_BUFF_DYNA_UPDATE))
+			//动态刷新才有crc
+			LCD_Reset_crc();//色彩已改变,强制刷新一下crc动态刷新值, 保证颜色正确
+			#endif
+		}
+}
+#endif
+
+
 /*--------------------------------------------------------------
   * 名称: lcd_driver_Write_0(uint16_t x,uint16_t ypage,uint8_t u8_value)
   * 功能: 普通快速驱动函数,将值以0的颜色写入显存
@@ -2011,36 +2044,7 @@ void Lcd_Fill_GRAM(uint8_t n)
 	#endif
 }
 
-#if (defined LCD_USE_RGB565)
-/*--------------------------------------------------------------
-  * 名称: RGB_Set_Driver_Colour(uint8_t num,uint16_t colour)
-	* 传入: num 颜色序号 对应设置writer_num的笔刷颜色
-	* 传入: colour 颜色
-	* 功能: 设置驱动笔刷颜色
-  * 说明: 
-----------------------------------------------------------------*/
-void RGB_Set_Driver_Colour(uint8_t num,uint16_t colour)
-{
-		#if (LCD_COLOUR_BIT == 1)
-		static uint16_t colour_lastime[2]={0x0000,0x0000};
-		#elif (LCD_COLOUR_BIT == 2)
-		static uint16_t colour_lastime[4]={0x0000,0x0000,0x0000,0x0000};
-		#elif (LCD_COLOUR_BIT == 3)
-		static uint16_t colour_lastime[8]={0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000};
-		#else
-		#error("not support LCD_COLOUR_BIT!")
-		#endif
-		
-		if(colour_lastime[num] != colour)
-		{
-			lcd_driver.colour[num] = colour_lastime[num] = colour;
-			#if((LCD_MODE == _FULL_BUFF_DYNA_UPDATE) || (LCD_MODE == _PAGE_BUFF_DYNA_UPDATE))
-			//动态刷新才有crc
-			LCD_Reset_crc();//色彩已改变,强制刷新一下crc动态刷新值, 保证颜色正确
-			#endif
-		}
-}
-#endif
+
 
 
 
