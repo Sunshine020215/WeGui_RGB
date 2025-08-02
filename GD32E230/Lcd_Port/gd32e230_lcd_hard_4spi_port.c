@@ -391,7 +391,7 @@ void LCD_Send_nCmd(uint8_t *p,uint16_t num)
 uint8_t LCD_Refresh(void)
 {
 	uint8_t ypage;
-	for(ypage=0;ypage<(SCREEN_HIGH/8);ypage++)
+	for(ypage=0;ypage<GRAM_YPAGE_NUM;ypage++)
 	{
 		LCD_Set_Addr(0,ypage);
 		LCD_Send_nDat(&lcd_driver.LCD_GRAM[ypage][0][0],SCREEN_WIDTH);
