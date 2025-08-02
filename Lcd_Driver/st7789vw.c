@@ -1048,8 +1048,8 @@ void ST7789VW_Clear()//清除IC显示缓存
 	i=0;
 	while(i++<320*320)
 	{
-		//LCD_Send_1Dat(0x33);LCD_Send_1Dat(0x33);//测试
-		LCD_Send_1Dat(0x00);LCD_Send_1Dat(0x00);
+		LCD_Send_1Dat(0x33);LCD_Send_1Dat(0x33);//测试
+		//LCD_Send_1Dat(0x00);LCD_Send_1Dat(0x00);
 	}
 	
 }
