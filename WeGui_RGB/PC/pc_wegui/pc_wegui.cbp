@@ -35,11 +35,11 @@
 			<Add directory="../../Lcd_Driver" />
 			<Add directory="../../Lcd_WeGui" />
 			<Add directory="../pc_wegui" />
+			<Add directory="../SDL2/x86_64-w64-mingw32/bin" />
 		</Compiler>
 		<Linker>
 			<Add library="mingw32" />
-			<Add library="SDL2main" />
-			<Add library="SDL2.dll" />
+			<Add library="../SDL2/x86_64-w64-mingw32/bin/SDL2.dll" />
 			<Add library="user32" />
 			<Add library="gdi32" />
 			<Add library="winmm" />

@@ -1234,11 +1234,7 @@ void Lcd_Draw_Line(int16_t x1,int16_t y1,int16_t x2,int16_t y2)
 		return;
 	}
 	else {incy=-1;delta_y=-delta_y;}
-<<<<<<< HEAD:WeGui_RGB/Lcd_Driver/lcd_driver.c
 	if(delta_x>delta_y)distance=delta_x; //选取基本增量坐标轴
-=======
-	if(delta_x>delta_y)distance=delta_x; //选取基本增量坐标轴 
->>>>>>> 1d7ada77862ed6167982759a7e115ba62360d19b:Lcd_Driver/lcd_driver.c
 	else distance=delta_y;
 	for(t=0;t<distance+1;t++)
 	{

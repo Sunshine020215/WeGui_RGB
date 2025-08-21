@@ -899,13 +899,8 @@ menu_t m_Setting_About_wSoft=
 	.menuPar.wMessage_Par.Value_string = STR_WEGUI_VERSION_CLASS,
 	.menuPar.wMessage_Par.Tip_string =
 	{
-<<<<<<< HEAD:WeGui_RGB/Lcd_WeGui/user_wegui_menu.c
 		.str_zh_CN=STR_WEGUI_VERSION,//中文标题
 	  .str_en_US=STR_WEGUI_VERSION,//英文标题
-=======
-		.str_zh_CN=(uint8_t *)"WeGui RGB\n V0.5.3",//中文标题
-	  .str_en_US=(uint8_t *)"WeGui RGB\n V0.5.3",//英文标题
->>>>>>> 1d7ada77862ed6167982759a7e115ba62360d19b:Lcd_WeGui/user_wegui_menu.c
 	},
 };
 
