@@ -2167,6 +2167,7 @@ void lcd_driver_Init(void)
 	//------driver配置默认字体---------
 	//---中英文字体high高度建议一致----
 
+	//--自动设置字体--
 	#if(SCREEN_WIDTH < 240)
 		lcd_driver.fonts_ASCII = &ascii_SongTi_6X12;//默认ASCII字体
 		lcd_driver.fonts_UTF8_cut = &SongTi_UTF8_12X12;//默认UTF8字体(裁切)
@@ -2179,9 +2180,9 @@ void lcd_driver_Init(void)
 	lcd_driver.fonts_UTF8_cut = &SongTi_UTF8_24X24;//默认UTF8字体(裁切)
 
 
-
+	//--手动设置字体--
 	//lcd_driver.newline_high = lcd_driver.fonts_ASCII->high;   //文本换行距离 (如果没有使用中文,可选择)
-	lcd_driver.newline_high = lcd_driver.fonts_UTF8_cut->high;//文本换行距离 (选择ASCII字体和UTF8字体最大的一个)
+	//lcd_driver.newline_high = lcd_driver.fonts_UTF8_cut->high;//文本换行距离 (选择ASCII字体和UTF8字体最大的一个)
 
 
 #	ifdef LCD_USE_RGB565
